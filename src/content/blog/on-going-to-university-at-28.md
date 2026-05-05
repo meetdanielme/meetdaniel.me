@@ -1,0 +1,25 @@
+---
+title: "On Going To University At 28"
+description: ""
+pubDate: 2025-07-04
+slug: "on-going-to-university-at-28"
+tags:
+  - "mature-student"
+  - "university"
+draft: false
+heroImage: "/images/posts/2025/university-college-cork-sketch-chatgpt.jpg"
+---
+
+A week ago, I turned 28. And today, I officially got accepted into the Bachelor of Science in Business Information Systems programme at University College Cork. After ten years in marketing (with a somewhat [unusual origin](https://meetdaniel.me/blog/reflecting-on-ten-years-in-marketing-with-no-degree/)), I’m heading back to school — pursuing a higher education degree for the first time.
+
+College has been on my mind ever since I decided to take a break from education a decade ago. Over the last few years, that quiet thought grew louder. I’m genuinely grateful for the opportunities I’ve had since jumping straight into work after high school — especially the experience I gained by working in tech startups. Still, I’ve often felt like I missed out on something fundamental by not going to university. It wasn’t necessarily about the academic knowledge (I felt pretty competent in my work as a marketer), but more about the college _experience_ — meeting people, figuring out what matters, thinking about who I want to become. And, if I’m being honest, it always just sounded fun. Most people I know describe their university years as some of the best of their lives, and I never got a chance to see what that’s like myself.
+
+The longer I stayed in marketing, the more disconnected I felt. Lately, the landscape has become especially draining — full of clickbait, short-form video churn, and now, AI-generated slop. While I’ve grown tired of marketing itself, my passion for technology is still burning strong. Unlike the Web3 hype cycle, I’m genuinely optimistic about this new wave of AI. It feels like a real shift — something that could redefine personal computing and, hopefully, how we use technology at a societal level. I’m inspired by efforts like [Tristan Harris’ Center for Humane Technology](https://www.humanetech.com) and curious about what OpenAI and Jony Ive are building together under the io brand.
+
+This excitement is motivating, but I don’t feel qualified — yet — to contribute meaningfully to this transformation. When I came across the [Business Information Systems programme at UCC](https://www.ucc.ie/en/ck203/), it clicked instantly. A blend of business courses and more technical content like programming? It felt tailor-made for someone like me at this exact point in time. I’ve worked across so many different roles in startups — very T-shaped in my skill set — but I’ve always lacked formal technical training or academic business foundations. And with everything going on in the world of AI, this kind of programme feels especially relevant. I think people like me — coming from creative backgrounds and business roles — are going to need to understand how technology actually works, and be able to operate with code to at least some degree. AI tools are lowering the barrier to entry, which is exciting, but it also means it’s even more important to understand what’s happening under the hood. I don’t want to just generate lines of code without knowing what they do. I want to be versatile in this new AI-driven world — and I think this programme will help me get there.
+
+And then there’s the college life itself. I want to experience it before I feel truly too old to hang out with people ten years younger than me (though I’m sure that’ll take some getting used to regardless). In many ways, I’ve always been in a weird age gap with my adult friendships. Most of the people I’m close to are already getting married or starting families. I’m not quite ready for that — but maybe I will be by the time I graduate, at 32.
+
+I’m also excited about the move to Ireland. I’ve had a good run in Berlin over the last seven years, and in many ways, it’s felt the most like home. But I’ve never quite felt like I _belonged_ here. Part of that is the language — I’ve barely picked up German and, to be honest, I never really felt the desire to integrate fully into the culture. I’ve often felt distant from it. That became especially clear after spending half a year in Los Angeles, where everything just felt so much more effortless. Living in an English-speaking environment brought a sense of ease I didn’t know I was missing. Ireland feels like a better cultural and linguistic fit for me — somewhere I can finally feel at ease. It also happens to be home to many of the companies I’d love to work for. Cork, where UCC is based, houses Apple’s first office outside the U.S., and honestly, there’s no company I’d rather work for.
+
+This next chapter feels like a reset. Not in the sense of starting over, but of integrating everything I’ve done so far with what’s ahead. I don’t know exactly where it’ll lead, but for the first time in a long while, I feel like I’m steering my life in a direction that truly excites me. And that’s more than enough reason to go back to school.

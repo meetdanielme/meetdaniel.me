@@ -1,0 +1,19 @@
+{
+  "name": "meetdaniel-me",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/rss": "latest",
+    "@astrojs/sitemap": "latest",
+    "@astrojs/tailwind": "latest",
+    "@tailwindcss/typography": "latest",
+    "astro": "^5.15.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {}
+}
