@@ -1,28 +1,19 @@
 ---
 title: "Content & Community Manager at Phase Software"
-description: "\""
+description: "Product marketing, content, community, and events work for a Berlin design-tool startup."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/case-studies/phase/phase.png"
+metrics:
+  - label: "Community growth"
+    value: "1,000 to 2,500+"
+  - label: "Magazine traffic"
+    value: "10,000 monthly views"
+  - label: "Published issues"
+    value: "14"
 ---
-
-"
-pubDate: 2025-04-01
-tags:
-  - "Work"
-draft: false
----
-
-* [About](/about/)
-* [Work](/work/)
-* [Now](/now)
-* [Uses](/uses)
-* [Feed](/feed)
-
-# [Content & Community Manager at Phase Software](/work/content-community-manager-at-phase-software/)
-
-![phase](/images/pages/2025/phase-logo.png)
 
 **Location**: Berlin, Germany
 **Period**: May 2018 – February 2019

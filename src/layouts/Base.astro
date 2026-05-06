@@ -26,8 +26,8 @@ const socials = [
     },
     {
         href: "https://x.com/meetdanielme",
-        label: "X/Twitter",
-        icon: "ri-twitter-x-line",
+        label: "Twitter",
+        icon: "ri-twitter-fill",
     },
     {
         href: "https://github.com/meetdanielme",
@@ -77,7 +77,7 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url.href} />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icon-1024.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link
@@ -215,16 +215,12 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                             ))
                         }
                     </div>
-                    <footer class="sidebar-footer">
-                        <a class="btn btn-secondary mb-6" href={contactHref}
+                    <div class="sidebar-footer">
+                        <a class="btn btn-secondary" href={contactHref}
                             ><i class="ri-mail-line" aria-hidden="true"
                             ></i>Contact Me</a
                         >
-                        <p>© 2026 Daniel Marcinkowski</p>
-                        <p class="mt-2">
-                            <a href="/privacy-policy/">Privacy Policy</a>
-                        </p>
-                    </footer>
+                    </div>
                 </aside>
                 <main class="max-w-[760px]">
                     <div class="hidden justify-end md:flex">
@@ -237,6 +233,14 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                                 data-theme-icon
                                 aria-hidden="true"></i></button>
                     </div><slot />
+                    <footer class="site-footer">
+                        <hr />
+                        <p>
+                            © 2026 Daniel Marcinkowski · <a
+                                href="/privacy-policy/">Privacy Policy</a
+                            >
+                        </p>
+                    </footer>
                 </main>
             </div>
         </div>

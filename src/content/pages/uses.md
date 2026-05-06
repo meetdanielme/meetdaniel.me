@@ -4,7 +4,7 @@ description: "My entire tech, travel, coffee, and stationary gear"
 pubDate: 2025-02-23
 tags:
 draft: false
-heroImage: "/images/pages/2025/daniel-marcinkowski-desk-setup-1.jpg"
+heroImage: "/images/pages/uses/daniel-marcinkowski-desk-setup-1.jpg"
 ---
 
 _Inspired by [/uses](https://uses.tech)._

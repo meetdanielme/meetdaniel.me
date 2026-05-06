@@ -1,28 +1,19 @@
 ---
 title: "Digital Marketing Specialist at ACELR8"
-description: "\""
+description: "Building a marketing function, brand, content, social, and events for a Berlin recruitment startup."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/case-studies/acelr8/acelr8.png"
+metrics:
+  - label: "Client engagement"
+    value: "+150%"
+  - label: "LinkedIn growth"
+    value: "10x"
+  - label: "Community reach"
+    value: "1,500+ professionals"
 ---
-
-"
-pubDate: 2025-04-01
-tags:
-  - "Work"
-draft: false
----
-
-* [About](/about/)
-* [Work](/work/)
-* [Now](/now)
-* [Uses](/uses)
-* [Feed](/feed)
-
-# [Digital Marketing Specialist at ACELR8](/work/digital-marketing-specialist-at-acelr8/)
-
-![acelr8](/images/pages/2025/acelr8-logo.png)
 
 **Location**: Berlin, Germany
 **Period**: March 2019 – December 2020

@@ -1,28 +1,19 @@
 ---
 title: "Senior Marketing Manager at Ready Player Me"
-description: "\""
+description: "Marketing strategy, community, content, SEO, and customer growth for a cross-game avatar platform."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/pages/2025/ready-player-me-logo.png"
+metrics:
+  - label: "Customer growth"
+    value: "25 to 20,000+"
+  - label: "Developer community"
+    value: "15,000+ members"
+  - label: "Referring domains"
+    value: "25x"
 ---
-
-"
-pubDate: 2025-04-01
-tags:
-  - "Work"
-draft: false
----
-
-* [About](/about/)
-* [Work](/work/)
-* [Now](/now)
-* [Uses](/uses)
-* [Feed](/feed)
-
-# [Senior Marketing Manager at Ready Player Me](/work/senior-marketing-manager-at-ready-player-me/)
-
-![ready player me](/images/pages/2025/ready-player-me-logo.png)
 
 **Location**: Berlin, Germany (remote)
 **Period**: January 2021 – November 2024
@@ -33,7 +24,7 @@ draft: false
 [Ready Player Me](https://readyplayer.me) was a cross-game avatar platform that enables users to create and use a consistent digital identity in virtual worlds. The company was acquired by Netflix in 2024.
 
 * As the first marketing hire, I built the entire marketing function from zero and developed the company’s product marketing and messaging strategy, contributing to scaling the game developer tools customer base from 25 to over 20,000
-* Grew social media following 10× across LinkedIn, X, Facebook, and Instagram through organic content strategy and community engagement
+* Grew social media following 10× across LinkedIn, Twitter, Facebook, and Instagram through organic content strategy and community engagement
 * Led SEO initiatives that increased referring domains 25×, significantly boosting organic traffic and developer discoverability
 * Built and nurtured a developer community of 15,000+ members on Discord, creating a direct feedback loop between users and the product team
 * Organised online and in-person events worldwide, including a flagship 1,000+ attendee event in New York City

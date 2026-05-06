@@ -28,7 +28,7 @@ I do not currently use advertising cookies, tracking pixels, or WordPress/plugin
 
 ## External links
 
-This website links to external services such as GitHub, LinkedIn, Bluesky, Threads, X/Twitter, Medium, YouTube, and others. If you follow those links, their own privacy policies apply.
+This website links to external services such as GitHub, LinkedIn, Bluesky, Threads, Twitter, Medium, YouTube, and others. If you follow those links, their own privacy policies apply.
 
 ## Contact
 

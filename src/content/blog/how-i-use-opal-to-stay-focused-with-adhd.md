@@ -88,7 +88,7 @@ Another thing I love about Opal is the **App Lists**. Instead of having a single
 
 At this time, I use only one App List for all of my Recurring Sessions, and it looks more or less like this:
 
-- Social: Threads, Instagram, LinkedIn, Facebook, Twitter/X, Mastodon, Bluesky, YouTube, Strava, Reddit;
+- Social: Threads, Instagram, LinkedIn, Facebook, Twitter, Mastodon, Bluesky, YouTube, Strava, Reddit;
 
 - Games: Balatro, Monument Valley 3, Alto's Adventure, finity, Threes (basically all games on my iPhone);
 

@@ -14,6 +14,15 @@ const shared = {
     .transform((tags) => tags ?? []),
   draft: z.boolean().optional().default(false),
   heroImage: z.string().optional(),
+  metrics: z
+    .array(
+      z.object({
+        label: z.string(),
+        value: z.string(),
+      }),
+    )
+    .optional()
+    .default([]),
 };
 
 const blog = defineCollection({ type: "content", schema: z.object(shared) });

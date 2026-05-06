@@ -12,7 +12,7 @@ On this website, I explore how I use technology to be creative, productive, and 
 
 <p><a class="btn btn-primary" href="mailto:hey@meetdaniel.me"><i class="ri-mail-line" aria-hidden="true"></i>Contact Me</a></p>
 
-You can also follow me on [Bluesky](https://bsky.app/profile/meetdaniel.me), [Threads](https://www.threads.net/@meetdaniel.me), [X/Twitter](https://x.com/meetdanielme), [GitHub](https://github.com/meetdanielme), and [LinkedIn](https://www.linkedin.com/in/meetdanielme/).
+You can also follow me on [Bluesky](https://bsky.app/profile/meetdaniel.me), [Threads](https://www.threads.net/@meetdaniel.me), [Twitter](https://x.com/meetdanielme), [GitHub](https://github.com/meetdanielme), and [LinkedIn](https://www.linkedin.com/in/meetdanielme/).
 
 **Learn more about my work experience [here](/work/).**
 

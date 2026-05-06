@@ -1,28 +1,19 @@
 ---
 title: "Social Media Specialist at Daftcode"
-description: "\""
+description: "Social media, content, and paid campaign work across multiple venture-builder products."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/case-studies/daftcode/daftcode-1.png"
+metrics:
+  - label: "Ventures supported"
+    value: "5"
+  - label: "Community launch"
+    value: "300+ members"
+  - label: "Company size"
+    value: "150+ people"
 ---
-
-"
-pubDate: 2025-04-01
-tags:
-  - "Work"
-draft: false
----
-
-* [About](/about/)
-* [Work](/work/)
-* [Now](/now)
-* [Uses](/uses)
-* [Feed](/feed)
-
-# [Social Media Specialist at Daftcode](/work/social-media-specialist-at-daftcode/)
-
-![daftcode](/images/pages/2025/daftcode-logo.png)
 
 **Location**: Warsaw, Poland
 **Period**: August 2016 – June 2018

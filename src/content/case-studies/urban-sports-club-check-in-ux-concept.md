@@ -1,13 +1,12 @@
 ---
 title: "Improved Urban Sports Check-In UX Concept"
-description: "In the following case study, I focused on a set of features meant to improve the ease and accessibility of the check-in experience in the Urban Sports Club app on iOS. I chose Appl"
+description: "A UX concept for improving the ease and accessibility of the Urban Sports Club check-in experience on iOS."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/case-studies/urban-sports-club/urban-sports-club-improved-check-in-ux.png"
 ---
-
-![urban sports club improved check in ux](https://meetdaniel.me/wp-content/uploads/2025/04/urban-sports-club-improved-check-in-ux.png)
 
 ## Project Overview
 

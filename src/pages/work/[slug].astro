@@ -23,9 +23,13 @@ const featuredImage = getFeaturedImage(study);
     canonical={`/work/${study.slug}/`}
 >
     <article>
-        <p><a class="tag-link" href="/work/">Back to Work</a></p>
-        <header class="mb-10 mt-4">
-            <p class="case-meta">Case study</p>
+        <p>
+            <a class="back-link" href="/work/"
+                ><i class="ri-arrow-left-line" aria-hidden="true"></i>Back to
+                Work</a
+            >
+        </p>
+        <header class="case-study-header">
             <h1 class="mt-2 text-4xl font-bold leading-tight">
                 {study.data.title}
             </h1>
@@ -38,6 +42,18 @@ const featuredImage = getFeaturedImage(study);
             }
             {featuredImage && <img class="mt-8" src={featuredImage} alt="" />}
         </header>
+        {
+            study.data.metrics.length > 0 && (
+                <dl class="metrics-grid">
+                    {study.data.metrics.map((metric) => (
+                        <div>
+                            <dt>{metric.label}</dt>
+                            <dd>{metric.value}</dd>
+                        </div>
+                    ))}
+                </dl>
+            )
+        }
         <div class="prose prose-zinc dark:prose-invert"><Content /></div>
     </article>
 </Base>

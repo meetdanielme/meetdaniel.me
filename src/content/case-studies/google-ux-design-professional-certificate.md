@@ -1,13 +1,12 @@
 ---
 title: "Google UX Design Professional Certificate"
-description: "An app and a responsive website to help global travelers find the current exchange rates between two currencies. They can also use this information to quickly and easily exchange c"
+description: "An app and responsive website concept to help global travelers find exchange rates and convert currencies quickly."
 pubDate: 2025-04-01
 tags:
   - "Work"
 draft: false
+heroImage: "/images/case-studies/google-ux-design/google-coursera-ux-design.jpg"
 ---
-
-![google coursera ux design](https://meetdaniel.me/wp-content/uploads/2025/03/google-coursera-ux-design.jpg)
 
 ## Project #1: Converty, a currency conversion app
 

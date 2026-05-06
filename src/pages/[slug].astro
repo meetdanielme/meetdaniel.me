@@ -30,25 +30,39 @@ const caseStudies =
         page.slug === "work" && caseStudies.length > 0 && (
             <section class="case-section">
                 <h2 class="text-2xl font-bold">Case studies</h2>
-                <div class="case-grid">
+                <div class="case-list">
                     {caseStudies.map((study) => {
                         const featuredImage = getFeaturedImage(study);
                         return (
-                            <a class="case-card" href={`/work/${study.slug}/`}>
+                            <article
+                                class={`post-card ${featuredImage ? "with-image" : ""}`}
+                            >
                                 {featuredImage && (
-                                    <img
-                                        class="case-thumb"
-                                        src={featuredImage}
-                                        alt=""
-                                        loading="lazy"
-                                    />
+                                    <a href={`/work/${study.slug}/`}>
+                                        <img
+                                            class="post-thumb"
+                                            src={featuredImage}
+                                            alt=""
+                                            loading="lazy"
+                                        />
+                                    </a>
                                 )}
-                                <span class="case-meta">Case study</span>
-                                <h3>{study.data.title}</h3>
-                                {study.data.description && (
-                                    <p>{study.data.description}</p>
-                                )}
-                            </a>
+                                <div>
+                                    <h3 class="text-xl font-bold">
+                                        <a
+                                            class="post-title-link"
+                                            href={`/work/${study.slug}/`}
+                                        >
+                                            {study.data.title}
+                                        </a>
+                                    </h3>
+                                    {study.data.description && (
+                                        <p class="mt-2">
+                                            {study.data.description}
+                                        </p>
+                                    )}
+                                </div>
+                            </article>
                         );
                     })}
                 </div>
