@@ -9,8 +9,10 @@ const {
     title = "Daniel Marcinkowski",
     description = "Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.",
     canonical = Astro.url.pathname,
+    socialImage = "/images/pages/2025/DSC_5324A-by-Karen-Harms-1-1024x683.jpeg",
 } = Astro.props;
 const url = new URL(canonical, Astro.site);
+const socialImageUrl = new URL(socialImage, Astro.site);
 const currentPath = Astro.url.pathname;
 const nav = [
     { href: "/", label: "Home", icon: "ri-home-5-line" },
@@ -79,6 +81,10 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url.href} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={socialImageUrl.href} />
+        <meta property="og:image:alt" content="Daniel Marcinkowski" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={socialImageUrl.href} />
         <link rel="icon" href="/icon-1024.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
@@ -179,9 +185,7 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                             src={profileImage}
                             alt="Portrait of Daniel Marcinkowski"
                         />
-                        <a href="/" class="profile-name"
-                            >Daniel Marcinkowski</a
-                        >
+                        <a href="/" class="profile-name">Daniel Marcinkowski</a>
                     </div>
                     <SearchBox id="desktop-search" />
                     <nav class="sidebar-nav mt-8 grid gap-2 text-base">
@@ -233,7 +237,8 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                             ><i
                                 class="ri-moon-line"
                                 data-theme-icon
-                                aria-hidden="true"></i></button>
+                                aria-hidden="true"></i></button
+                        >
                     </div><slot />
                     <footer class="site-footer">
                         <hr />

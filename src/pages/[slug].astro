@@ -8,6 +8,7 @@ export async function getStaticPaths() {
 }
 const { page } = Astro.props;
 const { Content } = await page.render();
+const pageFeaturedImage = getFeaturedImage(page);
 const pagesWithUpdatedDate = new Set(["about", "work", "uses", "now"]);
 const showUpdatedDate = pagesWithUpdatedDate.has(page.slug) && page.data.updatedDate;
 const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString("en-GB", {
@@ -30,6 +31,7 @@ const caseStudies =
     description={page.data.description ||
         `${page.data.title} page for Daniel Marcinkowski.`}
     canonical={`/${page.slug}/`}
+    socialImage={pageFeaturedImage}
 >
     <article>
         <h1
