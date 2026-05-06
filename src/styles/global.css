@@ -469,13 +469,13 @@ pre code {
     font-weight: 800;
 }
 .prose a {
-    color: var(--primary-active);
+    color: var(--primary);
     font-weight: 600;
     text-decoration: none;
 }
 .prose a:hover,
 .prose a:focus-visible {
-    color: var(--primary);
+    color: var(--primary-active);
     text-decoration: underline;
 }
 .prose a.btn,
@@ -778,6 +778,9 @@ html[data-theme="dark"] .post-title-link {
 html[data-theme="dark"] .post-title-link:hover {
     color: var(--primary);
 }
+html[data-theme="dark"] .post-title-link:focus-visible {
+    color: var(--primary);
+}
 html[data-theme="dark"] .btn-primary:hover {
     background: var(--contrast);
     color: #000;
@@ -850,4 +853,8 @@ html[data-theme="light"] .search-results {
 html[data-theme="light"] .profile-name,
 html[data-theme="light"] .post-title-link {
     color: #000;
+}
+html[data-theme="light"] .post-title-link:hover,
+html[data-theme="light"] .post-title-link:focus-visible {
+    color: var(--primary);
 }
