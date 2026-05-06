@@ -39,6 +39,8 @@ draft: false
 ---
 ```
 
+Set `draft: true` to keep a new or in-progress post, page, or case study out of the built site. Draft content is excluded from listing pages, detail routes, RSS, and search.
+
 Case studies also support:
 
 ```yaml
@@ -50,6 +52,24 @@ metrics:
   - label: "Customer growth"
     value: "25 to 20,000+"
 ```
+
+### Adding or updating content
+
+Use one Markdown file per piece of content:
+
+- Blog posts: `src/content/blog/my-article-slug.md` becomes `/blog/my-article-slug/`
+- Static pages: `src/content/pages/about.md` becomes `/about/`
+- Case studies: `src/content/case-studies/project-slug.md` becomes `/work/project-slug/`
+
+To add a new article, copy the frontmatter shape above into a new file in `src/content/blog`, choose a stable lowercase filename with hyphens, write the post below the closing `---`, and set `draft: true` until it is ready to publish. When publishing, set `draft: false`, add the final `pubDate`, and run `pnpm run build`.
+
+To add a new case study, create a Markdown file in `src/content/case-studies`, add `order` so the `/work/` listing appears in the intended order, and include any supported metadata such as `location`, `period`, `teamSize`, or `metrics` only when the content supports it. Do not invent metrics just to fill the layout.
+
+To add a new static page, create a Markdown file in `src/content/pages`. If it should show a “Last updated” line, add `updatedDate` and update `src/pages/[slug].astro` only if the page slug is not already in the allowed list.
+
+To update existing content, edit the existing Markdown file rather than changing its filename. Filenames define public URLs, so renaming a file changes the route and can break old links unless a redirect is added.
+
+When updating published content, use `updatedDate` for meaningful revisions. Keep `pubDate` as the original publication date unless the piece is intentionally being republished.
 
 ### Buttons
 
@@ -126,6 +146,37 @@ Keep site assets local instead of hotlinking remote WordPress media. Public file
 - `public/files/example.pdf` becomes `/files/example.pdf`
 
 If a post or case study has no `heroImage`, preview cards fall back to the first local Markdown image where possible.
+
+Recommended image locations:
+
+- Blog images: `public/images/posts/YYYY/image-name.jpg`
+- Static page images: `public/images/pages/page-name/image-name.jpg`
+- Case study images: `public/images/case-studies/project-slug/image-name.jpg`
+- Profile or global images: `public/images/profile/` or another clear shared folder
+
+Use root-relative paths in frontmatter and Markdown:
+
+```yaml
+heroImage: "/images/case-studies/project-slug/cover.png"
+```
+
+```md
+![Descriptive alt text](/images/posts/2026/example.jpg)
+```
+
+Use descriptive filenames, keep extensions lowercase, and avoid spaces in file names. Always include useful alt text unless the image is purely decorative. Prefer local images over remote URLs, especially for WordPress export media, so the site does not depend on the old WordPress uploads directory.
+
+After adding or moving images, run `pnpm run build` and check the affected page, its preview card, and any tag or work listing that should display the image.
+
+### Things to watch for
+
+- `draft: true` hides content from the public build, but the Markdown still needs valid frontmatter.
+- `pubDate` is required by the content schema for blog posts, pages, and case studies.
+- `heroImage` takes priority over the first Markdown image for preview cards.
+- Case study order is controlled by frontmatter, not filename order.
+- Public URLs come from filenames, so rename content files carefully.
+- Use root-relative asset paths like `/images/...`, not `public/images/...` inside Markdown.
+- Run `pnpm run build` before publishing changes.
 
 ## Local development
 
