@@ -14,6 +14,7 @@
     "@fontsource/figtree": "latest",
     "@fontsource/jetbrains-mono": "latest",
     "@tailwindcss/typography": "latest",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "latest",
     "astro": "^5.15.6",
     "lite-youtube-embed": "^0.3.4",

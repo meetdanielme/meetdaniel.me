@@ -2,6 +2,7 @@
 import "remixicon/fonts/remixicon.css";
 import "lite-youtube-embed/src/lite-yt-embed.css";
 import "../styles/global.css";
+import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import SearchBox from "../components/SearchBox.astro";
 const {
@@ -262,6 +263,7 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                 <figcaption data-image-lightbox-caption></figcaption>
             </figure>
         </dialog>
+        <Analytics />
         <SpeedInsights />
         <script>
             import "lite-youtube-embed";
