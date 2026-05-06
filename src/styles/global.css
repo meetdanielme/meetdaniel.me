@@ -99,6 +99,14 @@ img {
     padding: 1rem 1.5rem;
     background: var(--base);
 }
+.site-name-link {
+    color: var(--contrast);
+    transition: color 0.15s ease;
+}
+.site-name-link:hover,
+.site-name-link:focus-visible {
+    color: var(--primary);
+}
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -155,6 +163,9 @@ img {
     line-height: 1.2;
 }
 .profile-name:hover {
+    color: var(--primary);
+}
+.profile-name:focus-visible {
     color: var(--primary);
 }
 .sidebar-footer {
@@ -805,8 +816,15 @@ html[data-theme="dark"] .search-results {
     background: var(--base);
 }
 html[data-theme="dark"] .profile-name,
+html[data-theme="dark"] .site-name-link,
 html[data-theme="dark"] .post-title-link {
     color: var(--contrast);
+}
+html[data-theme="dark"] .profile-name:hover,
+html[data-theme="dark"] .profile-name:focus-visible,
+html[data-theme="dark"] .site-name-link:hover,
+html[data-theme="dark"] .site-name-link:focus-visible {
+    color: var(--primary);
 }
 html[data-theme="dark"] .post-title-link:hover {
     color: var(--primary);
@@ -884,8 +902,15 @@ html[data-theme="light"] .search-results {
     color: #000;
 }
 html[data-theme="light"] .profile-name,
+html[data-theme="light"] .site-name-link,
 html[data-theme="light"] .post-title-link {
     color: #000;
+}
+html[data-theme="light"] .profile-name:hover,
+html[data-theme="light"] .profile-name:focus-visible,
+html[data-theme="light"] .site-name-link:hover,
+html[data-theme="light"] .site-name-link:focus-visible {
+    color: var(--primary);
 }
 html[data-theme="light"] .post-title-link:hover,
 html[data-theme="light"] .post-title-link:focus-visible {
