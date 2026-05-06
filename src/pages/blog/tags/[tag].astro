@@ -32,18 +32,37 @@ const { tag, posts } = Astro.props;
     <div class="mt-10 grid gap-8">
         {
             posts.map((post) => (
-                <article class="border-b border-zinc-200 pb-6 dark:border-zinc-800">
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        {post.data.pubDate.toLocaleDateString("en-GB", {
-                            dateStyle: "long",
-                        })}
-                    </p>
-                    <h2 class="mt-1 text-2xl font-bold">
-                        <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-                    </h2>
-                    {post.data.description && (
-                        <p class="mt-2">{post.data.description}</p>
+                <article
+                    class={`post-card ${post.data.heroImage ? "with-image" : ""}`}
+                >
+                    {post.data.heroImage && (
+                        <a href={`/blog/${post.slug}/`}>
+                            <img
+                                class="post-thumb"
+                                src={post.data.heroImage}
+                                alt=""
+                                loading="lazy"
+                            />
+                        </a>
                     )}
+                    <div>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                            {post.data.pubDate.toLocaleDateString("en-GB", {
+                                dateStyle: "long",
+                            })}
+                        </p>
+                        <h2 class="mt-1 text-2xl font-bold">
+                            <a
+                                class="post-title-link"
+                                href={`/blog/${post.slug}/`}
+                            >
+                                {post.data.title}
+                            </a>
+                        </h2>
+                        {post.data.description && (
+                            <p class="mt-2">{post.data.description}</p>
+                        )}
+                    </div>
                 </article>
             ))
         }

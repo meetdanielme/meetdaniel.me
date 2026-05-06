@@ -1,0 +1,10 @@
+{
+  "name": "Daniel Marcinkowski",
+  "short_name": "Daniel",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "64x64" }
+  ],
+  "theme_color": "#EAAA00",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

@@ -2,7 +2,6 @@
 title: "About"
 description: "Learn more about me, this website, and my work experience to-date."
 pubDate: 2025-01-15
-slug: "about"
 tags:
 draft: false
 ---
@@ -11,7 +10,9 @@ Hey! I'm Daniel Marcinkowski. Originally from Warsaw, Poland, permanently based 
 
 On this website, I explore how I use technology to be creative, productive, and healthy while coping with ADHD in a world full of distractions and attention-grabbing platforms.
 
-You can [contact me here](mailto:hey@meetdaniel.me) or follow on [Mastodon](https://mastodon.social/@meetdanielme), [Bluesky](https://bsky.app/profile/meetdaniel.me), [Threads](http://threads.net/@meetdaniel.me), and [LinkedIn](http://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=meetdanielme).
+<p><a class="btn btn-primary" href="mailto:hey@meetdaniel.me"><i class="ri-mail-line" aria-hidden="true"></i>Contact Me</a></p>
+
+You can also follow me on [Bluesky](https://bsky.app/profile/meetdaniel.me), [Threads](https://www.threads.net/@meetdaniel.me), [X/Twitter](https://x.com/meetdanielme), [GitHub](https://github.com/meetdanielme), and [LinkedIn](https://www.linkedin.com/in/meetdanielme/).
 
 **Learn more about my work experience [here](/work/).**
 

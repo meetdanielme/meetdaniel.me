@@ -1,6 +1,8 @@
 ---
+import "remixicon/fonts/remixicon.css";
 import "../styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import SearchBox from "../components/SearchBox.astro";
 const {
     title = "Daniel Marcinkowski",
     description = "Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.",
@@ -9,33 +11,59 @@ const {
 const url = new URL(canonical, Astro.site);
 const currentPath = Astro.url.pathname;
 const nav = [
-    { href: "/", label: "Home", icon: "⌂" },
-    { href: "/about/", label: "About", icon: "◌" },
-    { href: "/work/", label: "Work", icon: "▣" },
-    { href: "/now/", label: "Now", icon: "◷" },
-    { href: "/uses/", label: "Uses", icon: "♡" },
-    { href: "/blog/", label: "Blog", icon: "≋" },
+    { href: "/", label: "Home", icon: "ri-home-5-line" },
+    { href: "/blog/", label: "Blog", icon: "ri-quill-pen-line" },
+    { href: "/about/", label: "About", icon: "ri-user-3-line" },
+    { href: "/work/", label: "Work", icon: "ri-briefcase-4-line" },
+    { href: "/uses/", label: "Uses", icon: "ri-tools-line" },
+    { href: "/now/", label: "Now", icon: "ri-time-line" },
 ];
 const socials = [
     {
-        href: "https://github.com/danielmarcinkowski",
-        label: "GitHub",
-        icon: "GH",
-    },
-    {
         href: "https://www.linkedin.com/in/meetdanielme/",
         label: "LinkedIn",
-        icon: "in",
+        icon: "ri-linkedin-box-fill",
     },
-    { href: "/rss.xml", label: "RSS", icon: "RSS" },
+    {
+        href: "https://x.com/meetdanielme",
+        label: "X/Twitter",
+        icon: "ri-twitter-x-line",
+    },
+    {
+        href: "https://github.com/meetdanielme",
+        label: "GitHub",
+        icon: "ri-github-fill",
+    },
+    {
+        href: "https://bsky.app/profile/meetdaniel.me",
+        label: "Bluesky",
+        icon: "ri-bluesky-fill",
+    },
+    {
+        href: "https://www.threads.net/@meetdaniel.me",
+        label: "Threads",
+        icon: "ri-threads-fill",
+    },
+    { href: "/rss.xml", label: "RSS", icon: "ri-rss-line" },
 ];
 const contactHref = "mailto:hey@meetdaniel.me";
+const profileImage = "/images/pages/2025/profile-pic.jpeg";
 ---
 
 <html lang="en-GB">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <script is:inline>
+            (() => {
+                const saved = localStorage.getItem("theme");
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)",
+                ).matches;
+                document.documentElement.dataset.theme =
+                    saved || (prefersDark ? "dark" : "light");
+            })();
+        </script>
         <title>
             {
                 title === "Daniel Marcinkowski"
@@ -49,6 +77,9 @@ const contactHref = "mailto:hey@meetdaniel.me";
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url.href} />
         <meta property="og:type" content="website" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link
             rel="alternate"
             type="application/rss+xml"
@@ -58,53 +89,63 @@ const contactHref = "mailto:hey@meetdaniel.me";
     </head>
     <body>
         <div class="site-shell">
-            <header
-                class="flex items-center justify-between border-b border-zinc-200 px-6 py-4 dark:border-zinc-800 md:hidden"
-            >
-                <a href="/" class="font-bold text-black dark:text-white"
+            <header class="mobile-header">
+                <button
+                    id="menu-open"
+                    class="icon-button"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false"
+                    aria-label="Open menu"
+                    ><i class="ri-menu-line" aria-hidden="true"></i></button
+                >
+                <a href="/about/" class="font-bold text-black dark:text-white"
                     >Daniel Marcinkowski</a
                 >
                 <button
-                    id="menu-open"
-                    class="rounded-lg border border-zinc-300 px-3 py-2 font-bold text-black dark:border-zinc-700 dark:text-white"
-                    aria-controls="mobile-menu"
-                    aria-expanded="false">Menu</button
+                    class="icon-button theme-toggle"
+                    type="button"
+                    aria-label="Toggle colour theme"
+                    ><i class="ri-moon-line" data-theme-icon aria-hidden="true"
+                    ></i></button
                 >
             </header>
             <div
                 id="mobile-menu"
-                class="fixed inset-0 z-50 hidden bg-white px-6 py-5 text-black dark:bg-black dark:text-white md:hidden"
+                class="mobile-menu hidden"
                 role="dialog"
                 aria-modal="true"
                 aria-label="Site navigation"
             >
                 <div class="flex items-center justify-between">
-                    <a href="/" class="font-bold text-black dark:text-white"
+                    <a
+                        href="/about/"
+                        class="font-bold text-black dark:text-white"
                         >Daniel Marcinkowski</a
                     >
                     <button
                         id="menu-close"
-                        class="rounded-lg border border-zinc-300 px-3 py-2 font-bold dark:border-zinc-700"
-                        >Close</button
+                        class="icon-button"
+                        aria-label="Close menu"
+                        ><i class="ri-close-line" aria-hidden="true"
+                        ></i></button
                     >
                 </div>
-                <nav class="mt-12 grid gap-6 text-2xl">
+                <div class="mt-6"><SearchBox id="mobile-search" /></div>
+                <nav class="mt-10 grid gap-5 text-2xl">
                     {
                         nav.map((item) => (
                             <a
                                 class="nav-link mobile-menu-link"
                                 href={item.href}
                             >
-                                <span class="icon" aria-hidden="true">
-                                    {item.icon}
-                                </span>
+                                <i class={item.icon} aria-hidden="true" />
                                 {item.label}
                             </a>
                         ))
                     }
                 </nav>
                 <div
-                    class="mt-12 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+                    class="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800"
                 >
                     <div class="flex flex-wrap gap-3">
                         {
@@ -114,34 +155,33 @@ const contactHref = "mailto:hey@meetdaniel.me";
                                     href={item.href}
                                     aria-label={item.label}
                                 >
-                                    <span
-                                        aria-hidden="true"
-                                        class="text-sm font-bold"
-                                    >
-                                        {item.icon}
-                                    </span>
+                                    <i class={item.icon} aria-hidden="true" />
                                 </a>
                             ))
                         }
                     </div>
                     <a
                         class="btn btn-secondary mobile-menu-link mt-6"
-                        href={contactHref}>Contact Me</a
+                        href={contactHref}
+                        ><i class="ri-mail-line" aria-hidden="true"></i>Contact
+                        Me</a
                     >
                 </div>
             </div>
-            <div
-                class="mx-auto grid max-w-[1200px] gap-10 px-6 py-8 md:grid-cols-[220px_1fr] md:px-10"
-            >
-                <aside
-                    class="hidden md:sticky md:top-8 md:block md:h-[calc(100vh-4rem)] md:border-r md:border-zinc-200 md:pr-8 dark:md:border-zinc-800"
-                >
-                    <a
-                        href="/"
-                        class="block text-lg font-bold text-black dark:text-white"
-                        >Daniel Marcinkowski</a
-                    >
-                    <nav class="mt-8 grid gap-3 text-sm">
+            <div class="site-grid">
+                <aside class="sidebar">
+                    <div class="profile-block">
+                        <img
+                            class="profile-image"
+                            src={profileImage}
+                            alt="Daniel Marcinkowski"
+                        />
+                        <a href="/about/" class="profile-name"
+                            >Daniel Marcinkowski</a
+                        >
+                    </div>
+                    <SearchBox id="desktop-search" />
+                    <nav class="mt-8 grid gap-2 text-base">
                         {
                             nav.map((item) => (
                                 <a
@@ -153,16 +193,14 @@ const contactHref = "mailto:hey@meetdaniel.me";
                                             : undefined
                                     }
                                 >
-                                    <span class="icon" aria-hidden="true">
-                                        {item.icon}
-                                    </span>
+                                    <i class={item.icon} aria-hidden="true" />
                                     {item.label}
                                 </a>
                             ))
                         }
                     </nav>
                     <div
-                        class="mt-8 flex flex-wrap gap-1 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+                        class="mt-8 flex flex-wrap gap-1 border-t border-zinc-300 pt-6 dark:border-zinc-800"
                     >
                         {
                             socials.map((item) => (
@@ -171,26 +209,34 @@ const contactHref = "mailto:hey@meetdaniel.me";
                                     href={item.href}
                                     aria-label={item.label}
                                 >
-                                    <span
-                                        aria-hidden="true"
-                                        class="text-xs font-bold"
-                                    >
-                                        {item.icon}
-                                    </span>
+                                    <i class={item.icon} aria-hidden="true" />
                                 </a>
                             ))
                         }
                     </div>
-                    <footer
-                        class="mt-10 text-sm text-zinc-600 dark:text-zinc-400 md:absolute md:bottom-0"
-                    >
-                        <a class="btn btn-secondary mb-8" href={contactHref}
-                            >Contact Me</a
+                    <footer class="sidebar-footer">
+                        <a class="btn btn-secondary mb-6" href={contactHref}
+                            ><i class="ri-mail-line" aria-hidden="true"
+                            ></i>Contact Me</a
                         >
                         <p>© 2026 Daniel Marcinkowski</p>
+                        <p class="mt-2">
+                            <a href="/privacy-policy/">Privacy Policy</a>
+                        </p>
                     </footer>
                 </aside>
-                <main class="max-w-[760px]"><slot /></main>
+                <main class="max-w-[760px]">
+                    <div class="hidden justify-end md:flex">
+                        <button
+                            class="icon-button theme-toggle"
+                            type="button"
+                            aria-label="Toggle colour theme"
+                            ><i
+                                class="ri-moon-line"
+                                data-theme-icon
+                                aria-hidden="true"></i></button>
+                    </div><slot />
+                </main>
             </div>
         </div>
         <SpeedInsights />
@@ -228,6 +274,28 @@ const contactHref = "mailto:hey@meetdaniel.me";
                 )
                     closeMenu();
             });
+            const setTheme = (theme) => {
+                document.documentElement.dataset.theme = theme;
+                localStorage.setItem("theme", theme);
+                document
+                    .querySelectorAll("[data-theme-icon]")
+                    .forEach((icon) => {
+                        icon.className =
+                            theme === "dark" ? "ri-sun-line" : "ri-moon-line";
+                    });
+            };
+            setTheme(document.documentElement.dataset.theme || "light");
+            document
+                .querySelectorAll(".theme-toggle")
+                .forEach((button) =>
+                    button.addEventListener("click", () =>
+                        setTheme(
+                            document.documentElement.dataset.theme === "dark"
+                                ? "light"
+                                : "dark",
+                        ),
+                    ),
+                );
         </script>
     </body>
 </html>

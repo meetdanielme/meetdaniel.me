@@ -174,7 +174,7 @@ Dark mode is automatically triggered by OS preferences (`prefers-color-scheme: d
 Typography comes directly from Figma text styles:
 
 - **Primary family:** Figtree for headings, body, links, and captions.
-- **Code family:** IBM Plex Mono for monospaced contexts.
+- **Code family:** JetBrains Mono for monospaced contexts.
 - **Headings:** Bold (700), clear editorial hierarchy (`H1` 40px down to `H4` 20px).
 - **Body:** Base 16px with both compact (`body-md`) and reading (`body-reading`) line-height variants.
 

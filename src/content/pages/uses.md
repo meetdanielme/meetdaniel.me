@@ -2,7 +2,6 @@
 title: "Uses"
 description: "My entire tech, travel, coffee, and stationary gear"
 pubDate: 2025-02-23
-slug: "uses"
 tags:
 draft: false
 heroImage: "/images/pages/2025/daniel-marcinkowski-desk-setup-1.jpg"

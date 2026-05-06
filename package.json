@@ -15,6 +15,7 @@
     "@fontsource/jetbrains-mono": "latest",
     "@tailwindcss/typography": "latest",
     "@vercel/speed-insights": "latest",
+    "remixicon": "latest",
     "astro": "^5.15.6",
     "tailwindcss": "^3.4.17"
   },
