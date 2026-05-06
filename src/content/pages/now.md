@@ -17,6 +17,8 @@ Things going on in my life right now. _Inspired by [nownownow.com](https://nowno
 
 - It hurts me to admit it, but I'm quietly back on [Twitter](https://x.com/meetdanielme) (won't call it any other way). I'm trying to stay on top of the AI news and, unfortunately, it's the best place for it.
 
+---
+
 # Then
 
 Archival entries.

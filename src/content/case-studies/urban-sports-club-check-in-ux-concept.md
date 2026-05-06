@@ -25,7 +25,11 @@ Additional project details:
 
 *Note: I have no association with Urban Sports Club. This project was meant to be a part of my UX design portfolio.*
 
-[Download Keynote Slides](https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept)
+<p><a class="btn btn-primary" href="https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept"><i class="ri-mail-line" aria-hidden="true"></i>Download Keynote Slides</a></p>
+
+<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed"><div class="wp-block-embed__wrapper">
+https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept
+</div></figure>
 
 ## Introduction
 
@@ -36,6 +40,10 @@ Still, Urban Sports is not perfect. One of its aspects that I find very poorly e
 The reason why I find this even more troubling is that Urban Sports doesn’t offer an ability to check-in after the workout is over. They will also not let you appeal a *no-show* in situations when you made it to the class and have proof from the partner that you did in fact complete the workout (like a screenshot from the BEAT81 app, one of USC’s biggest partners in Germany). As someone with [ADHD](/blog/what-ive-learned-about-living-with-adhd-so-far/) who gets easily overwhelmed in public spaces, I was forced to pay the 13€ no-show fee on at least three occasions despite attending a class just because I forgot to scan a QR code and tap “Check-in” in the app, which doesn’t make any effort whatsoever in reminding me to do so.
 
 I find the current check-in experience of Urban Sports Club to be inaccessible, and I believe that the company should put more effort in making their apps more user-friendly. But, rather than just complain, I come with some meaningful insights and solutions.
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://youtu.be/TfCXNFIu568
+</div></figure>
 
 ## Empathize With Users & Define Their Needs
 
