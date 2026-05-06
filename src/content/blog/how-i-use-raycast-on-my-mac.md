@@ -1,11 +1,11 @@
 ---
 title: "How I Use Raycast On My Mac"
-description: ""
+description: "Following a good amount of tweaking, Raycast has permanently replaced Spotlight on my Mac."
 pubDate: 2025-02-21
 slug: "how-i-use-raycast-on-my-mac"
 tags:
-  - "mac"
-  - "raycast"
+  - "Apple"
+  - "Productivity"
 draft: false
 heroImage: "/images/posts/2025/raycast-daniel-marcinkowski.jpg"
 ---

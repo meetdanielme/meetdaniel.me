@@ -1,10 +1,10 @@
 ---
 title: "Eights Months With Meta Ray-Ban Smart Glasses"
-description: ""
+description: "The second generation of Meta's smart glasses is clearly a success. And after using a pair for 8 months, I love them."
 pubDate: 2025-02-06
 slug: "eights-months-with-meta-ray-ban-smart-glasses"
 tags:
-  - "meta-ray-ban"
+  - "Tech"
 draft: false
 heroImage: "/images/posts/2025/44438071-CE02-4DE6-B808-DEC7FCC6160F_16by9.jpg"
 ---

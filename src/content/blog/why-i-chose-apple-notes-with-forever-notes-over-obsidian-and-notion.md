@@ -1,11 +1,10 @@
 ---
 title: "Why I Chose Apple Notes With Forever ✱ Notes Over Obsidian And Notion"
-description: ""
+description: "Despite its limitations, Apple Notes has been the core part of my productivity system, and Forever ✱ Notes framework takes is to another level."
 pubDate: 2025-02-17
 slug: "why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion"
 tags:
-  - "apple-notes"
-  - "forever-✱-notes"
+  - "Productivity"
 draft: false
 heroImage: "/images/posts/2025/Apple-Notes-Forever-Notes.png"
 ---

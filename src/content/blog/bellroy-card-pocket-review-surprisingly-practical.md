@@ -4,7 +4,7 @@ description: ""
 pubDate: 2023-06-17
 slug: "bellroy-card-pocket-review-surprisingly-practical"
 tags:
-  - "bellroy"
+  - "Reviews"
 draft: false
 heroImage: "/images/posts/2023/1fk4NULkX-oSbfJXkobOuYg.jpg"
 ---

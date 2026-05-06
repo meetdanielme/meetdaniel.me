@@ -1,10 +1,10 @@
 ---
 title: "Presence-Based HomeKit Automation vs. Android In The House"
-description: ""
+description: "Triggering Apple HomeKit automations with an Android phone? Possible."
 pubDate: 2022-01-29
 slug: "presence-based-homekit-automation-vs-android-in-the-house"
 tags:
-  - "apple-homekit"
+  - "Smart Home"
 draft: false
 heroImage: "/images/posts/2022/10N5dy6LkKM6YZ7pr_iSESg.jpg"
 ---

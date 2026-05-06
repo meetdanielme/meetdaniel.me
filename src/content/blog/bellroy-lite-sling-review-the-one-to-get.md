@@ -1,10 +1,10 @@
 ---
 title: "Bellroy Lite Sling: The One To Get"
-description: ""
+description: "A sling bag that *perfectly* fits my needs."
 pubDate: 2023-06-17
 slug: "bellroy-lite-sling-review-the-one-to-get"
 tags:
-  - "bellroy"
+  - "Reviews"
 draft: false
 heroImage: "/images/posts/2023/1is1k0qQotAoVztH7kpaz-Q.jpg"
 ---

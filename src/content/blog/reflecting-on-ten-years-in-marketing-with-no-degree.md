@@ -1,13 +1,12 @@
 ---
 title: "Reflecting On Ten Years In Marketing With No Degree"
-description: ""
+description: "My reflections on a decade of working in marketing in the tech industry with no college degree."
 pubDate: 2025-03-20
 slug: "reflecting-on-ten-years-in-marketing-with-no-degree"
 tags:
-  - "career"
-  - "marketing"
-  - "university"
-  - "work"
+  - "Personal"
+  - "Marketing"
+  - "University"
 draft: false
 heroImage: "/images/posts/2025/dsc07143.jpeg"
 ---
@@ -96,7 +95,7 @@ I stopped working in November of last year, giving me plenty of time to reflect 
 
 Being a solo marketer at startups for most of my career also meant I never had the chance to specialize in a specific field. Anything marketing-adjacent landed straight on my shoulders simply because often there was no one else to handle it. Most of the time, I didn’t mind—it gave me opportunities to try new things and expand my ever-growing skill set. To keep up with my workload and long list of responsibilities, I studied every productivity technique and methodology I could find, turning myself into one of the most organized people in the companies I worked at (at least according to my ex-colleagues).
 
-At the time, I didn’t realize it, but my obsession with productivity was an unconscious way of coping with [ADHD](https://meetdaniel.me/blog/what-ive-learned-about-living-with-adhd-so-far/), which I was only diagnosed with in the summer of 2022. More recently, I also discovered that I have many predispositions for OCPD (Obsessive-Compulsive Personality Disorder), which further explains my fixation on organization.
+At the time, I didn’t realize it, but my obsession with productivity was an unconscious way of coping with [ADHD](/blog/what-ive-learned-about-living-with-adhd-so-far/), which I was only diagnosed with in the summer of 2022. More recently, I also discovered that I have many predispositions for OCPD (Obsessive-Compulsive Personality Disorder), which further explains my fixation on organization.
 
 Since learning about my ADHD, I’ve become hyper-aware of how its symptoms affect my work. I now recognize the behaviors I need to watch for, making it easier to manage myself and stay productive. I’ve also started noticing ADHD patterns in my colleagues, which has helped me communicate more considerately and improve collaboration.
 

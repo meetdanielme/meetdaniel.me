@@ -11,7 +11,10 @@
     "@astrojs/rss": "latest",
     "@astrojs/sitemap": "latest",
     "@astrojs/tailwind": "latest",
+    "@fontsource/figtree": "latest",
+    "@fontsource/jetbrains-mono": "latest",
     "@tailwindcss/typography": "latest",
+    "@vercel/speed-insights": "latest",
     "astro": "^5.15.6",
     "tailwindcss": "^3.4.17"
   },

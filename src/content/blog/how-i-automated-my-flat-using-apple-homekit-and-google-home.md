@@ -1,11 +1,10 @@
 ---
 title: "How I automated my flat using Apple HomeKit and Google Home"
-description: ""
+description: "My smart home setup, featuring IKEA Trådfri and Symfonisk, tado°, and Homebridge."
 pubDate: 2020-01-20
 slug: "how-i-automated-my-flat-using-apple-homekit-and-google-home"
 tags:
-  - "apple-homekit"
-  - "google-home"
+  - "Smart Home"
 draft: false
 heroImage: "/images/posts/2020/1XOOEyzuOhZGpqY2ouq72XQ.webp"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Uses"
-description: ""
+description: "My entire tech, travel, coffee, and stationary gear"
 pubDate: 2025-02-23
 slug: "uses"
 tags:
@@ -28,7 +28,7 @@ _Inspired by [/uses](https://uses.tech)._
 
 **Phone**: Apple iPhone 16 Pro Max, 256 GB, Natural Titanium
 
-[Check what's currently on my homescreen.](https://meetdaniel.me/blog/my-iphone-homescreen-2025/)
+[Check what's currently on my homescreen.](/blog/my-iphone-homescreen-2025/)
 
 - Bellroy Phone Case, Sienna
 
@@ -76,7 +76,7 @@ My everyday carry
 
 - Transmitter: Twelve South AirFly Pro, Black
 
-- Smart glasses: [Meta Ray-Ban Smart Glasses](https://meetdaniel.me/blog/eights-months-with-meta-ray-ban-smart-glasses/) Wayfarer, Matte black, Grey Transition Lenses
+- Smart glasses: [Meta Ray-Ban Smart Glasses](/blog/eights-months-with-meta-ray-ban-smart-glasses/) Wayfarer, Matte black, Grey Transition Lenses
 
 - Apple HomePod mini, Space Grey
 
@@ -100,7 +100,7 @@ My everyday carry
 
 - Task manager: [Things 3](https://www.youtube.com/watch?v=13oMqrDuvG0)
 
-- Note-taking: [Apple Notes](https://meetdaniel.me/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/) + Notion
+- Note-taking: [Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/) + Notion
 
 - Calendar: Apple Calendar
 
@@ -110,11 +110,11 @@ My everyday carry
 
 - RSS reader: Reeder 3
 
-- Music streaming: [Apple Music](https://meetdaniel.me/blog/apple-music-revisited/)
+- Music streaming: [Apple Music](/blog/apple-music-revisited/)
 
 - Media tracker: TV Forecast + [Trakt.tv](https://trakt.tv/users/meetdanielme)
 
-- Browser: Safari ([some of the extensions I use](https://meetdaniel.me/blog/making-the-internet-adhd-friendly-in-safari/)) + Dia on Mac when something “requires Chrome”
+- Browser: Safari ([some of the extensions I use](/blog/making-the-internet-adhd-friendly-in-safari/)) + Dia on Mac when something “requires Chrome”
 
 - Word processor: iA Writer
 
@@ -128,9 +128,9 @@ My everyday carry
 
 - Interface design: Figma
 
-- Screen time app: [Opal](https://meetdaniel.me/blog/how-i-use-opal-to-stay-focused-with-adhd/)
+- Screen time app: [Opal](/blog/how-i-use-opal-to-stay-focused-with-adhd/)
 
-- Launcher: [Raycast](https://meetdaniel.me/blog/how-i-use-raycast-on-my-mac/) (now testing the new Spotlight in macOS 26 Tahoe)
+- Launcher: [Raycast](/blog/how-i-use-raycast-on-my-mac/) (now testing the new Spotlight in macOS 26 Tahoe)
 
 - Deliveries tracker: Parcel
 
@@ -142,11 +142,11 @@ My everyday carry
 
 - Gym backpack: Bellroy Lite Daypack, Black + AirTag
 
-- Sling: [Bellroy Lite Sling](https://meetdaniel.me/blog/bellroy-lite-sling-review-the-one-to-get/), Slate
+- Sling: [Bellroy Lite Sling](/blog/bellroy-lite-sling-review-the-one-to-get/), Slate
 
-- Wallet: [Bellroy Card Pocket](https://meetdaniel.me/blog/bellroy-card-pocket-review-surprisingly-practical/), Black + UGREEN Finder Slim
+- Wallet: [Bellroy Card Pocket](/blog/bellroy-card-pocket-review-surprisingly-practical/), Black + UGREEN Finder Slim
 
-- Tech organizer: [Bellroy Tech Kit Compact](https://meetdaniel.me/blog/bellroy-tech-kit-compact-review-fits-all-i-need/), Black
+- Tech organizer: [Bellroy Tech Kit Compact](/blog/bellroy-tech-kit-compact-review-fits-all-i-need/), Black
     - UGREEN Nexode Pro 65W
     
     - Apple USB-C Charing Cable
@@ -187,7 +187,7 @@ Carrying my Bellroy Sling Lite
 
 ## Coffee
 
-[Read more on how I brew coffee here](https://meetdaniel.me/blog/how-to-brew-great-coffee-at-home/).
+[Read more on how I brew coffee here](/blog/how-to-brew-great-coffee-at-home/).
 
 - Water filter: Brita Style, small
 

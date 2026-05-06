@@ -1,11 +1,10 @@
 ---
 title: "My iPhone Homescreen (2021)"
-description: ""
+description: "How my iPhone homescreen has changed following the introduction of widgets in iOS 14."
 pubDate: 2021-01-24
 slug: "my-iphone-homescreen-2021"
 tags:
-  - "home-screen"
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2021/1ENFUkyerxqYcL42wwakwFQ.png"
 ---

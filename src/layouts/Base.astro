@@ -1,36 +1,233 @@
 ---
-import '../styles/global.css';
-const { title = 'Daniel Marcinkowski', description = 'Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.', canonical = Astro.url.pathname } = Astro.props;
+import "../styles/global.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
+const {
+    title = "Daniel Marcinkowski",
+    description = "Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.",
+    canonical = Astro.url.pathname,
+} = Astro.props;
 const url = new URL(canonical, Astro.site);
+const currentPath = Astro.url.pathname;
+const nav = [
+    { href: "/", label: "Home", icon: "⌂" },
+    { href: "/about/", label: "About", icon: "◌" },
+    { href: "/work/", label: "Work", icon: "▣" },
+    { href: "/now/", label: "Now", icon: "◷" },
+    { href: "/uses/", label: "Uses", icon: "♡" },
+    { href: "/blog/", label: "Blog", icon: "≋" },
+];
+const socials = [
+    {
+        href: "https://github.com/danielmarcinkowski",
+        label: "GitHub",
+        icon: "GH",
+    },
+    {
+        href: "https://www.linkedin.com/in/meetdanielme/",
+        label: "LinkedIn",
+        icon: "in",
+    },
+    { href: "/rss.xml", label: "RSS", icon: "RSS" },
+];
+const contactHref = "mailto:hey@meetdaniel.me";
 ---
+
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title === 'Daniel Marcinkowski' ? title : `${title} · Daniel Marcinkowski`}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={url.href} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={url.href} />
-    <meta property="og:type" content="website" />
-    <link rel="alternate" type="application/rss+xml" title="Daniel Marcinkowski RSS" href="/rss.xml" />
-  </head>
-  <body>
-    <div class="mx-auto grid max-w-[1200px] gap-10 px-6 py-8 md:grid-cols-[220px_1fr] md:px-10">
-      <aside class="md:sticky md:top-8 md:h-[calc(100vh-4rem)] md:border-r md:border-zinc-200 md:pr-8 dark:md:border-zinc-800">
-        <a href="/" class="block text-lg font-bold">Daniel Marcinkowski</a>
-        <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Student & Creator</p>
-        <nav class="mt-8 grid gap-3 text-sm font-semibold">
-          <a href="/">Home</a><a href="/about/">About</a><a href="/work/">Work</a><a href="/now/">Now</a><a href="/uses/">Uses</a><a href="/blog/">Blog</a><a href="/rss.xml">Feed</a>
-        </nav>
-        <footer class="mt-10 text-sm text-zinc-600 dark:text-zinc-400 md:absolute md:bottom-0">
-          <p>Cork, Ireland</p>
-          <p><a href="mailto:hey@meetdaniel.me">hey@meetdaniel.me</a></p>
-          <p>© 2026 Daniel Marcinkowski</p>
-        </footer>
-      </aside>
-      <main class="max-w-[760px]"><slot /></main>
-    </div>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>
+            {
+                title === "Daniel Marcinkowski"
+                    ? title
+                    : `${title} · Daniel Marcinkowski`
+            }
+        </title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={url.href} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={url.href} />
+        <meta property="og:type" content="website" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Daniel Marcinkowski RSS"
+            href="/rss.xml"
+        />
+    </head>
+    <body>
+        <div class="site-shell">
+            <header
+                class="flex items-center justify-between border-b border-zinc-200 px-6 py-4 dark:border-zinc-800 md:hidden"
+            >
+                <a href="/" class="font-bold text-black dark:text-white"
+                    >Daniel Marcinkowski</a
+                >
+                <button
+                    id="menu-open"
+                    class="rounded-lg border border-zinc-300 px-3 py-2 font-bold text-black dark:border-zinc-700 dark:text-white"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false">Menu</button
+                >
+            </header>
+            <div
+                id="mobile-menu"
+                class="fixed inset-0 z-50 hidden bg-white px-6 py-5 text-black dark:bg-black dark:text-white md:hidden"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Site navigation"
+            >
+                <div class="flex items-center justify-between">
+                    <a href="/" class="font-bold text-black dark:text-white"
+                        >Daniel Marcinkowski</a
+                    >
+                    <button
+                        id="menu-close"
+                        class="rounded-lg border border-zinc-300 px-3 py-2 font-bold dark:border-zinc-700"
+                        >Close</button
+                    >
+                </div>
+                <nav class="mt-12 grid gap-6 text-2xl">
+                    {
+                        nav.map((item) => (
+                            <a
+                                class="nav-link mobile-menu-link"
+                                href={item.href}
+                            >
+                                <span class="icon" aria-hidden="true">
+                                    {item.icon}
+                                </span>
+                                {item.label}
+                            </a>
+                        ))
+                    }
+                </nav>
+                <div
+                    class="mt-12 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+                >
+                    <div class="flex flex-wrap gap-3">
+                        {
+                            socials.map((item) => (
+                                <a
+                                    class="social-link mobile-menu-link"
+                                    href={item.href}
+                                    aria-label={item.label}
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="text-sm font-bold"
+                                    >
+                                        {item.icon}
+                                    </span>
+                                </a>
+                            ))
+                        }
+                    </div>
+                    <a
+                        class="btn btn-secondary mobile-menu-link mt-6"
+                        href={contactHref}>Contact Me</a
+                    >
+                </div>
+            </div>
+            <div
+                class="mx-auto grid max-w-[1200px] gap-10 px-6 py-8 md:grid-cols-[220px_1fr] md:px-10"
+            >
+                <aside
+                    class="hidden md:sticky md:top-8 md:block md:h-[calc(100vh-4rem)] md:border-r md:border-zinc-200 md:pr-8 dark:md:border-zinc-800"
+                >
+                    <a
+                        href="/"
+                        class="block text-lg font-bold text-black dark:text-white"
+                        >Daniel Marcinkowski</a
+                    >
+                    <nav class="mt-8 grid gap-3 text-sm">
+                        {
+                            nav.map((item) => (
+                                <a
+                                    href={item.href}
+                                    class="nav-link"
+                                    aria-current={
+                                        currentPath === item.href
+                                            ? "page"
+                                            : undefined
+                                    }
+                                >
+                                    <span class="icon" aria-hidden="true">
+                                        {item.icon}
+                                    </span>
+                                    {item.label}
+                                </a>
+                            ))
+                        }
+                    </nav>
+                    <div
+                        class="mt-8 flex flex-wrap gap-1 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+                    >
+                        {
+                            socials.map((item) => (
+                                <a
+                                    class="social-link"
+                                    href={item.href}
+                                    aria-label={item.label}
+                                >
+                                    <span
+                                        aria-hidden="true"
+                                        class="text-xs font-bold"
+                                    >
+                                        {item.icon}
+                                    </span>
+                                </a>
+                            ))
+                        }
+                    </div>
+                    <footer
+                        class="mt-10 text-sm text-zinc-600 dark:text-zinc-400 md:absolute md:bottom-0"
+                    >
+                        <a class="btn btn-secondary mb-8" href={contactHref}
+                            >Contact Me</a
+                        >
+                        <p>© 2026 Daniel Marcinkowski</p>
+                    </footer>
+                </aside>
+                <main class="max-w-[760px]"><slot /></main>
+            </div>
+        </div>
+        <SpeedInsights />
+        <script is:inline>
+            const openButton = document.getElementById("menu-open");
+            const closeButton = document.getElementById("menu-close");
+            const menu = document.getElementById("mobile-menu");
+            const links = Array.from(
+                document.querySelectorAll(".mobile-menu-link"),
+            );
+            const openMenu = () => {
+                menu?.classList.remove("hidden");
+                document.body.classList.add("menu-open");
+                openButton?.setAttribute("aria-expanded", "true");
+                closeButton?.focus();
+            };
+            const closeMenu = () => {
+                menu?.classList.add("hidden");
+                document.body.classList.remove("menu-open");
+                openButton?.setAttribute("aria-expanded", "false");
+                openButton?.focus();
+            };
+            openButton?.addEventListener("click", openMenu);
+            closeButton?.addEventListener("click", closeMenu);
+            links.forEach((link) =>
+                link.addEventListener("click", () => {
+                    menu?.classList.add("hidden");
+                    document.body.classList.remove("menu-open");
+                }),
+            );
+            document.addEventListener("keydown", (event) => {
+                if (
+                    event.key === "Escape" &&
+                    !menu?.classList.contains("hidden")
+                )
+                    closeMenu();
+            });
+        </script>
+    </body>
 </html>

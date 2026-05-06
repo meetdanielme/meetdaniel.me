@@ -1,10 +1,10 @@
 ---
 title: "Sony Is Making The Best TVs For Apple Users And I Got One"
-description: ""
+description: "Turns out that Sony makes great TVs for Apple nerds like me."
 pubDate: 2021-09-05
 slug: "sony-is-making-the-best-tvs-for-apple-users-and-i-got-one"
 tags:
-  - "apple-homekit"
+  - "Smart Home"
 draft: false
 heroImage: "/images/posts/2021/1TYNZKKF7j0eFabhFkK_xVw.jpg"
 ---

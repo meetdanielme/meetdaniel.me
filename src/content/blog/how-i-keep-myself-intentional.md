@@ -1,17 +1,17 @@
 ---
 title: "How I Keep Myself Intentional"
-description: ""
+description: "Lack of intentionality is one of my biggest ADHD struggles. Here are some tools I use to help me stay more present."
 pubDate: 2025-05-02
 slug: "how-i-keep-myself-intentional"
 tags:
-  - "intention"
+  - "Personal"
 draft: false
 heroImage: "/images/posts/2025/notebook.jpg"
 ---
 
 My ADHD likes to present itself in different ways, including anxiety, struggling with focus, and feeling restless. But perhaps the most life-impairing symptom I deal with is a lack of intentionality. It’s not that everything I do is based on compulsive thoughts and feelings, but I often find myself mindlessly scrolling through my phone, watching random YouTube videos, or letting my mind wander without being aware of it.
 
-This type of behavior is something I’ve been battling for a long time. Since my [ADHD diagnosis in 2023](https://meetdaniel.me/blog/what-ive-learned-about-living-with-adhd-so-far/), I’ve been working on improving my ability to stay intentional throughout the day and push back against distraction-seeking urges by implementing different tools and coping mechanisms. Here are some of the things that have been working for me.
+This type of behavior is something I’ve been battling for a long time. Since my [ADHD diagnosis in 2023](/blog/what-ive-learned-about-living-with-adhd-so-far/), I’ve been working on improving my ability to stay intentional throughout the day and push back against distraction-seeking urges by implementing different tools and coping mechanisms. Here are some of the things that have been working for me.
 
 ## Yearly Themes
 

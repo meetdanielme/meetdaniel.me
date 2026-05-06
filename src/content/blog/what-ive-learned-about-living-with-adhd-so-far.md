@@ -1,10 +1,10 @@
 ---
 title: "What I’ve Learned About Living With ADHD (So Far)"
-description: ""
+description: "I was diagnosed with ADHD as an adult almost two years ago. Here is what I have learned about myself since then."
 pubDate: 2025-04-14
 slug: "what-ive-learned-about-living-with-adhd-so-far"
 tags:
-  - "focus-adhd"
+  - "ADHD"
 draft: false
 heroImage: "/images/posts/2025/daniel-marcinkowski-adult-adhd.jpg"
 ---
@@ -31,7 +31,7 @@ As I progressed through middle and high school, the number and intensity of cour
 
 My procrastination didn’t help. Rather than study or do homework, I’d play CS:GO with friends or go to parties on weekends. I often completed take-home assignments 30 minutes before class.
 
-Looking back, I believe these challenges pushed me toward a career in marketing right after high school instead of pursuing a university degree ([something I explored here](https://meetdaniel.me/blog/reflecting-on-ten-years-in-marketing-with-no-degree/)). Writing about tech and later managing social media for one of the largest companies in the world came much easier to me than writing essays on poetry or solving equations.
+Looking back, I believe these challenges pushed me toward a career in marketing right after high school instead of pursuing a university degree ([something I explored here](/blog/reflecting-on-ten-years-in-marketing-with-no-degree/)). Writing about tech and later managing social media for one of the largest companies in the world came much easier to me than writing essays on poetry or solving equations.
 
 As a young professional, my ADHD symptoms were masked by my obsession with productivity and organization. I used apps like Wunderlist (RIP, buddy) and Todoist religiously. I carried a notebook everywhere to jot down thoughts and brainstorm. As I advanced in my career, people saw me as reliable—I’d take on anything that came my way. Later, I realized that some of these patterns also aligned with Obsessive Compulsive Personality Disorder (OCPD), which helped build my _“high-functioning”_ mask.
 
@@ -53,11 +53,11 @@ Getting diagnosed and medicated was just the beginning. I wanted to better under
 
 I also have to give credit to the German healthcare system. Despite the mixed reviews it gets, my diagnosis process was relatively smooth. I couldn’t find a psychiatrist or therapist under public insurance quickly, so I paid €150 for the diagnosis out of pocket. Everything else—including therapy—has been covered. I only pay a standard €5 fee to renew prescriptions. I realize many people aren’t as lucky, especially outside Germany. Please don’t lose hope.
 
-Professional help gave me awareness, but managing ADHD day-to-day is still up to me. Luckily, I already had systems in place: [Things 3](https://meetdaniel.me/blog/eight-years-with-things-3/), [Apple Notes](https://meetdaniel.me/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), and Apple Calendar. I’ve since tweaked how I use them—adding time blocking and weekly reviews—and become more realistic about my workload, prioritizing long-term impact.
+Professional help gave me awareness, but managing ADHD day-to-day is still up to me. Luckily, I already had systems in place: [Things 3](/blog/eight-years-with-things-3/), [Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), and Apple Calendar. I’ve since tweaked how I use them—adding time blocking and weekly reviews—and become more realistic about my workload, prioritizing long-term impact.
 
-I also reshaped my environment, especially my digital one. I started using One Sec, then switched to [Opal](https://meetdaniel.me/blog/how-i-use-opal-to-stay-focused-with-adhd/). I listen to [Endel](https://endelreferral.page.link/8Cdv) soundscapes during deep work, and block distractions with [Safari extensions](https://meetdaniel.me/blog/making-the-internet-adhd-friendly-in-safari/). I also built a meditation habit and journal daily, which helps with emotional regulation and self-reflection.
+I also reshaped my environment, especially my digital one. I started using One Sec, then switched to [Opal](/blog/how-i-use-opal-to-stay-focused-with-adhd/). I listen to [Endel](https://endelreferral.page.link/8Cdv) soundscapes during deep work, and block distractions with [Safari extensions](/blog/making-the-internet-adhd-friendly-in-safari/). I also built a meditation habit and journal daily, which helps with emotional regulation and self-reflection.
 
-One other big thing: [exercise](https://meetdaniel.me/blog/getting-in-the-best-shape-of-my-life/). I can’t overstate how much moving my body helps regulate my energy. It doesn’t have to be a heavy workout—even a walk helps. I played around with timing my meals, workouts, meds, and more, until I found a rhythm that worked. Now, I work _with_ my energy, not against it. For example, I know I can focus for four solid hours if I exercise early, so I reserve that time for writing. I also started breaking large tasks into phases—like turning _“Publish blog post on ADHD”_ into research, notes, draft, edit, and publish.
+One other big thing: [exercise](/blog/getting-in-the-best-shape-of-my-life/). I can’t overstate how much moving my body helps regulate my energy. It doesn’t have to be a heavy workout—even a walk helps. I played around with timing my meals, workouts, meds, and more, until I found a rhythm that worked. Now, I work _with_ my energy, not against it. For example, I know I can focus for four solid hours if I exercise early, so I reserve that time for writing. I also started breaking large tasks into phases—like turning _“Publish blog post on ADHD”_ into research, notes, draft, edit, and publish.
 
 Earlier, I said something felt _“wrong”_ with me, but ADHD showed me that’s not the case. There’s nothing _wrong_ with me—or you—if you have ADHD. Our brains are just wired differently. And while it’s not a magic gift, it does come with strengths: creativity, big-picture thinking, and the ability to hyperfocus. Once you understand how your mind works, you can tap into those strengths in areas that matter.
 

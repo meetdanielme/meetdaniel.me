@@ -1,11 +1,11 @@
 ---
 title: "One Year With Apple Fitness+"
-description: ""
+description: "After using Apple Fitness+ for more than a year now, I can't see myself giving it up anytime soon."
 pubDate: 2025-03-13
 slug: "one-year-with-apple-fitness"
 tags:
-  - "fitness"
-  - "iphone"
+  - "Fitness"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2025/apple-fitness-plus-yoga-ipad.jpg"
 ---

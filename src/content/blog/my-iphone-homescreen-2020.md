@@ -1,11 +1,10 @@
 ---
 title: "My iPhone Homescreen (2020)"
-description: ""
+description: "What apps I keep on my iPhone's homescreen."
 pubDate: 2020-02-01
 slug: "my-iphone-homescreen-2020"
 tags:
-  - "home-screen"
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2020/1RBruaBJhamQE7naf9jDejg.webp"
 ---

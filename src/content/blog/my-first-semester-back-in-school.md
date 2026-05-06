@@ -1,15 +1,15 @@
 ---
 title: "My First Semester Back In School"
-description: ""
+description: "After 10 years in tech, I went back to school at 28. Here's what my first semester studying Business Information Systems taught me."
 pubDate: 2026-02-10
 slug: "my-first-semester-back-in-school"
 tags:
-  - "university"
+  - "University"
 draft: false
 heroImage: "/images/posts/2026/img_1520-scaled-e1770738461792.jpeg"
 ---
 
-Last year, I took a big bet. Rather than finding a new job after parting ways with my previous company, I decided to [go to university for the first time in my life](https://meetdaniel.me/blog/on-going-to-university-at-28/) — nine years after graduating from high school. Now, with my first semester studying Business Information Systems at University College Cork behind me, I want to reflect on what this experience has been like.
+Last year, I took a big bet. Rather than finding a new job after parting ways with my previous company, I decided to [go to university for the first time in my life](/blog/on-going-to-university-at-28/) — nine years after graduating from high school. Now, with my first semester studying Business Information Systems at University College Cork behind me, I want to reflect on what this experience has been like.
 
 ## Connecting With Classmates
 

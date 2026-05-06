@@ -1,10 +1,10 @@
 ---
 title: "How to brew great coffee at home"
-description: ""
+description: "How I brew speciality coffee at home."
 pubDate: 2020-04-11
 slug: "how-to-brew-great-coffee-at-home"
 tags:
-  - "coffee"
+  - "Coffee"
 draft: false
 heroImage: "/images/posts/2020/1CihxntCC_ebSyuszqQ_8IA.jpg"
 ---

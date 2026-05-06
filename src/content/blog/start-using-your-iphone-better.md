@@ -1,10 +1,10 @@
 ---
 title: "Start using your iPhone better"
-description: ""
+description: "How I use my iPhone more efficiently."
 pubDate: 2018-04-08
 slug: "start-using-your-iphone-better"
 tags:
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2018/1i0X3ZmBROuSYUHC3hVw0aw.jpg"
 ---

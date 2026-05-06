@@ -4,8 +4,7 @@ description: ""
 pubDate: 2019-01-12
 slug: "my-iphone-homescreen-2019"
 tags:
-  - "home-screen"
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2019/1aXQ30EnlqnbRK4FgzaZuLw.webp"
 ---

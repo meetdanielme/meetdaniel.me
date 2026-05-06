@@ -1,12 +1,10 @@
 ---
 title: "On Leaving Medium and Post-Twitter Social Media Landscape"
-description: ""
+description: "Long story short: I'm leaving Medium for my own blog and I'm hitting a reset button on my social media presence."
 pubDate: 2025-01-21
 slug: "on-leaving-medium-and-post-twitter-social-media-landscape"
 tags:
-  - "medium"
-  - "social-media"
-  - "twitter"
+  - "Writing"
 draft: false
 heroImage: "/images/posts/2025/Medium-com-logo.jpeg"
 ---

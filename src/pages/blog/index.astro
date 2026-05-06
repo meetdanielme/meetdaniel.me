@@ -1,17 +1,47 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a,b)=>b.data.pubDate.valueOf()-a.data.pubDate.valueOf());
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
-<Base title="Blog" description="Writing by Daniel Marcinkowski about technology, productivity, marketing, university, and personal systems.">
-  <h1 class="text-4xl font-bold">Blog</h1>
-  <p class="mt-3 text-zinc-700 dark:text-zinc-300">Notes and essays on technology, productivity, marketing, university, and trying to use the internet more intentionally.</p>
-  <div class="mt-10 grid gap-8">
-    {posts.map((post) => <article class="border-b border-zinc-200 pb-6 dark:border-zinc-800">
-      <p class="text-sm text-zinc-600 dark:text-zinc-400">{post.data.pubDate.toLocaleDateString('en-GB', { dateStyle: 'long' })}</p>
-      <h2 class="mt-1 text-2xl font-bold"><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h2>
-      {post.data.description && <p class="mt-2">{post.data.description}</p>}
-      <div class="mt-3 flex flex-wrap gap-2">{post.data.tags.map((tag)=><span class="rounded-full bg-brand-code px-3 py-1 text-xs text-black">{tag}</span>)}</div>
-    </article>)}
-  </div>
+
+<Base
+    title="Blog"
+    description="Writing by Daniel Marcinkowski about technology, productivity, marketing, university, and personal systems."
+>
+    <h1 class="text-4xl font-bold">Blog</h1>
+    <p class="mt-3 text-zinc-700 dark:text-zinc-300">
+        Notes and essays on technology, productivity, marketing, university, and
+        trying to use the internet more intentionally.
+    </p>
+    <div class="mt-10 grid gap-8">
+        {
+            posts.map((post) => (
+                <article class="border-b border-zinc-200 pb-6 dark:border-zinc-800">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                        {post.data.pubDate.toLocaleDateString("en-GB", {
+                            dateStyle: "long",
+                        })}
+                    </p>
+                    <h2 class="mt-1 text-2xl font-bold">
+                        <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                    </h2>
+                    {post.data.description && (
+                        <p class="mt-2">{post.data.description}</p>
+                    )}
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        {post.data.tags.map((tag) => (
+                            <a
+                                class="tag-link rounded-full bg-brand-code px-3 py-1 text-xs text-black"
+                                href={`/blog/tags/${tag.toLowerCase().replaceAll(" ", "-")}/`}
+                            >
+                                {tag}
+                            </a>
+                        ))}
+                    </div>
+                </article>
+            ))
+        }
+    </div>
 </Base>

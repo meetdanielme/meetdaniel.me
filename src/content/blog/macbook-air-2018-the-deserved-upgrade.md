@@ -1,10 +1,10 @@
 ---
 title: "MacBook Air (2018) — The deserved upgrade"
-description: ""
+description: "The MacBook Air I needed and got."
 pubDate: 2019-01-15
 slug: "macbook-air-2018-the-deserved-upgrade"
 tags:
-  - "mac"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2019/1ATA7ZBaGkujZgK_fuy9UVQ.webp"
 ---

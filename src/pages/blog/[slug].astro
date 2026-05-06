@@ -1,23 +1,86 @@
 ---
-import { getCollection } from 'astro:content';
-import Base from '../../layouts/Base.astro';
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+    const posts = await getCollection("blog", ({ data }) => !data.draft);
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
 }
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
-<Base title={post.data.title} description={post.data.description || `Blog post by Daniel Marcinkowski: ${post.data.title}`} canonical={`/blog/${post.slug}/`}>
-  <article>
-    <header class="mb-10">
-      <p class="text-sm text-zinc-600 dark:text-zinc-400">{post.data.pubDate.toLocaleDateString('en-GB', { dateStyle: 'long' })}</p>
-      <h1 class="mt-2 text-4xl font-bold leading-tight">{post.data.title}</h1>
-      {post.data.description && <p class="mt-4 text-xl text-zinc-700 dark:text-zinc-300">{post.data.description}</p>}
-      {post.data.updatedDate && <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Updated {post.data.updatedDate.toLocaleDateString('en-GB', { dateStyle: 'long' })}</p>}
-      <div class="mt-4 flex flex-wrap gap-2">{post.data.tags.map((tag)=><span class="rounded-full bg-brand-code px-3 py-1 text-xs text-black">{tag}</span>)}</div>
-      {post.data.heroImage && <img class="mt-8" src={post.data.heroImage} alt="" />}
-    </header>
-    <div class="prose prose-zinc dark:prose-invert"><Content /></div>
-  </article>
+
+<Base
+    title={post.data.title}
+    description={post.data.description ||
+        `Blog post by Daniel Marcinkowski: ${post.data.title}`}
+    canonical={`/blog/${post.slug}/`}
+>
+    <article>
+        <header class="mb-10">
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                {
+                    post.data.pubDate.toLocaleDateString("en-GB", {
+                        dateStyle: "long",
+                    })
+                }
+            </p>
+            <h1 class="mt-2 text-4xl font-bold leading-tight">
+                {post.data.title}
+            </h1>
+            {
+                post.data.description && (
+                    <p class="mt-4 text-xl text-zinc-700 dark:text-zinc-300">
+                        {post.data.description}
+                    </p>
+                )
+            }
+            {
+                post.data.updatedDate && (
+                    <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                        Updated{" "}
+                        {post.data.updatedDate.toLocaleDateString("en-GB", {
+                            dateStyle: "long",
+                        })}
+                    </p>
+                )
+            }
+            <div class="mt-4 flex flex-wrap gap-2">
+                {
+                    post.data.tags.map((tag) => (
+                        <a
+                            class="tag-link rounded-full bg-brand-code px-3 py-1 text-xs text-black"
+                            href={`/blog/tags/${tag.toLowerCase().replaceAll(" ", "-")}/`}
+                        >
+                            {tag}
+                        </a>
+                    ))
+                }
+            </div>
+            {
+                post.data.heroImage && (
+                    <img class="mt-8" src={post.data.heroImage} alt="" />
+                )
+            }
+        </header>
+        <div class="prose prose-zinc dark:prose-invert"><Content /></div>
+    </article>
+    <script is:inline>
+        document.querySelectorAll("pre").forEach((pre) => {
+            if (pre.querySelector(".code-copy")) return;
+            const button = document.createElement("button");
+            button.className = "code-copy";
+            button.type = "button";
+            button.textContent = "Copy";
+            button.addEventListener("click", async () => {
+                const code = pre.querySelector("code")?.innerText || "";
+                await navigator.clipboard.writeText(code);
+                button.textContent = "Copied";
+                window.setTimeout(() => (button.textContent = "Copy"), 1800);
+            });
+            pre.appendChild(button);
+        });
+    </script>
 </Base>

@@ -1,12 +1,12 @@
 ---
 title: "Making the Internet ADHD-Friendly in Safari"
-description: ""
+description: "The Internet is a pretty bad place for people with ADHD. These Safari features and extensions make it much better."
 pubDate: 2025-02-28
 slug: "making-the-internet-adhd-friendly-in-safari"
 tags:
-  - "iphone"
-  - "opal"
-  - "safari"
+  - "Apple"
+  - "ADHD"
+  - "Tech"
 draft: false
 heroImage: "/images/posts/2025/safari-adhd-extensions.jpg"
 ---
@@ -139,7 +139,7 @@ Watch Later is my default YouTube page thanks to UnTrap
 
 ### Opal
 
-[Opal](https://applink.opal.so/invite-friend?rc=XXJS4&rId=fHpPZVGTItUE7RP7ShhNS61ZtT93&rNme=dmarcinkowski) quickly became one of the most important tools in my ADHD toolset. I already went deeper into what Opal is, what it does, and how I use it [in this article](https://meetdaniel.me/blog/how-i-use-opal-to-stay-focused-with-adhd/), so I won’t be repeating myself here. What’s great about it in the context of web browsing, though, is that it doesn’t require any extensions. Once you set up your block list in the app, all the websites will be blocked as long as you have an active focus session.
+[Opal](https://applink.opal.so/invite-friend?rc=XXJS4&rId=fHpPZVGTItUE7RP7ShhNS61ZtT93&rNme=dmarcinkowski) quickly became one of the most important tools in my ADHD toolset. I already went deeper into what Opal is, what it does, and how I use it [in this article](/blog/how-i-use-opal-to-stay-focused-with-adhd/), so I won’t be repeating myself here. What’s great about it in the context of web browsing, though, is that it doesn’t require any extensions. Once you set up your block list in the app, all the websites will be blocked as long as you have an active focus session.
 
 <figure>
 

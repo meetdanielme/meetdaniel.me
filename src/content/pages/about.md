@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: ""
+description: "Learn more about me, this website, and my work experience to-date."
 pubDate: 2025-01-15
 slug: "about"
 tags:
@@ -13,7 +13,7 @@ On this website, I explore how I use technology to be creative, productive, and 
 
 You can [contact me here](mailto:hey@meetdaniel.me) or follow on [Mastodon](https://mastodon.social/@meetdanielme), [Bluesky](https://bsky.app/profile/meetdaniel.me), [Threads](http://threads.net/@meetdaniel.me), and [LinkedIn](http://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=meetdanielme).
 
-**Learn more about my work experience [here](https://meetdaniel.me/work/).**
+**Learn more about my work experience [here](/work/).**
 
 ![Daniel Marcinkowski](/images/pages/2025/DSC_5324A-by-Karen-Harms-1-1024x683.jpeg)
 
@@ -43,4 +43,4 @@ You can [contact me here](mailto:hey@meetdaniel.me) or follow on [Mastodon](http
 
 - [Interview about my marketing role at Ready Player Me with an Estonian podcast grit.](https://grithub.ee/portfolio-item/ready-player-me-daniel-marcinkowski/) (May 2022)
 
-**Learn more about my work experience [here](https://meetdaniel.me/work/).**
+**Learn more about my work experience [here](/work/).**

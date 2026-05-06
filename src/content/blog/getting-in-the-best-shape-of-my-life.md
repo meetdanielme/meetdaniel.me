@@ -1,11 +1,10 @@
 ---
 title: "Getting In The Best Shape Of My Life"
-description: ""
+description: "My journey from a couch potato to a fitness addict."
 pubDate: 2025-04-02
 slug: "getting-in-the-best-shape-of-my-life"
 tags:
-  - "apple-watch"
-  - "fitness"
+  - "Fitness"
 draft: false
 heroImage: "/images/posts/2025/daniel-marcinkowski-fitness.jpg"
 ---
@@ -30,7 +29,7 @@ Around the same time, my closest friends were deep into indoor cycling classes a
 
 When my life fully returned to just being in Berlin, I went all-in on working out and signed up for [Urban Sports Club](https://medium.com/life-after-the-anmeldung/getting-into-fitness-in-berlin-with-beat81-urban-sports-club-e7c7f6305c87), which is a single membership that gives you access to thousands of fitness venues across Europe (similar to [ClassPass](https://classpass.com/refer/QTPR5PBN1)). Initially, all I did were the spinning classes, but soon after, I started going to strength-focused HIIT classes as I felt that my cardio health is pretty good, but I could use some more muscle.
 
-That’s when I finally caught the fitness bug—the thing that keeps regulars coming back. I always found gyms intimidating and awkward to be at, but group classes have changed my perception. I love the fact that I can just show up in my exercise gear and not think about what I have to do. This is the very same reason why I use [Apple Fitness+](https://meetdaniel.me/blog/one-year-with-apple-fitness/), especially at hotel gyms while traveling.
+That’s when I finally caught the fitness bug—the thing that keeps regulars coming back. I always found gyms intimidating and awkward to be at, but group classes have changed my perception. I love the fact that I can just show up in my exercise gear and not think about what I have to do. This is the very same reason why I use [Apple Fitness+](/blog/one-year-with-apple-fitness/), especially at hotel gyms while traveling.
 
 <figure>
 

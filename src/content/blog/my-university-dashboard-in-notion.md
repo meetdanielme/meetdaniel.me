@@ -1,11 +1,11 @@
 ---
 title: "My University Dashboard in Notion"
-description: ""
+description: "Inside the Notion dashboard that runs my university life — six databases, one connected system."
 pubDate: 2026-03-30
 slug: "my-university-dashboard-in-notion"
 tags:
-  - "notion"
-  - "university"
+  - "Productivity"
+  - "University"
 draft: false
 heroImage: "/images/posts/2026/notion-university-dashboard-template-cover-image.jpg"
 ---

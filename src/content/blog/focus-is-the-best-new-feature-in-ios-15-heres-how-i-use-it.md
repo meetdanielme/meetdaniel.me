@@ -1,10 +1,10 @@
 ---
 title: "Focus is the best new feature in iOS 15 — here’s how I use it"
-description: ""
+description: "Getting the most out of the new Focus modes."
 pubDate: 2021-11-28
 slug: "focus-is-the-best-new-feature-in-ios-15-heres-how-i-use-it"
 tags:
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2021/1fMYvRYbYGySd0sgvASK1jA.jpg"
 ---

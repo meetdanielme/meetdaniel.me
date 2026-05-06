@@ -1,10 +1,10 @@
 ---
 title: "My Must-Have macOS Utilities in 2020"
-description: ""
+description: "Featuring AirBuddy, NoiseBuddy, 1Blocker, iTranslate, Karabiner-Elements, and more."
 pubDate: 2020-04-15
 slug: "my-must-have-macos-utilities-in-2020"
 tags:
-  - "mac"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2020/1qHDUu7ZqLRuHkfubMujQ_w-scaled.webp"
 ---

@@ -1,10 +1,10 @@
 ---
 title: "Apple Music, revisited"
-description: ""
+description: "Apple's music streaming service continues to get better."
 pubDate: 2019-01-18
 slug: "apple-music-revisited"
 tags:
-  - "apple-music"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2019/1k3ftxm9x7u-EVunQvPjMhA.jpg"
 ---

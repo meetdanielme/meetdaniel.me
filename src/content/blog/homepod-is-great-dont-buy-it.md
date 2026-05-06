@@ -1,11 +1,11 @@
 ---
 title: "HomePod is great. Don’t buy it."
-description: ""
+description: "The huggable speaker from Apple. With an Apple price tag."
 pubDate: 2019-01-07
 slug: "homepod-is-great-dont-buy-it"
 tags:
-  - "apple-homekit"
-  - "homepod"
+  - "Smart Home"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2019/1aODG_RKmrk96QR94I4L6KQ.webp"
 ---

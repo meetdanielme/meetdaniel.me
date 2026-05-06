@@ -1,10 +1,10 @@
 ---
 title: "How I used Homebridge to take my HomeKit setup to another level"
-description: ""
+description: "Diving deep into smart home automation with Homebridge on a Raspberry Pi."
 pubDate: 2020-01-22
 slug: "how-i-used-homebridge-to-take-my-homekit-setup-to-another-level"
 tags:
-  - "apple-homekit"
+  - "Smart Home"
 draft: false
 heroImage: "/images/posts/2020/14gxryuHsBCdj9P1uxl6ANw.jpg"
 ---

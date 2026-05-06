@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../../layouts/Base.astro";
+export async function getStaticPaths() {
+    const toSlug = (tag) => tag.toLowerCase().replaceAll(" ", "-");
+    const posts = await getCollection("blog", ({ data }) => !data.draft);
+    const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+    return tags.map((tag) => ({
+        params: { tag: toSlug(tag) },
+        props: {
+            tag,
+            posts: posts
+                .filter((post) => post.data.tags.includes(tag))
+                .sort(
+                    (a, b) =>
+                        b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+                ),
+        },
+    }));
+}
+const tagSlug = (tag) => tag.toLowerCase().replaceAll(" ", "-");
+const { tag, posts } = Astro.props;
+---
+
+<Base
+    title={`${tag} posts`}
+    description={`Blog posts tagged ${tag} by Daniel Marcinkowski.`}
+    canonical={`/blog/tags/${tagSlug(tag)}/`}
+>
+    <p><a class="tag-link" href="/blog/tags/">← All tags</a></p>
+    <h1 class="mt-4 text-4xl font-bold">{tag}</h1>
+    <div class="mt-10 grid gap-8">
+        {
+            posts.map((post) => (
+                <article class="border-b border-zinc-200 pb-6 dark:border-zinc-800">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                        {post.data.pubDate.toLocaleDateString("en-GB", {
+                            dateStyle: "long",
+                        })}
+                    </p>
+                    <h2 class="mt-1 text-2xl font-bold">
+                        <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                    </h2>
+                    {post.data.description && (
+                        <p class="mt-2">{post.data.description}</p>
+                    )}
+                </article>
+            ))
+        }
+    </div>
+</Base>

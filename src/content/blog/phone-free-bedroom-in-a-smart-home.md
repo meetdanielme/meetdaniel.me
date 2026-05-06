@@ -1,10 +1,10 @@
 ---
 title: "Phone-Free Bedroom in a Smart Home"
-description: ""
+description: "A smartphone in bedroom is a no-no."
 pubDate: 2020-02-06
 slug: "phone-free-bedroom-in-a-smart-home"
 tags:
-  - "apple-homekit"
+  - "Smart Home"
 draft: false
 heroImage: "/images/posts/2020/0gxUjt33EXFYK2DuK.jpg"
 ---

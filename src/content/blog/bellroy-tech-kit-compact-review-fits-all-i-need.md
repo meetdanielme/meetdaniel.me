@@ -1,10 +1,10 @@
 ---
 title: "Bellroy Tech Kit Compact: Fits All I Need"
-description: ""
+description: "How I keep all my cables and chargers neatly organized while I travel."
 pubDate: 2023-06-17
 slug: "bellroy-tech-kit-compact-review-fits-all-i-need"
 tags:
-  - "bellroy"
+  - "Reviews"
 draft: false
 heroImage: "/images/posts/2023/1ozt0-fW_9LtbYK5MC-ulpQ.jpg"
 ---

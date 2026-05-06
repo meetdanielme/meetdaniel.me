@@ -1,11 +1,10 @@
 ---
 title: "Eight Years With Things 3"
-description: ""
+description: "I'm pretty sure my life would be a huge mess if it wasn't for Things 3 — one of the most beautiful to-do list apps out there."
 pubDate: 2025-03-27
 slug: "eight-years-with-things-3"
 tags:
-  - "project-management"
-  - "things"
+  - "Productivity"
 draft: false
 heroImage: "/images/posts/2025/things-3-daniel-marcinkowski.jpg"
 ---
@@ -70,7 +69,7 @@ I try not to put too much time and effort into adding new tasks to Things. I tre
 
 ### Inbox, Today, daily/weekly review
 
-Regularly reviewing tasks in Things became a habit for me, but I also have repeating projects for **daily and weekly review** sessions, which send me a reminder everyday at 7 AM. I use these checklists in combination with my [daily notes from the Forever ✱ Notes system in Apple Notes](https://meetdaniel.me/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), which I can quickly access using an Apple Shortcut linked in the project’s notes section.
+Regularly reviewing tasks in Things became a habit for me, but I also have repeating projects for **daily and weekly review** sessions, which send me a reminder everyday at 7 AM. I use these checklists in combination with my [daily notes from the Forever ✱ Notes system in Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), which I can quickly access using an Apple Shortcut linked in the project’s notes section.
 
 ![things 3 daily review](/images/posts/2025/things-3-daily-review-1.png)
 
@@ -110,7 +109,7 @@ I tend to go through Things’s built-in date-based lists only during my weekly 
 
 ![](/images/posts/2025/things-3-1-2.png)
 
-For **areas**, I try to keep them consistent across all productivity tools I use ([including Apple Notes](https://meetdaniel.me/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/)), and that’s also true for Things:
+For **areas**, I try to keep them consistent across all productivity tools I use ([including Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/)), and that’s also true for Things:
 
 - **Personal** is home to everything that doesn’t into any of the other areas. Here, I also keep dedicated projects for this blog and my apartment — I don’t see a reason to turn these into their own areas at this point.
 

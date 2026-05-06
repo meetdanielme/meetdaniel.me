@@ -1,11 +1,11 @@
 ---
 title: "How I Use Opal To Stay Focused With ADHD"
-description: ""
+description: "Not all screen time is bad, and Opal helps me focus on things that matter while battling my ADHD-caused urges."
 pubDate: 2025-01-24
 slug: "how-i-use-opal-to-stay-focused-with-adhd"
 tags:
-  - "iphone"
-  - "opal"
+  - "Apple"
+  - "ADHD"
 draft: false
 heroImage: "/images/posts/2025/Opal-Daniel-Marcinkowski.jpg"
 ---

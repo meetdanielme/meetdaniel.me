@@ -1,11 +1,10 @@
 ---
 title: "My iPhone Home Screen (2025)"
-description: ""
+description: "What's new on my iPhone Home Screen in 2025"
 pubDate: 2025-01-20
 slug: "my-iphone-homescreen-2025"
 tags:
-  - "home-screen"
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2025/dmarcinkowski-iphone-home-screen-2025.jpg"
 ---

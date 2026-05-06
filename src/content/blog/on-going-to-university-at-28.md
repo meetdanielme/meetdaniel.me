@@ -1,16 +1,15 @@
 ---
 title: "On Going To University At 28"
-description: ""
+description: "Ten years after I decided to pursue a career in marketing over higher education, I'm going to the university for the first time in my life"
 pubDate: 2025-07-04
 slug: "on-going-to-university-at-28"
 tags:
-  - "mature-student"
-  - "university"
+  - "University"
 draft: false
 heroImage: "/images/posts/2025/university-college-cork-sketch-chatgpt.jpg"
 ---
 
-A week ago, I turned 28. And today, I officially got accepted into the Bachelor of Science in Business Information Systems programme at University College Cork. After ten years in marketing (with a somewhat [unusual origin](https://meetdaniel.me/blog/reflecting-on-ten-years-in-marketing-with-no-degree/)), I’m heading back to school — pursuing a higher education degree for the first time.
+A week ago, I turned 28. And today, I officially got accepted into the Bachelor of Science in Business Information Systems programme at University College Cork. After ten years in marketing (with a somewhat [unusual origin](/blog/reflecting-on-ten-years-in-marketing-with-no-degree/)), I’m heading back to school — pursuing a higher education degree for the first time.
 
 College has been on my mind ever since I decided to take a break from education a decade ago. Over the last few years, that quiet thought grew louder. I’m genuinely grateful for the opportunities I’ve had since jumping straight into work after high school — especially the experience I gained by working in tech startups. Still, I’ve often felt like I missed out on something fundamental by not going to university. It wasn’t necessarily about the academic knowledge (I felt pretty competent in my work as a marketer), but more about the college _experience_ — meeting people, figuring out what matters, thinking about who I want to become. And, if I’m being honest, it always just sounded fun. Most people I know describe their university years as some of the best of their lives, and I never got a chance to see what that’s like myself.
 

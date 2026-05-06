@@ -1,10 +1,10 @@
 ---
 title: "How to use iPhone notifications like a pro"
-description: ""
+description: "A few simple ways to keep your iPhone notifications more manageable."
 pubDate: 2018-03-19
 slug: "how-to-use-iphone-notifications-like-a-pro"
 tags:
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2018/1hlSW-cXkCWJHymsLVCdu7Q.webp"
 ---

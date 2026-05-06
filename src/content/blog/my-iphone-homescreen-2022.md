@@ -1,11 +1,10 @@
 ---
 title: "My iPhone Homescreen (2022)"
-description: ""
+description: "The state of my iPhone homescreen for 2022."
 pubDate: 2022-01-23
 slug: "my-iphone-homescreen-2022"
 tags:
-  - "home-screen"
-  - "iphone"
+  - "Apple"
 draft: false
 heroImage: "/images/posts/2022/18uekhJROITY2I0ndbyGQcQ.png"
 ---

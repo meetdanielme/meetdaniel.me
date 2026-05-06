@@ -1,6 +1,6 @@
 ---
 title: "Now"
-description: ""
+description: "A semi-regularly updated list of things going on in my life at the moment."
 pubDate: 2025-02-23
 slug: "now"
 tags:
@@ -27,7 +27,7 @@ Archival entries.
 
 - Back in Berlin for a bit! I'm almost done with my first year at UCC, just need to go through the exam season.
 
-- I published [my university Notion setup](https://meetdaniel.me/blog/my-university-dashboard-in-notion/).
+- I published [my university Notion setup](/blog/my-university-dashboard-in-notion/).
 
 - I was featured on [my school's social media](https://www.linkedin.com/posts/cork-university-business-school_after-a-decade-working-as-a-marketer-i-activity-7440421648589066240-SHFa?utm_source=share&utm_medium=member_desktop&rcm=ACoAABHJ784B3lW-R5_2kakYSGCqvyICSj5EXQI)!
 
@@ -113,7 +113,7 @@ Movies & TV shows ([follow me on Trakt](https://trakt.tv/users/meetdanielme)):
 
 📍 Berlin, Germany
 
-- I wrote an article about [staying intentional](https://meetdaniel.me/blog/how-i-keep-myself-intentional/).
+- I wrote an article about [staying intentional](/blog/how-i-keep-myself-intentional/).
 
 - I got a spot at my first-choice program, BSC in Business Information Systems at University College Cork, which means that I’m moving to Ireland in September. I’m both excited and terrified at the same time!
 
@@ -139,7 +139,7 @@ Music ([follow me on Apple Music](https://music.apple.com/profile/meetdanielme))
 
 - I have published an article on my experience [getting diagnosed with ADHD as an adult](/blog/what-ive-learned-about-living-with-adhd-so-far/).
 
-- I have added two UX case studies to my [Work](https://meetdaniel.me/work/) page, including one focused on the Urban Sports Club app, which [got attention of their product team](https://www.linkedin.com/posts/meetdanielme_uxdesign-casestudy-activity-7318250090475778050-6178).
+- I have added two UX case studies to my [Work](/work/) page, including one focused on the Urban Sports Club app, which [got attention of their product team](https://www.linkedin.com/posts/meetdanielme_uxdesign-casestudy-activity-7318250090475778050-6178).
 
 - I’m now officially a [Notion Ambassador](https://www.linkedin.com/posts/meetdanielme_notion-has-been-a-part-of-my-productivity-activity-7316021103988998144-v9Ui)!
 
