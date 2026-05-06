@@ -71,7 +71,7 @@ I try not to put too much time and effort into adding new tasks to Things. I tre
 
 Regularly reviewing tasks in Things became a habit for me, but I also have repeating projects for **daily and weekly review** sessions, which send me a reminder everyday at 7 AM. I use these checklists in combination with my [daily notes from the Forever ✱ Notes system in Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), which I can quickly access using an Apple Shortcut linked in the project’s notes section.
 
-![things 3 daily review](/images/posts/2025/things-3-daily-review-1.png)
+![things 3 daily review](/images/posts/2025/things-3-daily-review.png)
 
 ![things 3 weekly review](/images/posts/2025/things-3-weekly-review-1.png)
 
