@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { getFeaturedImage } from "../../utils/images";
+
+export async function getStaticPaths() {
+    const studies = await getCollection("case-studies", ({ data }) => !data.draft);
+    return studies.map((study) => ({
+        params: { slug: study.slug },
+        props: { study },
+    }));
+}
+
+const { study } = Astro.props;
+const { Content } = await study.render();
+const featuredImage = getFeaturedImage(study);
+---
+
+<Base
+    title={study.data.title}
+    description={study.data.description ||
+        `Case study by Daniel Marcinkowski: ${study.data.title}`}
+    canonical={`/work/${study.slug}/`}
+>
+    <article>
+        <p><a class="tag-link" href="/work/">Back to Work</a></p>
+        <header class="mb-10 mt-4">
+            <p class="case-meta">Case study</p>
+            <h1 class="mt-2 text-4xl font-bold leading-tight">
+                {study.data.title}
+            </h1>
+            {
+                study.data.description && (
+                    <p class="mt-4 text-xl text-zinc-700 dark:text-zinc-300">
+                        {study.data.description}
+                    </p>
+                )
+            }
+            {featuredImage && <img class="mt-8" src={featuredImage} alt="" />}
+        </header>
+        <div class="prose prose-zinc dark:prose-invert"><Content /></div>
+    </article>
+</Base>

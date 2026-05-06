@@ -159,4 +159,4 @@ The Internet is only getting more distracting. Fortunately, there are a lot of g
 
 * * *
 
-1. In my job as a marketer, Chromium-based browsers were still a must, since not all tools and extensions were available. [↩︎](#fnr1-6453 "return to article")
+1. <span id="fn1-6453"></span>In my job as a marketer, Chromium-based browsers were still a must, since not all tools and extensions were available. [↩︎](#fnr1-6453 "return to article")

@@ -143,6 +143,6 @@ I’m certain that, if it wasn’t for Things 3, my life would be a mess. Someho
 
 * * *
 
-1. I try to use keyboard shortcuts as much as possible, and Things lets you [assign keys to specific tags](https://culturedcode.com/things/support/articles/2803581/#htqgf). I use `H` for _Highlight ✨_ and `W` for _Waiting for ⏰_. [↩︎](#fnr1-28515 "return to article")
-2. I also have a tendency to schedule everything on Mondays and then redistribute it across a whole week. [↩︎](#fnr2-28515 "return to article")
-3. Yes, you can mark tasks as canceled! Just hold the `⌥` key or tap and hold on the task or project tick box. [↩︎](#fnr3-28515 "return to article")
+1. <span id="fn1-28515"></span>I try to use keyboard shortcuts as much as possible, and Things lets you [assign keys to specific tags](https://culturedcode.com/things/support/articles/2803581/#htqgf). I use `H` for _Highlight ✨_ and `W` for _Waiting for ⏰_. [↩︎](#fnr1-28515 "return to article")
+2. <span id="fn2-28515"></span>I also have a tendency to schedule everything on Mondays and then redistribute it across a whole week. [↩︎](#fnr2-28515 "return to article")
+3. <span id="fn3-28515"></span>Yes, you can mark tasks as canceled! Just hold the `⌥` key or tap and hold on the task or project tick box. [↩︎](#fnr3-28515 "return to article")

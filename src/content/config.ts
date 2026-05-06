@@ -18,5 +18,9 @@ const shared = {
 
 const blog = defineCollection({ type: "content", schema: z.object(shared) });
 const pages = defineCollection({ type: "content", schema: z.object(shared) });
+const caseStudies = defineCollection({
+  type: "content",
+  schema: z.object(shared),
+});
 
-export const collections = { blog, pages };
+export const collections = { blog, pages, "case-studies": caseStudies };

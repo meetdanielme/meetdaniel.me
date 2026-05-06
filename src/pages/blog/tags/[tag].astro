@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../../layouts/Base.astro";
+import { getFeaturedImage } from "../../../utils/images";
 export async function getStaticPaths() {
     const toSlug = (tag) => tag.toLowerCase().replaceAll(" ", "-");
     const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -31,15 +32,17 @@ const { tag, posts } = Astro.props;
     <h1 class="mt-4 text-4xl font-bold">{tag}</h1>
     <div class="mt-10 grid gap-8">
         {
-            posts.map((post) => (
+            posts.map((post) => {
+                const featuredImage = getFeaturedImage(post);
+                return (
                 <article
-                    class={`post-card ${post.data.heroImage ? "with-image" : ""}`}
+                    class={`post-card ${featuredImage ? "with-image" : ""}`}
                 >
-                    {post.data.heroImage && (
+                    {featuredImage && (
                         <a href={`/blog/${post.slug}/`}>
                             <img
                                 class="post-thumb"
-                                src={post.data.heroImage}
+                                src={featuredImage}
                                 alt=""
                                 loading="lazy"
                             />
@@ -64,7 +67,8 @@ const { tag, posts } = Astro.props;
                         )}
                     </div>
                 </article>
-            ))
+                );
+            })
         }
     </div>
 </Base>

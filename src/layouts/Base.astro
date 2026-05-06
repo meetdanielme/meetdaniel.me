@@ -47,7 +47,7 @@ const socials = [
     { href: "/rss.xml", label: "RSS", icon: "ri-rss-line" },
 ];
 const contactHref = "mailto:hey@meetdaniel.me";
-const profileImage = "/images/pages/2025/profile-pic.jpeg";
+const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
 ---
 
 <html lang="en-GB">
@@ -78,7 +78,7 @@ const profileImage = "/images/pages/2025/profile-pic.jpeg";
         <meta property="og:url" content={url.href} />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link
             rel="alternate"
@@ -116,12 +116,7 @@ const profileImage = "/images/pages/2025/profile-pic.jpeg";
                 aria-modal="true"
                 aria-label="Site navigation"
             >
-                <div class="flex items-center justify-between">
-                    <a
-                        href="/about/"
-                        class="font-bold text-black dark:text-white"
-                        >Daniel Marcinkowski</a
-                    >
+                <div class="mobile-menu-header">
                     <button
                         id="menu-close"
                         class="icon-button"
@@ -129,6 +124,12 @@ const profileImage = "/images/pages/2025/profile-pic.jpeg";
                         ><i class="ri-close-line" aria-hidden="true"
                         ></i></button
                     >
+                    <a
+                        href="/about/"
+                        class="mobile-menu-title font-bold text-black dark:text-white"
+                        >Daniel Marcinkowski</a
+                    >
+                    <span class="mobile-menu-spacer" aria-hidden="true"></span>
                 </div>
                 <div class="mt-6"><SearchBox id="mobile-search" /></div>
                 <nav class="mt-10 grid gap-5 text-2xl">
@@ -174,7 +175,7 @@ const profileImage = "/images/pages/2025/profile-pic.jpeg";
                         <img
                             class="profile-image"
                             src={profileImage}
-                            alt="Daniel Marcinkowski"
+                            alt="Portrait of Daniel Marcinkowski"
                         />
                         <a href="/about/" class="profile-name"
                             >Daniel Marcinkowski</a

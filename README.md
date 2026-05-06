@@ -1,6 +1,27 @@
 # meetdaniel.me
 
-## Button links
+Personal website of Daniel Marcinkowski — a static, Markdown-first site for writing, work, case studies, and personal pages.
 
-Use the global `.btn`, `.btn-primary`, and `.btn-secondary` classes for button-style links in Markdown or Astro content, for example `<a class="btn btn-primary" href="/cv.pdf">Download CV</a>`. Astro pages can also use `src/components/ButtonLink.astro` with `variant="primary"` or `variant="secondary"`.
-My personal website — now running on Astro + Vercel. 
+## Stack
+
+- [Astro](https://astro.build/)
+- TypeScript
+- TailwindCSS
+- Astro content collections powered by Markdown
+- Vercel hosting and Speed Insights
+
+## What is included
+
+- Blog posts with tags, RSS, and sitemap support
+- Work page and dedicated case study pages
+- About, Now, Uses, and Privacy Policy pages
+- Static client-side search
+- Light/dark theme support
+
+## Local development
+
+```sh
+pnpm install
+pnpm run dev
+pnpm run build
+```

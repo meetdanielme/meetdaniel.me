@@ -120,4 +120,4 @@ From all services that Apple offers, Fitness+ may not be as easy to recommend as
 
 * * *
 
-1. Not to be mistaken for the Breathe feature of the Mindfulness app on the Apple Watch. [↩︎](#fnr1-14184 "return to article")
+1. <span id="fn1-14184"></span>Not to be mistaken for the Breathe feature of the Mindfulness app on the Apple Watch. [↩︎](#fnr1-14184 "return to article")

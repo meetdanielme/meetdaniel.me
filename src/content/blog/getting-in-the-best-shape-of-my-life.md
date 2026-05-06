@@ -67,4 +67,4 @@ Looking back, I get why I wasn’t into fitness before. We all know exercise is 
 
 * * *
 
-1. /jk [↩︎](#fnr1-13101 "return to article")
+1. <span id="fn1-13101"></span>/jk [↩︎](#fnr1-13101 "return to article")

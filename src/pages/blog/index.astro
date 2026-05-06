@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { getFeaturedImage } from "../../utils/images";
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -17,15 +18,17 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
     </p>
     <div class="mt-10 grid gap-8">
         {
-            posts.map((post) => (
+            posts.map((post) => {
+                const featuredImage = getFeaturedImage(post);
+                return (
                 <article
-                    class={`post-card ${post.data.heroImage ? "with-image" : ""}`}
+                    class={`post-card ${featuredImage ? "with-image" : ""}`}
                 >
-                    {post.data.heroImage && (
+                    {featuredImage && (
                         <a href={`/blog/${post.slug}/`}>
                             <img
                                 class="post-thumb"
-                                src={post.data.heroImage}
+                                src={featuredImage}
                                 alt=""
                                 loading="lazy"
                             />
@@ -60,7 +63,8 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
                         </div>
                     </div>
                 </article>
-            ))
+                );
+            })
         }
     </div>
 </Base>

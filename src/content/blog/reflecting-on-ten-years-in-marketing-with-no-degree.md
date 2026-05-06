@@ -135,4 +135,4 @@ I’m scared, but this feels like the right decision—just like the one I made 
 
 * * *
 
-1. If you speak Polish, I have shared my reflections about the internship [here](https://medium.com/daniel-marcinkowski/młody-idź-na-staż-9d7c52a7b64e). [↩︎](#fnr1-8547 "return to article")
+1. <span id="fn1-8547"></span>If you speak Polish, I have shared my reflections about the internship [here](https://medium.com/daniel-marcinkowski/młody-idź-na-staż-9d7c52a7b64e). [↩︎](#fnr1-8547 "return to article")

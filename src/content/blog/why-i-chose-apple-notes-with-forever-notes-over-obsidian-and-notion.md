@@ -290,6 +290,6 @@ Especially with its recent updates, Apple Notes feels like a feature-complete ap
 
 * * *
 
-1. You can't imagine my joy when [Google added Markdown to Docs](https://support.google.com/docs/answer/12014036?hl=en). [↩︎](#fnr1-16374 "return to article")
-2. You can link notes by adding a standard link (_Cmd-K_) or by typing `>>` followed by the note's name. You can also create new notes this way. [↩︎](#fnr2-16374 "return to article")
-3. I run it using the ["When Waking Up" Personal Automation in Shortcuts](https://support.apple.com/en-ng/guide/shortcuts/apd932ff833f/ios). [↩︎](#fnr3-16374 "return to article")
+1. <span id="fn1-16374"></span>You can't imagine my joy when [Google added Markdown to Docs](https://support.google.com/docs/answer/12014036?hl=en). [↩︎](#fnr1-16374 "return to article")
+2. <span id="fn2-16374"></span>You can link notes by adding a standard link (_Cmd-K_) or by typing `>>` followed by the note's name. You can also create new notes this way. [↩︎](#fnr2-16374 "return to article")
+3. <span id="fn3-16374"></span>I run it using the ["When Waking Up" Personal Automation in Shortcuts](https://support.apple.com/en-ng/guide/shortcuts/apd932ff833f/ios). [↩︎](#fnr3-16374 "return to article")

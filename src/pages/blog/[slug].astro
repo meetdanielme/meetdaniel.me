@@ -82,5 +82,15 @@ const { Content } = await post.render();
             });
             pre.appendChild(button);
         });
+        document
+            .querySelectorAll('.prose a[href^="#fn"][href*="-"]')
+            .forEach((link) => {
+                const target = link.getAttribute("href")?.slice(1);
+                if (!target) return;
+                const referenceId = target.replace(/^fn/, "fnr");
+                if (!link.id && !document.getElementById(referenceId)) {
+                    link.id = referenceId;
+                }
+            });
     </script>
 </Base>

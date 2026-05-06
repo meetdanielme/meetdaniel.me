@@ -41,4 +41,4 @@ As for the new incarnation of my blog, I will be exploring using technology to s
 
 * * *
 
-1. Well, sort of. I will continue to post on [Life After Anmeldung](https://medium.com/life-after-the-anmeldung), where I share personal finance tips with fellow expats in Germany. [↩︎](#fnr1-30370 "return to article")
+1. <span id="fn1-30370"></span>Well, sort of. I will continue to post on [Life After Anmeldung](https://medium.com/life-after-the-anmeldung), where I share personal finance tips with fellow expats in Germany. [↩︎](#fnr1-30370 "return to article")

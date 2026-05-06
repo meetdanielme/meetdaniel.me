@@ -21,7 +21,7 @@
 }
 
 :root {
-    color-scheme: light dark;
+    color-scheme: light;
     --base: #ffffff;
     --contrast: #000000;
     --primary: #eaaa00;
@@ -38,12 +38,15 @@ html {
     color: var(--contrast);
 }
 html[data-theme="dark"] {
-    --base: #000000;
-    --contrast: #ffffff;
-    --surface: #111111;
-    --subtle: #2e2e2e;
-    --muted: #a1a1aa;
-    --rule: #27272a;
+    color-scheme: dark;
+    --base: #070707;
+    --contrast: #e8e4da;
+    --primary: #eaaa00;
+    --primary-active: #d08a00;
+    --surface: #141414;
+    --subtle: #242424;
+    --muted: #9c968b;
+    --rule: #2d2a24;
 }
 html[data-theme="light"] {
     --base: #ffffff;
@@ -105,6 +108,21 @@ img {
     color: var(--contrast);
     padding: 1.25rem 1.5rem;
 }
+.mobile-menu-header {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+    align-items: center;
+    gap: 0.75rem;
+}
+.mobile-menu-title {
+    justify-self: center;
+    color: var(--contrast);
+    text-align: center;
+}
+.mobile-menu-spacer {
+    width: 2.5rem;
+    height: 2.5rem;
+}
 .site-grid {
     max-width: 1200px;
     margin-inline: auto;
@@ -114,7 +132,7 @@ img {
 }
 .sidebar {
     display: none;
-    background: #f1f1f1;
+    background: var(--surface);
     border-radius: 16px;
     padding: 1.5rem;
 }
@@ -155,11 +173,21 @@ img {
     color: var(--contrast);
     background: var(--base);
     font-size: 1.25rem;
+    cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
 }
 .icon-button:hover {
     color: #000;
     background: var(--primary);
     border-color: var(--primary);
+}
+.icon-button:active {
+    background: var(--primary-active);
+    border-color: var(--primary-active);
+    color: #000;
 }
 @media (min-width: 768px) {
     .mobile-header {
@@ -172,12 +200,15 @@ img {
     .sidebar {
         position: sticky;
         top: 2rem;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
         height: calc(100vh - 4rem);
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
     }
     .sidebar-footer {
-        position: absolute;
-        bottom: 1.5rem;
+        margin-top: auto;
     }
 }
 .nav-link {
@@ -246,9 +277,13 @@ img {
     color: #fff;
     border-color: #000;
 }
+.btn-primary:focus-visible,
+.button-primary:focus-visible {
+    color: #000;
+}
 .btn-secondary,
 .button-secondary {
-    background: transparent;
+    background: var(--base);
     color: var(--contrast);
     border: 1px solid var(--rule);
 }
@@ -261,16 +296,16 @@ img {
 
 code {
     font-family: "JetBrains Mono", monospace;
-    background: #efefef;
-    color: #000000;
+    background: var(--subtle);
+    color: var(--contrast);
     font-weight: 700;
     padding: 0.15rem 0.35rem;
     border-radius: 4px;
 }
 pre {
     position: relative;
-    background: #efefef !important;
-    color: #000 !important;
+    background: var(--subtle) !important;
+    color: var(--contrast) !important;
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -385,18 +420,25 @@ pre code {
     max-width: 650px;
     font-size: 1.08rem;
     line-height: 1.7;
+    color: var(--contrast);
+}
+.prose :where(h1, h2, h3, h4, strong) {
+    color: var(--contrast);
 }
 .prose a {
     color: var(--primary);
     font-weight: 600;
+    text-decoration: none;
 }
 .prose a:hover {
     color: var(--primary-active);
+    text-decoration: underline;
 }
 .prose blockquote {
     border-left-color: var(--primary);
     background: var(--surface);
     padding: 0.5rem 1.5rem;
+    color: var(--contrast);
 }
 .prose figure {
     margin-top: 2rem;
@@ -410,6 +452,20 @@ pre code {
     font-size: 0.875rem;
     color: var(--muted);
     text-align: center;
+}
+.prose .footnotes,
+.prose [data-footnotes] {
+    margin-top: 3rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+.prose .footnotes ol,
+.prose [data-footnotes] ol {
+    padding-left: 1.25rem;
+}
+.prose sup a {
+    text-decoration: none;
 }
 .prose ul,
 .prose ol {
@@ -436,11 +492,27 @@ pre code {
     gap: 1rem;
     margin: 2rem 0;
 }
+.case-section {
+    margin-top: 3rem;
+}
 .case-card {
+    display: grid;
+    gap: 0.75rem;
     border: 1px solid var(--rule);
     border-radius: 12px;
     padding: 1.25rem;
     background: var(--surface);
+    color: var(--contrast);
+}
+.case-card:hover {
+    border-color: var(--primary);
+    color: var(--contrast);
+}
+.case-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--subtle);
 }
 .case-card h3 {
     margin-top: 0;
@@ -460,27 +532,36 @@ pre code {
     }
 }
 
-html[data-theme="dark"] .sidebar {
-    background: #111;
-}
 html[data-theme="dark"] .mobile-menu,
 html[data-theme="dark"] .mobile-header,
 html[data-theme="dark"] .icon-button,
 html[data-theme="dark"] .search-input-wrap,
 html[data-theme="dark"] .search-results {
-    background: #000;
+    background: var(--base);
 }
 html[data-theme="dark"] .profile-name,
 html[data-theme="dark"] .post-title-link {
-    color: #fff;
+    color: var(--contrast);
 }
 html[data-theme="dark"] .post-title-link:hover {
     color: var(--primary);
 }
 html[data-theme="dark"] .btn-primary:hover {
-    background: #fff;
+    background: var(--contrast);
     color: #000;
-    border-color: #fff;
+    border-color: var(--contrast);
+}
+html[data-theme="dark"] .btn-secondary:hover,
+html[data-theme="dark"] .button-secondary:hover,
+html[data-theme="dark"] .icon-button:hover {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+html[data-theme="dark"] .code-copy {
+    background: var(--surface);
+    color: var(--contrast);
+    border-color: var(--rule);
 }
 
 html[data-theme="light"],
@@ -499,52 +580,6 @@ html[data-theme="light"] .search-input-wrap,
 html[data-theme="light"] .search-results {
     background: #fff;
     color: #000;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --base: #000000;
-        --contrast: #ffffff;
-        --surface: #111111;
-        --subtle: #2e2e2e;
-        --muted: #a1a1aa;
-        --rule: #27272a;
-    }
-    html,
-    body,
-    .site-shell {
-        background: #000;
-        color: #fff;
-    }
-    .social-link:hover {
-        background: #111;
-    }
-    code {
-        background: #efefef;
-        color: #000000;
-    }
-    pre {
-        background: #2e2e2e !important;
-        color: #fff !important;
-    }
-    pre code {
-        color: inherit;
-        background: transparent;
-    }
-    .code-copy {
-        background: #000;
-        color: #fff;
-        border-color: #3f3f46;
-    }
-    .prose {
-        color: #fff;
-    }
-    .prose :where(h1, h2, h3, h4, strong) {
-        color: #fff;
-    }
-    .prose blockquote {
-        background: #111;
-    }
 }
 
 html[data-theme="light"],

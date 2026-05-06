@@ -154,5 +154,5 @@ I'm looking forward to trying out [Opal's upcoming AI features](https://www.opal
 
 * * *
 
-1. When you install the app today, you can use the Block feature based on the Screen Time API, which doesn't involve using Shortcuts. [↩︎](#fnr1-4251 "return to article")
-2. Opal's interface isn't optimized for iPadOS at the time of writing this, but app-blocking works just fine. [↩︎](#fnr2-4251 "return to article")
+1. <span id="fn1-4251"></span>When you install the app today, you can use the Block feature based on the Screen Time API, which doesn't involve using Shortcuts. [↩︎](#fnr1-4251 "return to article")
+2. <span id="fn2-4251"></span>Opal's interface isn't optimized for iPadOS at the time of writing this, but app-blocking works just fine. [↩︎](#fnr2-4251 "return to article")
