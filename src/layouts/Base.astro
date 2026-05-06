@@ -58,7 +58,7 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
         <meta name="viewport" content="width=device-width" />
         <script is:inline>
             (() => {
-                const saved = localStorage.getItem("theme");
+                const saved = localStorage.getItem("theme-preference");
                 const prefersDark = window.matchMedia(
                     "(prefers-color-scheme: dark)",
                 ).matches;
@@ -302,9 +302,15 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                 )
                     closeMenu();
             });
-            const setTheme = (theme) => {
+            const systemTheme = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            );
+            const getSystemTheme = () =>
+                systemTheme.matches ? "dark" : "light";
+            const themePreferenceKey = "theme-preference";
+            localStorage.removeItem("theme");
+            const applyTheme = (theme) => {
                 document.documentElement.dataset.theme = theme;
-                localStorage.setItem("theme", theme);
                 document
                     .querySelectorAll("[data-theme-icon]")
                     .forEach((icon) => {
@@ -312,7 +318,19 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                             theme === "dark" ? "ri-sun-line" : "ri-moon-line";
                     });
             };
-            setTheme(document.documentElement.dataset.theme || "light");
+            const setTheme = (theme) => {
+                applyTheme(theme);
+                localStorage.setItem(themePreferenceKey, theme);
+            };
+            applyTheme(
+                localStorage.getItem(themePreferenceKey) ||
+                    document.documentElement.dataset.theme ||
+                    getSystemTheme(),
+            );
+            systemTheme.addEventListener("change", (event) => {
+                if (localStorage.getItem(themePreferenceKey)) return;
+                applyTheme(event.matches ? "dark" : "light");
+            });
             document
                 .querySelectorAll(".theme-toggle")
                 .forEach((button) =>
