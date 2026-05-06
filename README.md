@@ -98,6 +98,26 @@ Use image grids for related screenshots. They display side-by-side on larger scr
 
 For three images, use `image-grid-3`.
 
+### Embeds
+
+YouTube links become lightweight embedded videos when the URL is placed on its own line in Markdown:
+
+```md
+https://www.youtube.com/watch?v=UylsydmgSI4
+```
+
+WordPress-style YouTube embed blocks are also converted automatically during the Astro build. iCloud Keynote links render as presentation cards, because Keynote does not provide the same kind of lightweight video embed.
+
+```html
+<div class="content-embed content-embed-card">
+  <i class="ri-slideshow-line" aria-hidden="true"></i>
+  <div>
+    <p class="content-embed-label">Keynote slides</p>
+    <a href="https://www.icloud.com/keynote/example">Open presentation</a>
+  </div>
+</div>
+```
+
 ### Images and files
 
 Keep site assets local instead of hotlinking remote WordPress media. Public files are served from the site root:

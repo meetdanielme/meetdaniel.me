@@ -1,5 +1,6 @@
 ---
 import "remixicon/fonts/remixicon.css";
+import "lite-youtube-embed/src/lite-yt-embed.css";
 import "../styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import SearchBox from "../components/SearchBox.astro";
@@ -262,6 +263,9 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
             </figure>
         </dialog>
         <SpeedInsights />
+        <script>
+            import "lite-youtube-embed";
+        </script>
         <script is:inline>
             const openButton = document.getElementById("menu-open");
             const closeButton = document.getElementById("menu-close");

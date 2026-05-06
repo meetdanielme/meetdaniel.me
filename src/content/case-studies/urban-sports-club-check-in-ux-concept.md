@@ -25,11 +25,13 @@ Additional project details:
 
 *Note: I have no association with Urban Sports Club. This project was meant to be a part of my UX design portfolio.*
 
-<p><a class="btn btn-primary" href="https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept"><i class="ri-mail-line" aria-hidden="true"></i>Download Keynote Slides</a></p>
-
-<figure class="wp-block-embed is-type-rich is-provider-embed wp-block-embed-embed"><div class="wp-block-embed__wrapper">
-https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept
-</div></figure>
+<div class="content-embed content-embed-card">
+  <i class="ri-slideshow-line" aria-hidden="true"></i>
+  <div>
+    <p class="content-embed-label">Keynote slides</p>
+    <a href="https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept">Open presentation</a>
+  </div>
+</div>
 
 ## Introduction
 
@@ -41,9 +43,7 @@ The reason why I find this even more troubling is that Urban Sports doesn’t of
 
 I find the current check-in experience of Urban Sports Club to be inaccessible, and I believe that the company should put more effort in making their apps more user-friendly. But, rather than just complain, I come with some meaningful insights and solutions.
 
-<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-https://youtu.be/TfCXNFIu568
-</div></figure>
+https://www.youtube.com/watch?v=TfCXNFIu568
 
 ## Empathize With Users & Define Their Needs
 
@@ -183,7 +183,5 @@ Based on my research, I was able to identify multiple improvements that could be
 * Add improvements to the new flow based on the results of the UX Research Study
 * Implement the changes in the public beta release of the Urban Sports app before shipping to the public
 * Conduct a similar research for the Android version of the app
-
----
 
 That’s all! If you have any questions, don’t hesitate to reach out to my via email or on [LinkedIn](https://www.linkedin.com/in/meetdanielme/). If anyone from Urban Sports Club is reading this — I’m happy to meet your design team in Berlin anytime.

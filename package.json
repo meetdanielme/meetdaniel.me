@@ -15,9 +15,9 @@
     "@fontsource/jetbrains-mono": "latest",
     "@tailwindcss/typography": "latest",
     "@vercel/speed-insights": "latest",
-    "remixicon": "latest",
     "astro": "^5.15.6",
+    "lite-youtube-embed": "^0.3.4",
+    "remixicon": "latest",
     "tailwindcss": "^3.4.17"
-  },
-  "devDependencies": {}
+  }
 }

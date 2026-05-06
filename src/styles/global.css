@@ -547,6 +547,39 @@ pre code {
     border-radius: 8px;
     background: var(--surface);
 }
+.prose .content-embed {
+    margin: 2rem 0;
+}
+.prose .content-embed-youtube lite-youtube {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    background-color: var(--surface);
+}
+.prose .content-embed-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 1rem;
+}
+.prose .content-embed-card i {
+    color: var(--primary);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+.prose .content-embed-card p {
+    margin: 0;
+}
+.prose .content-embed-label {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 .prose .image-grid {
     display: grid;
     gap: 1rem;
