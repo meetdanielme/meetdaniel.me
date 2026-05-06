@@ -7,6 +7,9 @@ tags:
   - "Work"
 draft: false
 heroImage: "/images/case-studies/ready-player-me/ready-player-me.png"
+location: "Berlin, Germany (remote)"
+period: "January 2021 – November 2024"
+teamSize: "From 20 to 70 people"
 metrics:
   - label: "Customer growth"
     value: "25 to 20,000+"
@@ -14,12 +17,6 @@ metrics:
     value: "15,000+ members"
   - label: "Referring domains"
     value: "25x"
----
-
-**Location**: Berlin, Germany (remote)
-**Period**: January 2021 – November 2024
-**Company size**: from 20 to 70 people
-
 ---
 
 [Ready Player Me](https://readyplayer.me) was a cross-game avatar platform that enables users to create and use a consistent digital identity in virtual worlds. The company was acquired by Netflix in 2024.
@@ -45,10 +42,18 @@ Amplitude, Google Analytics, HubSpot, Webflow, Ghost, Figma, Discord, Zapier, ah
 * [What’s New in Ready Player Me — 2023 Recap](https://readyplayer.me/blog/whats-new-in-ready-player-me-2023)
 * [Dev Diaries webinar: Monetization Services & Collections with Hiber](https://www.youtube.com/watch?v=dsYM7jV7k40)
 
-![screenshot 2025 03 20 at 12.44.41 pm](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screenshot-2025-03-20-at-12.44.41%E2%80%AFpm.png?resize=692%2C1024&ssl=1)
-![screenshot 2025 03 20 at 12.44.21 pm](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screenshot-2025-03-20-at-12.44.21%E2%80%AFpm.png?resize=960%2C1024&ssl=1)
-![screenshot 2025 03 20 at 12.43.57 pm](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screenshot-2025-03-20-at-12.43.57%E2%80%AFpm.png?resize=1024%2C1007&ssl=1)
-![1668765288318](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/1668765288318.jpeg?resize=1024%2C683&ssl=1)
+<div class="image-grid image-grid-3">
+  <figure>
+    <img src="/images/case-studies/ready-player-me/screenshot-2025-03-20-at-12.44.41-pm.png" alt="Ready Player Me marketing work screenshot">
+  </figure>
+  <figure>
+    <img src="/images/case-studies/ready-player-me/screenshot-2025-03-20-at-12.44.21-pm.png" alt="Ready Player Me marketing content screenshot">
+  </figure>
+  <figure>
+    <img src="/images/case-studies/ready-player-me/screenshot-2025-03-20-at-12.43.57-pm.png" alt="Ready Player Me content and community screenshot">
+  </figure>
+</div>
+![1668765288318](/images/case-studies/ready-player-me/1668765288318.jpeg)
 
 ## Testimonials
 

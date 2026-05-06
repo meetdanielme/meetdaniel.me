@@ -209,7 +209,7 @@ Movies & TV shows ([follow me on Trakt](https://trakt.tv/users/meetdanielme)):
 
 - I'm working on obtaining a [Google Data Analytics](https://www.coursera.org/professional-certificates/google-data-analytics) professional certificate on Coursera.
 
-- I have implemented the [Forever ✱ Notes setup in Apple Notes](https://dmarcinkowski.pl/wp-content/uploads/2025/02/Apple-Notes-Forever-Notes.png).
+- I have implemented the [Forever ✱ Notes setup in Apple Notes](/images/pages/now/apple-notes-forever-notes.png).
 
 - I'm waiting to hear back from universities I have applied to so that I can decide where I'm going to live for the next 3+ years.
 

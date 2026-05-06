@@ -23,4 +23,4 @@ Currency conversion apps are often too complex to be able to quickly access them
 
 Converty will let users convert currency smoother and faster than the competition. We will measure effectiveness by the time of interaction with the app (the less, the better).
 
-[Download Keynote Slides](https://meetdaniel.me/wp-content/uploads/2025/04/converty-case-study.key)
+[Download Keynote Slides](/files/case-studies/google-ux-design/converty-case-study.key)

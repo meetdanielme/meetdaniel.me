@@ -14,6 +14,23 @@ export async function getStaticPaths() {
 const { study } = Astro.props;
 const { Content } = await study.render();
 const featuredImage = getFeaturedImage(study);
+const metadata = [
+    {
+        label: "Location",
+        value: study.data.location,
+        icon: "ri-map-pin-line",
+    },
+    {
+        label: "Team size",
+        value: study.data.teamSize,
+        icon: "ri-team-line",
+    },
+    {
+        label: "Period",
+        value: study.data.period,
+        icon: "ri-calendar-line",
+    },
+].filter((item) => item.value);
 ---
 
 <Base
@@ -40,8 +57,31 @@ const featuredImage = getFeaturedImage(study);
                     </p>
                 )
             }
-            {featuredImage && <img class="mt-8" src={featuredImage} alt="" />}
+            {
+                featuredImage && (
+                    <img
+                        class="case-hero-image mt-8"
+                        src={featuredImage}
+                        alt=""
+                    />
+                )
+            }
         </header>
+        {
+            metadata.length > 0 && (
+                <dl class="case-detail-grid">
+                    {metadata.map((item) => (
+                        <div>
+                            <dt>
+                                <i class={item.icon} aria-hidden="true" />
+                                <span>{item.label}</span>
+                            </dt>
+                            <dd>{item.value}</dd>
+                        </div>
+                    ))}
+                </dl>
+            )
+        }
         {
             study.data.metrics.length > 0 && (
                 <dl class="metrics-grid">

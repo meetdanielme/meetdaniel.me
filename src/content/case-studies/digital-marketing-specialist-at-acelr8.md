@@ -7,6 +7,9 @@ tags:
   - "Work"
 draft: false
 heroImage: "/images/case-studies/acelr8/acelr8.png"
+location: "Berlin, Germany"
+period: "March 2019 – December 2020"
+teamSize: "From 20 to 50 people"
 metrics:
   - label: "Client engagement"
     value: "+150%"
@@ -14,12 +17,6 @@ metrics:
     value: "10x"
   - label: "Community reach"
     value: "1,500+ professionals"
----
-
-**Location**: Berlin, Germany
-**Period**: March 2019 – December 2020
-**Company size**: from 20 to 50 people
-
 ---
 
 [ACELR8](https://www.acelr8.com) was a startup-focused recruitment company that helps tech companies scale by providing in-house recruitment solutions.
@@ -47,9 +44,17 @@ Contentful, Ghost, Webflow, Figma, LinkedIn, Canva, Adobe Lightroom, Eventbrite
 * [A-Players Podcast (producer)](https://creators.spotify.com/pod/show/acelr8)
 * [How Pitch Works Remotely](https://www.acelr8.com/post/how-pitch-works-remotely)
 
-![screenshot 2025 03 20 at 12.27.20 pm](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screenshot-2025-03-20-at-12.27.20%E2%80%AFpm.png?resize=1024%2C586&ssl=1)
-![5e738d31ca2a78f654e862cb frame 4](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/5e738d31ca2a78f654e862cb_frame-4.png?resize=1024%2C576&ssl=1)
-![5e738d30f25c96831e4b2da6 frame 2](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/5e738d30f25c96831e4b2da6_frame-2.png?resize=1024%2C576&ssl=1)
+<div class="image-grid image-grid-3">
+  <figure>
+    <img src="/images/case-studies/acelr8/screenshot-2025-03-20-at-12.27.20-pm.png" alt="ACELR8 marketing work screenshot">
+  </figure>
+  <figure>
+    <img src="/images/case-studies/acelr8/5e738d31ca2a78f654e862cb_frame-4.png" alt="ACELR8 brand work example">
+  </figure>
+  <figure>
+    <img src="/images/case-studies/acelr8/5e738d30f25c96831e4b2da6_frame-2.png" alt="ACELR8 visual identity example">
+  </figure>
+</div>
 
 ## Testimonials
 

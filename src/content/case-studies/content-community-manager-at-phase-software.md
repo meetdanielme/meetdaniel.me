@@ -7,6 +7,9 @@ tags:
   - "Work"
 draft: false
 heroImage: "/images/case-studies/phase/phase.png"
+location: "Berlin, Germany"
+period: "May 2018 – February 2019"
+teamSize: "20 people"
 metrics:
   - label: "Community growth"
     value: "1,000 to 2,500+"
@@ -14,12 +17,6 @@ metrics:
     value: "10,000 monthly views"
   - label: "Published issues"
     value: "14"
----
-
-**Location**: Berlin, Germany
-**Period**: May 2018 – February 2019
-**Company size**: 20 people
-
 ---
 
 [Phase](https://www.phase.com) is a design tool startup focused on creating a modern, code-powered alternative to traditional UI/UX design software.
@@ -38,23 +35,23 @@ Slack, WordPress, Facebook, Twitter, LinkedIn, Adobe Lightroom, Canva
 * [Are Our Design Tools Really Evolving? — { Future of Digital Design }](https://uxplanet.org/are-our-design-tools-really-evolving-future-of-digital-design-ec993e9dc13f)
 * [My design work for Phase (Dribbble)](https://dribbble.com/meetdanielme)
 
-![phasemag](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/phasemag.png?resize=1024%2C768&ssl=1)
+![phasemag](/images/case-studies/phase/phasemag.png)
 
 Phase Magazine covers co-designed by me
 
-![screen shot 2019 01 29 at 14.24.07](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screen-shot-2019-01-29-at-14.24.07.png?resize=1024%2C771&ssl=1)
+![screen shot 2019 01 29 at 14.24.07](/images/case-studies/phase/screen-shot-2019-01-29-at-14.24.07.png)
 
 Example of a Phase Magazine article
 
-![screen shot 2019 01 29 at 14.24.20](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screen-shot-2019-01-29-at-14.24.20.png?resize=1024%2C724&ssl=1)
+![screen shot 2019 01 29 at 14.24.20](/images/case-studies/phase/screen-shot-2019-01-29-at-14.24.20.png)
 
 Phase Magazine podcast series fully produced by me
 
-![screen shot 2019 01 29 at 14.18.57](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screen-shot-2019-01-29-at-14.18.57-1.png?fit=2398%2C1548&ssl=1)
+![screen shot 2019 01 29 at 14.18.57](/images/case-studies/phase/screen-shot-2019-01-29-at-14.18.57-1.png)
 
 Phase Community on Slack
 
-![screen shot 2019 01 29 at 14.20.01](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/03/screen-shot-2019-01-29-at-14.20.01-1.png?fit=2880%2C1674&ssl=1)
+![screen shot 2019 01 29 at 14.20.01](/images/case-studies/phase/screen-shot-2019-01-29-at-14.20.01-1.png)
 
 Phase Community on Meetup.com
 

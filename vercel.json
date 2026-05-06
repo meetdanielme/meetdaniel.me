@@ -1,3 +1,14 @@
 {
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/feed/",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page/:page/",
+      "destination": "/blog/",
+      "permanent": true
+    }
+  ]
 }

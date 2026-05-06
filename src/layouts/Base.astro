@@ -244,6 +244,23 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                 </main>
             </div>
         </div>
+        <dialog
+            class="image-lightbox"
+            data-image-lightbox
+            aria-label="Expanded image"
+        >
+            <button
+                class="image-lightbox-close icon-button"
+                type="button"
+                data-image-lightbox-close
+                aria-label="Close expanded image"
+                ><i class="ri-close-line" aria-hidden="true"></i></button
+            >
+            <figure>
+                <img data-image-lightbox-img alt="" />
+                <figcaption data-image-lightbox-caption></figcaption>
+            </figure>
+        </dialog>
         <SpeedInsights />
         <script is:inline>
             const openButton = document.getElementById("menu-open");
@@ -301,6 +318,58 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                         ),
                     ),
                 );
+            const lightbox = document.querySelector("[data-image-lightbox]");
+            const lightboxImage = document.querySelector(
+                "[data-image-lightbox-img]",
+            );
+            const lightboxCaption = document.querySelector(
+                "[data-image-lightbox-caption]",
+            );
+            const lightboxClose = document.querySelector(
+                "[data-image-lightbox-close]",
+            );
+            const getCaption = (image) => {
+                const figureCaption = image
+                    .closest("figure")
+                    ?.querySelector("figcaption")?.textContent;
+                return figureCaption?.trim() || image.alt || "";
+            };
+            const openLightbox = (image) => {
+                if (!lightbox || !lightboxImage || !lightboxCaption) return;
+                lightboxImage.src = image.currentSrc || image.src;
+                lightboxImage.alt = image.alt || "";
+                const caption = getCaption(image);
+                lightboxCaption.textContent = caption;
+                lightboxCaption.hidden = !caption;
+                lightbox.showModal();
+                lightboxClose?.focus();
+            };
+            document
+                .querySelectorAll(
+                    ".prose img, .case-hero-image, .page-hero-image, .post-hero-image",
+                )
+                .forEach((image) => {
+                    if (image.closest("a")) return;
+                    image.dataset.lightboxImage = "true";
+                    image.tabIndex = 0;
+                    image.setAttribute("role", "button");
+                    image.setAttribute(
+                        "aria-label",
+                        image.alt
+                            ? `Expand image: ${image.alt}`
+                            : "Expand image",
+                    );
+                    image.addEventListener("click", () => openLightbox(image));
+                    image.addEventListener("keydown", (event) => {
+                        if (event.key !== "Enter" && event.key !== " ") return;
+                        event.preventDefault();
+                        openLightbox(image);
+                    });
+                });
+            lightboxClose?.addEventListener("click", () => lightbox?.close());
+            lightbox?.addEventListener("click", (event) => {
+                if (event.target === lightbox) lightbox.close();
+            });
         </script>
     </body>
 </html>

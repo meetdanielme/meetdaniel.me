@@ -7,6 +7,7 @@ tags:
   - "Work"
 draft: false
 heroImage: "/images/case-studies/urban-sports-club/urban-sports-club-improved-check-in-ux.png"
+period: "April 1–15, 2025"
 ---
 
 ## Project Overview
@@ -57,7 +58,7 @@ I conducted a user survey and [competitive audit](https://docs.google.com/docume
 
 You can find the full version of user personas, together with user journey maps, in the [Keynote slide deck](https://www.icloud.com/keynote/05aNO-1n9LM-FH63CszFFwmiQ#Urban_Sports_Club_Check-In_Concept).
 
-![lisa](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/lisa-edited.jpg?resize=1024%2C1025&ssl=1)
+![lisa](/images/case-studies/urban-sports-club/lisa-edited.jpg)
 
 Generated with ChatGPT 4o
 
@@ -65,7 +66,7 @@ Generated with ChatGPT 4o
 
 Lisa is a busy, active professional who often arrives at her workout sessions feeling rushed and distracted. She needs a simple, automatic, or well-timed reminder to check in to her Urban Sports Club classes because she sometimes forgets to do it and ends up being unfairly charged, which creates frustration and breaks her trust in the app.
 
-![martin](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/martin-edited.jpg?resize=1024%2C1025&ssl=1)
+![martin](/images/case-studies/urban-sports-club/martin-edited.jpg)
 
 Generated with ChatGPT 4o
 
@@ -77,12 +78,20 @@ Martin is a disciplined and detail-oriented user who values routine and efficien
 
 As my goal with the project was to utilize existing features of iOS, I decided to skip creating wireframes and lo-fi mockups and utilize [Apple’s iOS 18 UI Kit for Figma](https://www.figma.com/community/file/1385659531316001292) instead. Still, I have created big picture and close-up storyboards that illustrate the issues uncovered during the previous phase of the design process. Please admire my sketches:
 
-![big picture storyboard usc](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/big-picture-storyboard-usc.jpg?resize=1024%2C576&ssl=1)
-![close up storyboard usc](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/close-up-storyboard-usc.jpg?resize=1024%2C576&ssl=1)
+<div class="image-grid image-grid-2">
+  <figure>
+    <img src="/images/case-studies/urban-sports-club/big-picture-storyboard-usc.jpg" alt="Big picture storyboard for the Urban Sports Club check-in concept">
+    <figcaption>Big-picture storyboard</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/case-studies/urban-sports-club/close-up-storyboard-usc.jpg" alt="Close-up storyboard for the Urban Sports Club check-in concept">
+    <figcaption>Close-up storyboard</figcaption>
+  </figure>
+</div>
 
 I have also created a detailed user flow diagram which includes both the current check-in flow of the Urban Sports app as well as my suggested changes. Please note that I have removed the step where the user needs to tap a button to confirm the check-in (right before they see a green confirmation modal), as it seems like USC has removed that step in the latest beta version of the app.
 
-![user flow (with qr code scan necessary)](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/user-flow-with-qr-code-scan-necessary.png?fit=5144%2C3605&ssl=1)
+![user flow (with qr code scan necessary)](/images/case-studies/urban-sports-club/user-flow-with-qr-code-scan-necessary.png)
 
 [View the full resolution version in Figma](https://www.figma.com/design/NVWTqqn4gGX1d4IHmnim8h/USC-Check-In-Fix?node-id=0-1).
 
@@ -102,15 +111,15 @@ As a side note: it’s *technically* possible to launch Urban Sports Club from t
 
 <div class="image-grid image-grid-3">
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-collapsed.png?resize=501%2C1024&ssl=1" alt="Collapsed Urban Sports Club notification concept">
+    <img src="/images/case-studies/urban-sports-club/notifications-collapsed.png" alt="Collapsed Urban Sports Club notification concept">
     <figcaption>Collapsed notification</figcaption>
   </figure>
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-expanded-501x1024.png?resize=501%2C1024&ssl=1" alt="Expanded Urban Sports Club notification concept">
+    <img src="/images/case-studies/urban-sports-club/notifications-expanded-501x1024.png" alt="Expanded Urban Sports Club notification concept">
     <figcaption>Expanded notification</figcaption>
   </figure>
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/control-center.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club control center shortcut concept">
+    <img src="/images/case-studies/urban-sports-club/control-center.png" alt="Urban Sports Club control center shortcut concept">
     <figcaption>Control Center shortcut</figcaption>
   </figure>
 </div>
@@ -129,15 +138,15 @@ These features support diverse user behaviors: some users glance at widgets dail
 
 <div class="image-grid image-grid-3">
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/home-screen.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club home screen widget concept">
+    <img src="/images/case-studies/urban-sports-club/home-screen.png" alt="Urban Sports Club home screen widget concept">
     <figcaption>Home Screen widget</figcaption>
   </figure>
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/quick-actions.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club quick actions concept">
+    <img src="/images/case-studies/urban-sports-club/quick-actions.png" alt="Urban Sports Club quick actions concept">
     <figcaption>Quick Actions</figcaption>
   </figure>
   <figure>
-    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/spotlight-top-hit-siri-suggested-apps.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club Spotlight search suggestion concept">
+    <img src="/images/case-studies/urban-sports-club/spotlight-top-hit-siri-suggested-apps.png" alt="Urban Sports Club Spotlight search suggestion concept">
     <figcaption>Spotlight suggestion</figcaption>
   </figure>
 </div>

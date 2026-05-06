@@ -15,6 +15,9 @@ const shared = {
   draft: z.boolean().optional().default(false),
   heroImage: z.string().optional(),
   order: z.number().optional().default(999),
+  location: z.string().optional(),
+  period: z.string().optional(),
+  teamSize: z.string().optional(),
   metrics: z
     .array(
       z.object({
