@@ -11,7 +11,7 @@ heroImage: "/images/posts/2020/0gxUjt33EXFYK2DuK.jpg"
 
 I’m trying to keep my use of technology as healthy as possible. I’ve been using features like Night Shift and Screen Time since they became available. They are an essential part of how I use my tech devices. But how does this approach translate to my smart home?
 
-First of all, as I mentioned in my [previous articles](https://dmarcinkowski.pl/blog/category/smart-home/ "Smart Home"), I’m using automations based on motion sensors, location, and time of the day. That’s enough to, for example, make the lights turn on when my girlfriend and I are back home or turn off heating when we are out.
+First of all, as I mentioned in my [previous articles](/blog/tags/smart-home/), I’m using automations based on motion sensors, location, and time of the day. That’s enough to, for example, make the lights turn on when my girlfriend and I are back home or turn off heating when we are out.
 
 For most of the time, we control all of the devices just by talking to one of the Google Home Minis that we have or, simply, with our phones. When it comes to the bedroom, though, we don’t want to have a speaker with microphones in there. Same applies to our phones — we charge them in another room so that we aren’t tempted to use them before going to sleep or right after waking up. That created a problem — we were no longer able to toggle a _Goodnight_ scene that turns off all of the lights, heating, stops the music, etc.
 
@@ -42,7 +42,7 @@ Setting it up was super simple. I paired the device with the CC2531 stick and id
 
 After restarting the Homebridge server, the button appeared in the Home app right away and was ready for configuring. To solve the _Goodnight_ scene problem I mentioned earlier, I just added the scene to a long press action.
 
-![](/images/posts/2020/1*-PbBbQh2vyWoQYxgUnDJ2w.gif)
+![](/images/posts/2020/1_-PbBbQh2vyWoQYxgUnDJ2w.gif)
 
 When I wanted to set up another action, I ran into a very stupid limitation of HomeKit: it’s only possible to add one action per each of the button’s states. For example, if you want to toggle a light between the on and off states, you have to set up two separate actions, like a single press for turning on the light, and a double press for turning it off. Fortunately, since iOS 13, there’s a workaround for the limitation. It’s now possible to convert HomeKit actions into shortcuts, which opens a countless number of possibilities. By setting up a shortcut that uses an _If_ statement, we are now able to turn our bedside lamps on if they’re off, and vice versa .
 

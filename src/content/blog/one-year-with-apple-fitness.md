@@ -48,7 +48,7 @@ One last technical aspect worth mentioning is Fitness+’s improved sync with St
 
 ## Guided Meditations
 
-I’m far from being spiritual, but taking care of my mental health is critical for me, especially in terms of coping with [ADHD](/blog/category/focus-adhd/). Without a doubt, meditation has proved to be an amazing tool in supporting my therapeutic work. The guided meditations in Fitness+ have worked particularly well for me, as I have completed over 250 sessions and counting. In the past, I have used similar services like Calm and Headspace, but I couldn’t justify their subscription price. Since Fitness+ and its Meditations come bundled with Apple One Premiere, which I would pay for anyway, I stuck with it.
+I’m far from being spiritual, but taking care of my mental health is critical for me, especially in terms of coping with [ADHD](/blog/tags/adhd/). Without a doubt, meditation has proved to be an amazing tool in supporting my therapeutic work. The guided meditations in Fitness+ have worked particularly well for me, as I have completed over 250 sessions and counting. In the past, I have used similar services like Calm and Headspace, but I couldn’t justify their subscription price. Since Fitness+ and its Meditations come bundled with Apple One Premiere, which I would pay for anyway, I stuck with it.
 
 <figure>
 

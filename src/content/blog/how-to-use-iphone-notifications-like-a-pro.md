@@ -9,13 +9,13 @@ draft: false
 heroImage: "/images/posts/2018/1hlSW-cXkCWJHymsLVCdu7Q.webp"
 ---
 
-[](https://medium.com/@dmarcinkowski?source=post_page---byline--44e2126d247b--------------------------------)Notification on our phones can be very annoying nowadays. Every app wants our attention, so we’re getting a ton of irrelevant and unnecessary alerts. Lucky for us we still have some control. If you want to make a better use out of your iPhone’s notifications, keep reading.
+Notification on our phones can be very annoying nowadays. Every app wants our attention, so we’re getting a ton of irrelevant and unnecessary alerts. Lucky for us we still have some control. If you want to make a better use out of your iPhone’s notifications, keep reading.
 
 ## 1\. Turn off _Raise to Wake_
 
 _Settings > Display & Brightness > Raise to Wake_
 
-![](/images/posts/2018/1*sGMepnOb3XjeK3j-k2glfQ.jpeg)
+![](/images/posts/2018/1_sGMepnOb3XjeK3j-k2glfQ.jpeg)
 
 Let’s start with turning off _Raise to Wake_ feature, added to iPhone 6s and above in iOS 10. It may save you a little time, but it’ll also show your notifications every time when you pick your phone from desk or pocket. Save yourself these few times accidentally checking new alerts.
 
@@ -23,7 +23,7 @@ Let’s start with turning off _Raise to Wake_ feature, added to iPhone 6s and
 
 _Settings > Notifications > Show Previews_
 
-![](/images/posts/2018/1*oq9ykmIjDPXAHaDjgVcvxA.jpeg)
+![](/images/posts/2018/1_oq9ykmIjDPXAHaDjgVcvxA.jpeg)
 
 This tip is great for keeping your notifications more private. You can hide the content of notifications on the lock screen. The full preview will be shown only if your phone recognizes your fingerprints or face. On iPhone X it’s turned on by default.
 
@@ -31,7 +31,7 @@ This tip is great for keeping your notifications more private. You can hide the 
 
 _Settings > Notifications_
 
-![](/images/posts/2018/1*34afFdhwWvTmArrexC2zRw.jpeg)
+![](/images/posts/2018/1_34afFdhwWvTmArrexC2zRw.jpeg)
 
 Do you really need a notification for every like on Instagram or Twitter? I don’t think so. Turn off all notifications, with few exceptions:
 
@@ -47,7 +47,7 @@ Do you really need a notification for every like on Instagram or Twitter? I don�
 
 _Settings > Notifications_
 
-![](/images/posts/2018/1*shlbxhAXyHow-0WK-L8ktA.jpeg)
+![](/images/posts/2018/1_shlbxhAXyHow-0WK-L8ktA.jpeg)
 
 If turning off all notifications isn’t your thing you can try a different approach. You can turn off lock screen alerts but keep _Show in History_ on. These are notifications that you can see when you scroll down in _Notification Center_. I use it to access alerts about emails and other non-time-sensitive things.
 
@@ -55,7 +55,7 @@ If turning off all notifications isn’t your thing you can try a different appr
 
 _Settings > Do Not Disturb_
 
-![](/images/posts/2018/1*l3JUaNvCyETq0dF9aPlngw.jpeg)
+![](/images/posts/2018/1_l3JUaNvCyETq0dF9aPlngw.jpeg)
 
 I don’t understand why people don’t use _Do Not Disturb_. Do you want to be woken up in the middle of the night by some stupid alert so badly?
 
@@ -65,7 +65,7 @@ I have it scheduled from 10 pm to 8 am with exceptions for calls from my favorit
 
 _Settings > Notifications_
 
-![](/images/posts/2018/1*aeLTU0gWMJKu7rJA4uUH-w.jpeg)
+![](/images/posts/2018/1_aeLTU0gWMJKu7rJA4uUH-w.jpeg)
 
 These red dots are really, really bad for your attention. You unlock your phone with the goal in mind, but after seeing the badge floating around Mail icon you decide to check it first and forget what you were supposed to do.
 

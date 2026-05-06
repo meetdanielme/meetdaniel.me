@@ -9,6 +9,26 @@
       "source": "/page/:page/",
       "destination": "/blog/",
       "permanent": true
+    },
+    {
+      "source": "/blog/category/focus-adhd/",
+      "destination": "/blog/tags/adhd/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/:tag/",
+      "destination": "/blog/tags/:tag/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/focus-is-the-best-new-feature-in-ios-15-heres-how-i-use-it-d3b1202b338b/",
+      "destination": "/blog/focus-is-the-best-new-feature-in-ios-15-heres-how-i-use-it/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/homekit-homebridge-raspberrypi/",
+      "destination": "/blog/how-i-used-homebridge-to-take-my-homekit-setup-to-another-level/",
+      "permanent": true
     }
   ]
 }

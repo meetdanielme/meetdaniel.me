@@ -14,7 +14,7 @@ Despite my ADHD, many people in my life perceive me as quite organized and produ
 
 ## Fighting internal distractions
 
-I have no issues with blocking external distractions coming from my devices. There are very few notifications that can disturb me with a vibration or sound: calendar events, reminders, calls, and a handful of other apps. Moreover, there isn't much to distract me on my [Home Screens](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2025/) or Mac's desktop either.
+I have no issues with blocking external distractions coming from my devices. There are very few notifications that can disturb me with a vibration or sound: calendar events, reminders, calls, and a handful of other apps. Moreover, there isn't much to distract me on my [Home Screens](/blog/my-iphone-homescreen-2025/) or Mac's desktop either.
 
 My kryptonite is internal distractions and urges to check things online and stay up-to-date with what's going on in the tech world. That includes many apps and services that others tend to check compulsively, like social media, news sites, and email. But I also tend to regularly check my investment account, credit card points, and even app updates in the App Store ([apparently, I'm not the only one](https://www.reddit.com/r/ios/comments/1aoutbo/do_you_an_obsession_of_checking_for_app_updates/)).
 

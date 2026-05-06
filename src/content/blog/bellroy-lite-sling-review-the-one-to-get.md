@@ -17,7 +17,7 @@ _Side note: this review_ **_isn’t_** _sponsored by Bellroy. I purchased all 
 
 There’s a lot I — and probably that stranger in Hamburg — like about the [Lite Sling](https://amzn.to/40hQo7R). It stays true to its name, weighing just 220g. Ultralight materials used by Bellroy also make the sling rollable and foldable, so it’s perfect to store in a backpack or a suitcase when traveling and take it out when you arrive at your destination.
 
-The bag offers plenty of room and smart organization that Bellroy is known for. The front pocket (decorated with Bellroy’s logo and bicycle light loop) is perfect for storing flat objects like small wallets, flat power banks or a protein bar. There are two smaller pockets inside that _perfectly_ fit my MagSafe Battery Pack and my [Bellroy Card Pocket wallet](https://dmarcinkowski.pl/blog/bellroy-card-pocket-review-surprisingly-practical). Similar to the Classic Backpack, front pocket also hides a key loop — this time on a more elastic cord!
+The bag offers plenty of room and smart organization that Bellroy is known for. The front pocket (decorated with Bellroy’s logo and bicycle light loop) is perfect for storing flat objects like small wallets, flat power banks or a protein bar. There are two smaller pockets inside that _perfectly_ fit my MagSafe Battery Pack and my [Bellroy Card Pocket wallet](/blog/bellroy-card-pocket-review-surprisingly-practical/). Similar to the Classic Backpack, front pocket also hides a key loop — this time on a more elastic cord!
 
 <figure>
 

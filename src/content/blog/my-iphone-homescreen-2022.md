@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2022/18uekhJROITY2I0ndbyGQcQ.png"
 ---
 
-This series became a small tradition for me. I have been documenting what’s on my homescreen for the past three years (read the [2019](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2019), [2020](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2020), and [2021](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2021) installments). Every time, I’m surprised how much I changed my setup. It’s not different this year.
+This series became a small tradition for me. I have been documenting what’s on my homescreen for the past three years (read the [2019](/blog/my-iphone-homescreen-2019/), [2020](/blog/my-iphone-homescreen-2020/), and [2021](/blog/my-iphone-homescreen-2021/) installments). Every time, I’m surprised how much I changed my setup. It’s not different this year.
 
 But first — a hardware update. I finally switched from iPhone X to iPhone 13 Pro — and I love it. I preferred X’s dimensions and weight (13 Pro is a small brick), but the new camera system with Macro mode and the ProMotion display sold the new iPhone for me.
 
@@ -33,7 +33,7 @@ As you can see, **Google Maps** is still on my homescreen, which means that th
 
 ### Focus pages
 
-In iOS 15, Apple introduced Focus modes. I wrote an [article](https://dmarcinkowski.pl/blog/focus-is-the-best-new-feature-in-ios-15-heres-how-i-use-it-d3b1202b338b) about how they work and how to set them up. The biggest advantage of Focus modes are custom home screens that activate based on the time, location, app in use, etc. I have been experimenting with Focus modes myself to create a few activity-focused home screens.
+In iOS 15, Apple introduced Focus modes. I wrote an [article](/blog/focus-is-the-best-new-feature-in-ios-15-heres-how-i-use-it/) about how they work and how to set them up. The biggest advantage of Focus modes are custom home screens that activate based on the time, location, app in use, etc. I have been experimenting with Focus modes myself to create a few activity-focused home screens.
 
 <figure>
 

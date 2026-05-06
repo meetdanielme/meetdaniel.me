@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2021/1ENFUkyerxqYcL42wwakwFQ.png"
 ---
 
-Oh boy, 2020 was a year. I remember thinking back in March that “it will last a few months, and then everything will be back to normal.” Yeah, right. But, on a positive note, Apple had a fantastic year, and the pandemic did well for them. Not only did we get four well-produced events in a single year, but, at last, we got widgets on the iPhone’s homescreen! Like [last year](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2020/ "My iPhone Homescreen (2020)") and [the year before that](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2019), I want to look at the current state of my iPhone’s homescreen.
+Oh boy, 2020 was a year. I remember thinking back in March that “it will last a few months, and then everything will be back to normal.” Yeah, right. But, on a positive note, Apple had a fantastic year, and the pandemic did well for them. Not only did we get four well-produced events in a single year, but, at last, we got widgets on the iPhone’s homescreen! Like [last year](/blog/my-iphone-homescreen-2020/ "My iPhone Homescreen (2020)") and [the year before that](/blog/my-iphone-homescreen-2019/), I want to look at the current state of my iPhone’s homescreen.
 
 Last year, I said this:
 
@@ -35,11 +35,11 @@ Last year, I talked about my apps in “raws” (productivity, multimedia, navig
 
 **Safari** keeps getting better, and the only thing I wish it had is support for multiple profiles, which both Chrome and Edge have.
 
-I’m happy with both [**Apple Music**](https://dmarcinkowski.pl/blog/apple-music-revisited) and **Apple Podcasts**. I switched from Google Home to Amazon Echo last year, and now I can use both of the services using my smart speaker (although right after I bought my Echo, Google Home received support for Apple Music). Oh, and there’s still no Handoff for Apple Music (besides the HomePod).
+I’m happy with both [**Apple Music**](/blog/apple-music-revisited/) and **Apple Podcasts**. I switched from Google Home to Amazon Echo last year, and now I can use both of the services using my smart speaker (although right after I bought my Echo, Google Home received support for Apple Music). Oh, and there’s still no Handoff for Apple Music (besides the HomePod).
 
 **The second raw starts with Google Maps.** I have been using it a lot since it has great biking directions. I’m looking forward to seeing Apple Maps’ cycling navigation in Berlin. Apple’s app keeps getting better and has far better Apple Watch app than Google Maps. On that note — Google Maps is back on Apple Watch, and I couldn’t be happier about it!
 
-I’m still pretty much into [**Apple Home**](https://dmarcinkowski.pl/blog/how-i-automated-my-flat-using-apple-homekit-and-google-home) and smart home in general. In 2020, I added a few more devices to my setup, including more IKEA TRADFRI lights and a smart humidifier. I also set up a few custom integrations via [Homebridge](https://dmarcinkowski.pl/blog/homekit-homebridge-raspberrypi), like a toggle switch for my Synology.
+I’m still pretty much into [**Apple Home**](/blog/how-i-automated-my-flat-using-apple-homekit-and-google-home/) and smart home in general. In 2020, I added a few more devices to my setup, including more IKEA TRADFRI lights and a smart humidifier. I also set up a few custom integrations via [Homebridge](/blog/how-i-used-homebridge-to-take-my-homekit-setup-to-another-level/), like a toggle switch for my Synology.
 
 The last two apps in this raw are **Instapaper** and **Kindle**, my go-to places for reading.
 

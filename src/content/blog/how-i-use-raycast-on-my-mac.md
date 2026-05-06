@@ -10,7 +10,7 @@ draft: false
 heroImage: "/images/posts/2025/raycast-daniel-marcinkowski.jpg"
 ---
 
-Since the beginning of this year, I have been re-evaluating most of my productivity tool stack. In some cases, like with [Apple Notes](https://dmarcinkowski.pl/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), I ended up sticking to the app itself but radically changing how I use it. In other cases, like with macOS’ built-in Spotlight search, I replaced it completely with an alternative that better fits my workflow. That alternative is [Raycast](https://raycast.com/?via=daniel-marcinkowski).
+Since the beginning of this year, I have been re-evaluating most of my productivity tool stack. In some cases, like with [Apple Notes](/blog/why-i-chose-apple-notes-with-forever-notes-over-obsidian-and-notion/), I ended up sticking to the app itself but radically changing how I use it. In other cases, like with macOS’ built-in Spotlight search, I replaced it completely with an alternative that better fits my workflow. That alternative is [Raycast](https://raycast.com/?via=daniel-marcinkowski).
 
 ## The Out-Of-The-Box Raycast Experience
 

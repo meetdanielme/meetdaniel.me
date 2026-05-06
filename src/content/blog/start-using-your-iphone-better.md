@@ -13,7 +13,7 @@ When I see my friends using their iPhones I’m surprised how little of iOS feat
 
 ## 1\. Spotlight
 
-![](/images/posts/2018/1KPso1mkQL7qSbhwObDrYLA-515x1024.png)
+![](/images/posts/2018/1KPso1mkQL7qSbhwObDrYLA.png)
 
 ![](/images/posts/2018/1QUazywU-K66mVsvJE5nLaw-515x1024.png)
 
@@ -23,7 +23,7 @@ Spotlight is a great tool to search for things on your phone. To access it just 
 
 ![](/images/posts/2018/111fLplHb1-qBUREeDc6ESw-515x1024.png)
 
-![](/images/posts/2018/1*_EsRY4Q4u6TsVwjASWD0UQ.png)
+![](/images/posts/2018/1__EsRY4Q4u6TsVwjASWD0UQ.png)
 
 If you have an iPhone 6s or newer (except SE) you can use 3D Touch, which senses how deeply you press the display. It enables some cool features, like Quick Actions on Home Screen. Press firmly on icons and they’ll reveal shortcuts to different features. My favorite example is creating new tasks in Things, adding new events to Calendar and selecting my recently played Spotify playlists. In some apps, you can Peak and Pop into content and if you swipe up it gives you access to some options, like sharing, replying etc.
 
@@ -45,7 +45,7 @@ There’s one more 3D Touch tip, which works only on iPhones 6s, 7 and 8. If you
 
 ![](/images/posts/2018/1UbOtSj3zxO8coqi-jL_AzA-515x1024.png)
 
-![](/images/posts/2018/1*MIBePvGgxNSoGyz4tN-TtA.png)
+![](/images/posts/2018/1_MIBePvGgxNSoGyz4tN-TtA.png)
 
 Widgets on iOS are great. Not only do they display useful data, but they also let you do some basic in-app interactions, like checking off tasks in Things. If you have Bluetooth devices like Apple Watch or AirPods you can add Batteries widget too.
 
@@ -61,13 +61,13 @@ Workflow is this amazing app that Apple bought last year. It lets you automate d
 
 ![](/images/posts/2018/1nPEAxYlzYtR4zcBtlXkGWw-515x1024.png)
 
-![](/images/posts/2018/1*I9tLlw79CkUN5n4i_k0izQ.png)
+![](/images/posts/2018/1_I9tLlw79CkUN5n4i_k0izQ.png)
 
 Control Center customization was one of the most wanted features since Apple added it in iOS 7. In the 11th edition of Apple’s mobile OS, they finally gave us some options to personalize it. On iPhones, there are 16 different toggles that can be added to the Control Center. It even features a Screen Recording option!
 
 ## 7\. Customizing Share Sheet
 
-![](/images/posts/2018/1*djWeT2229HMJTjh6HyjAfg.png)
+![](/images/posts/2018/1_djWeT2229HMJTjh6HyjAfg.png)
 
 ![](/images/posts/2018/1Meilix-jAbd3jh-qncavdA-515x1024.png)
 

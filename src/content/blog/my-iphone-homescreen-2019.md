@@ -25,7 +25,7 @@ Getting around Berlin isn’t that hard, and the public transport here works pre
 
 I love how great **Instapaper**, the read-later app, is and I can’t imagine not using it like I had to [earlier last year](http://blog.instapaper.com/post/176732408411). But it works now, and please, stay that way.
 
-Yes, I’m one of the sick people who is subscribing to [**Apple Music**](https://dmarcinkowski.pl/blog/apple-music-revisited/ "Apple Music, revisited") instead of Spotify. Besides missing out on my friend’s playlist, I’m really happy with the overall experience of using Apple’s platform. And it works with [HomePod](https://dmarcinkowski.pl/blog/homepod-is-great-dont-buy-it/ "HomePod is great. Don’t buy it.") and Siri, which makes me stick to it if I want it or no.
+Yes, I’m one of the sick people who is subscribing to [**Apple Music**](/blog/apple-music-revisited/ "Apple Music, revisited") instead of Spotify. Besides missing out on my friend’s playlist, I’m really happy with the overall experience of using Apple’s platform. And it works with [HomePod](/blog/homepod-is-great-dont-buy-it/ "HomePod is great. Don’t buy it.") and Siri, which makes me stick to it if I want it or no.
 
 ![](/images/posts/2019/13mDJTb4466G30vkeyECf1g.jpg)
 

@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2020/1RBruaBJhamQE7naf9jDejg.webp"
 ---
 
-Surprisingly, my iPhone’s Homescreen has changed a lot since [last year](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2019/ "My iPhone Homescreen (2019)"). I’m still very much into the idea of having only the essential apps on the main page and keeping the rest of them in folders on the second screen, but the selection of the apps that I have on the first one changed a lot.
+Surprisingly, my iPhone’s Homescreen has changed a lot since [last year](/blog/my-iphone-homescreen-2019/ "My iPhone Homescreen (2019)"). I’m still very much into the idea of having only the essential apps on the main page and keeping the rest of them in folders on the second screen, but the selection of the apps that I have on the first one changed a lot.
 
 As a side note — I’m still rocking the first iPhone X. It’s held up quite well, but I’m looking forward to upgrading to the iPhone 12 Pro (or however the next generation will be called).
 
@@ -37,7 +37,7 @@ Even though I have two Google Home Mini speakers in my apartment, I’m still us
 
 Last year, I mentioned that I’m using [Citymapper](https://citymapper.com/) for public transit, but last year, I started biking so that the app became less useful for me. **Google Maps** still works great here in Berlin, and with biking navigation, is even more useful for me now.
 
-Last year, I really got into smart homes, and I even wrote two articles on that topic. That explains why I have the **Apple Home** and **Sonos** (I switched from HomePod to three IKEA speakers) apps on my Homescreen. If you want to know more about my setup, check out [my smart home articles](https://dmarcinkowski.pl/blog/category/smart-home/ "Smart Home").[](https://medium.com/@dmarcinkowski/homekit-homebridge-raspberrypi-985b16e1edd5)
+Last year, I really got into smart homes, and I even wrote two articles on that topic. That explains why I have the **Apple Home** and **Sonos** (I switched from HomePod to three IKEA speakers) apps on my Homescreen. If you want to know more about my setup, check out [my smart home articles](/blog/tags/smart-home/).
 
 The last app in the row is just the **Settings**.
 

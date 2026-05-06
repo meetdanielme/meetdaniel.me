@@ -15,11 +15,11 @@ Currently, I cannot imagine using a different desktop system than macOS. Not onl
 
 <figure>
 
-![](/images/posts/2020/1*gj-sArMgwAT5FS4pcdfbjQ.png)
+![](/images/posts/2020/1_gj-sArMgwAT5FS4pcdfbjQ.png)
 
 <figure>
 
-![](/images/posts/2020/1*Kf-e1UDWdVdRokslRePcdw.png)
+![](/images/posts/2020/1_Kf-e1UDWdVdRokslRePcdw.png)
 
 <figcaption>
 
@@ -35,7 +35,7 @@ If you don’t follow Guilherme Rambo ([@\_inside](https://twitter.com/_inside))
 
 <figure>
 
-![](/images/posts/2020/1*JjKj_L2BcdcEtGz1OD-VSA.png)
+![](/images/posts/2020/1_JjKj_L2BcdcEtGz1OD-VSA.png)
 
 <figcaption>
 
@@ -49,7 +49,7 @@ The first one mimics Apple’s own connection prompt that shows up on the iOS an
 
 <figure>
 
-![](/images/posts/2020/1*OuabSPZLdtg7HEzlmSWuug.png)
+![](/images/posts/2020/1_OuabSPZLdtg7HEzlmSWuug.png)
 
 <figcaption>
 
@@ -65,7 +65,7 @@ The next utility from Rambo is a simple menu bar app called [NoiseBuddy](https:
 
 <figure>
 
-![](/images/posts/2020/1*D5EAd2HdnNFFRi_KLrjrQA.png)
+![](/images/posts/2020/1_D5EAd2HdnNFFRi_KLrjrQA.png)
 
 <figcaption>
 
@@ -79,7 +79,7 @@ Like it or not, I _do use_ content blockers on websites that I don’t visit f
 
 <figure>
 
-![](/images/posts/2020/1*0tIFE29DJXWjETz7WI4bjg.png)
+![](/images/posts/2020/1_0tIFE29DJXWjETz7WI4bjg.png)
 
 <figcaption>
 
@@ -95,7 +95,7 @@ I have been using [1Blocker](https://1blocker.com/) for years, and I can only 
 
 <figure>
 
-![](/images/posts/2020/1*dovlM0H1xWWnq4Ao4upQ2Q.png)
+![](/images/posts/2020/1_dovlM0H1xWWnq4Ao4upQ2Q.png)
 
 <figcaption>
 
@@ -111,7 +111,7 @@ Even though I live in Germany, I don’t really speak German (typical Berlin lif
 
 <figure>
 
-![](/images/posts/2020/1*JdOwK6Fl9fjBiRh3jA09_g.png)
+![](/images/posts/2020/1_JdOwK6Fl9fjBiRh3jA09_g.png)
 
 <figcaption>
 
@@ -127,7 +127,7 @@ Karabiner-Elements
 
 <figure>
 
-![](/images/posts/2020/1*Nwle5tSkByHttJU91iIFhg.png)
+![](/images/posts/2020/1_Nwle5tSkByHttJU91iIFhg.png)
 
 <figcaption>
 
@@ -143,7 +143,7 @@ For those of you with the newer MacBooks — you may have noticed that when 
 
 <figure>
 
-![](/images/posts/2020/1*gQXky_1jn9hHP8BIQ1sHog.png)
+![](/images/posts/2020/1_gQXky_1jn9hHP8BIQ1sHog.png)
 
 <figcaption>
 
@@ -159,11 +159,11 @@ If your Mac is running out of free storage and there is not much you can get rid
 
 <figure>
 
-![](/images/posts/2020/1*KVz05aPW-0_a6bmVryPPvw.png)
+![](/images/posts/2020/1_KVz05aPW-0_a6bmVryPPvw.png)
 
 <figure>
 
-![](/images/posts/2020/1*Y-nS8OVehBciDzNIkC-Jdg.png)
+![](/images/posts/2020/1_Y-nS8OVehBciDzNIkC-Jdg.png)
 
 <figcaption>
 

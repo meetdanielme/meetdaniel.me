@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2025/dmarcinkowski-iphone-home-screen-2025.jpg"
 ---
 
-It's been three years since I have done one of those (you can check my [2022](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2022/), [2021](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2021/), [2020](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2020/), and [2019](https://dmarcinkowski.pl/blog/my-iphone-homescreen-2019/) iPhone Home Screens here), but I guess better late than never.
+It's been three years since I have done one of those (you can check my [2022](/blog/my-iphone-homescreen-2022/), [2021](/blog/my-iphone-homescreen-2021/), [2020](/blog/my-iphone-homescreen-2020/), and [2019](/blog/my-iphone-homescreen-2019/) iPhone Home Screens here), but I guess better late than never.
 
 Since my last post in this series, Apple went all-in on device personalization, going way beyond Home Screen widgets, and giving us Lock Screen customization with its own set of widgets, dark and tinted app icons, and the ability to hide labels by making them larger — just to name a few. I did experiment with all of these options at some point (especially during the iOS beta periods), but I have always went back to a much simpler setup every time. And that's where my Home Screen is at today.
 

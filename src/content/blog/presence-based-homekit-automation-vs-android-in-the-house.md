@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2022/10N5dy6LkKM6YZ7pr_iSESg.jpg"
 ---
 
-**Spoiler:** [**you will need Homebridge**](https://dmarcinkowski.pl/blog/homekit-homebridge-raspberrypi)**.**
+**Spoiler:** [**you will need Homebridge**](/blog/how-i-used-homebridge-to-take-my-homekit-setup-to-another-level/)**.**
 
 Suppose you’re into home automation, but you live with someone who doesn’t use the same mobile operating system as you do. In that case, you know exactly how limiting it can be. In my case, I use an iPhone, but I didn’t manage to convert my girlfriend from Android just yet (I’m working on it). This makes it almost impossible to run presence-based automations in HomeKit. But there are some workarounds.
 

@@ -9,7 +9,7 @@ draft: false
 heroImage: "/images/posts/2020/14gxryuHsBCdj9P1uxl6ANw.jpg"
 ---
 
-I recently wrote an [article](https://dmarcinkowski.pl/blog/how-i-automated-my-flat-using-apple-homekit-and-google-home/ "How I automated my flat using Apple HomeKit and Google Home") where I gave an overview of my current smart home setup. There, I briefly mentioned that I’m using Raspberry Pi with a Homebridge server running on it. In this piece, I’d like to explain my setup in more detail.
+I recently wrote an [article](/blog/how-i-automated-my-flat-using-apple-homekit-and-google-home/ "How I automated my flat using Apple HomeKit and Google Home") where I gave an overview of my current smart home setup. There, I briefly mentioned that I’m using Raspberry Pi with a Homebridge server running on it. In this piece, I’d like to explain my setup in more detail.
 
 For starters — my knowledge about programming, Linux, etc. is close to zero. To get most of the things mentioned below to work, I just went through dozens of different tutorials, articles, and Github repositories. I will try to link all of them so that you can achieve similar outcomes.
 
@@ -55,7 +55,7 @@ Soon after that, I learned about a [plugin](https://github.com/oznu/homebridge-
 
 Next, I wanted to make use of the CC2531 stick and make **IKEA Trådfri motion sensor** compatible with HomeKit. For that, I installed an [MQTTThing plugin](https://www.npmjs.com/package/homebridge-mqttthing), which is compatible with Zigbee2MQTT. After digging a little, figuring out the sensor’s ID with MQTT Explorer app, and repurposing a config for Hue motion sensor I found on the plugin’s wiki, I managed to connect the sensor to Homebridge. It sounds easy, but I was close to tears after a week or so of trying — and finally succeeding. HomeKit recognises it as an occupancy sensor. It works perfectly fine most of the time, but I had to move Raspberry Pi away from IKEA’s gateway to avoid signal interference.
 
-So far, IKEA’s sensor is the only device that I added using the CC2531 stick, but I ordered **Xiaomi Single Switch (UPDATE:** [**got it already**](https://dmarcinkowski.pl/blog/phone-free-bedroom-in-a-smart-home/ "Phone-Free Bedroom in a Smart Home")**) t**hat I will try connecting next. I was thinking about connecting all of my IKEA light bulbs and controllers using the stick too, but for now, I’m happy how they work using IKEA’s own gateway.
+So far, IKEA’s sensor is the only device that I added using the CC2531 stick, but I ordered **Xiaomi Single Switch (UPDATE:** [**got it already**](/blog/phone-free-bedroom-in-a-smart-home/ "Phone-Free Bedroom in a Smart Home")**) t**hat I will try connecting next. I was thinking about connecting all of my IKEA light bulbs and controllers using the stick too, but for now, I’m happy how they work using IKEA’s own gateway.
 
 <figure>
 
