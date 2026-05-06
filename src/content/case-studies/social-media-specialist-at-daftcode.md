@@ -2,6 +2,7 @@
 title: "Social Media Specialist at Daftcode"
 description: "Social media, content, and paid campaign work across multiple venture-builder products."
 pubDate: 2025-04-01
+order: 6
 tags:
   - "Work"
 draft: false

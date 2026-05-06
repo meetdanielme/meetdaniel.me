@@ -2,6 +2,7 @@
 title: "Work"
 description: "Learn more about my work experience to-date and my versatile skillset across marketing, content, design, project management, and more."
 pubDate: 2025-02-06
+updatedDate: 2026-05-06
 tags:
 draft: false
 ---

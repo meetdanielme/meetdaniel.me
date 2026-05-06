@@ -2,6 +2,7 @@
 title: "About"
 description: "Learn more about me, this website, and my work experience to-date."
 pubDate: 2025-01-15
+updatedDate: 2026-05-06
 tags:
 draft: false
 ---

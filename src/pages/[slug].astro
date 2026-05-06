@@ -8,10 +8,19 @@ export async function getStaticPaths() {
 }
 const { page } = Astro.props;
 const { Content } = await page.render();
+const pagesWithUpdatedDate = new Set(["about", "work", "uses", "now"]);
+const showUpdatedDate = pagesWithUpdatedDate.has(page.slug) && page.data.updatedDate;
+const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+});
 const caseStudies =
     page.slug === "work"
         ? (await getCollection("case-studies", ({ data }) => !data.draft)).sort(
-              (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+              (a, b) =>
+                  a.data.order - b.data.order ||
+                  b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
           )
         : [];
 ---
@@ -23,7 +32,26 @@ const caseStudies =
     canonical={`/${page.slug}/`}
 >
     <article>
-        <h1 class="mb-8 text-4xl font-bold">{page.data.title}</h1>
+        <h1
+            class={`text-4xl font-bold ${showUpdatedDate || page.data.heroImage ? "mb-3" : "mb-8"}`}
+        >
+            {page.data.title}
+        </h1>
+        {
+            showUpdatedDate && (
+                <p class="page-updated">Last updated: {formattedUpdatedDate}</p>
+            )
+        }
+        {
+            page.data.heroImage && (
+                <img
+                    class="page-hero-image"
+                    src={page.data.heroImage}
+                    alt=""
+                    loading="eager"
+                />
+            )
+        }
         <div class="prose prose-zinc dark:prose-invert"><Content /></div>
     </article>
     {

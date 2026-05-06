@@ -127,30 +127,30 @@ img {
     max-width: 1200px;
     margin-inline: auto;
     display: grid;
-    gap: 2.5rem;
-    padding: 2rem 1.5rem;
+    gap: 2rem;
+    padding: 1.5rem;
 }
 .sidebar {
     display: none;
     background: var(--surface);
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1.15rem;
 }
 .profile-block {
     display: grid;
     justify-items: center;
     text-align: center;
-    gap: 0.8rem;
+    gap: 0.55rem;
 }
 .profile-image {
-    width: 128px;
-    height: 128px;
+    width: 112px;
+    height: 112px;
     object-fit: cover;
     border-radius: 999px;
 }
 .profile-name {
     color: var(--contrast);
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     font-weight: 800;
     line-height: 1.2;
 }
@@ -213,16 +213,16 @@ img {
     }
     .site-grid {
         grid-template-columns: 280px 1fr;
-        padding: 2rem 2.5rem;
+        padding: 1.25rem 2.5rem;
     }
     .sidebar {
         position: sticky;
-        top: 2rem;
+        top: 1.25rem;
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
-        height: calc(100vh - 4rem);
-        max-height: calc(100vh - 4rem);
+        gap: 0.85rem;
+        height: calc(100vh - 2.5rem);
+        max-height: calc(100vh - 2.5rem);
         overflow-y: auto;
     }
     .sidebar-footer {
@@ -235,8 +235,12 @@ img {
     gap: 0.75rem;
     color: var(--contrast);
     font-weight: 700;
-    padding: 0.55rem 0.65rem;
+    padding: 0.42rem 0.55rem;
     border-radius: 8px;
+}
+.sidebar-nav {
+    margin-top: 0.25rem;
+    gap: 0.25rem;
 }
 .nav-link:hover,
 .nav-link[aria-current="page"] {
@@ -257,11 +261,15 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    padding: 0.35rem;
+    width: 1.95rem;
+    height: 1.95rem;
+    padding: 0.3rem;
     border-radius: 999px;
     font-size: 1.2rem;
+}
+.sidebar-socials {
+    margin-top: 0.45rem;
+    padding-top: 0.75rem;
 }
 .social-link:hover {
     color: var(--primary);
@@ -367,6 +375,9 @@ pre code {
 .search-box {
     position: relative;
     margin-top: 1.25rem;
+}
+.sidebar .search-box {
+    margin-top: 0.35rem;
 }
 .search-input-wrap {
     display: flex;
@@ -516,6 +527,34 @@ pre code {
     color: var(--muted);
     text-align: center;
 }
+.prose .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+.prose .image-grid figure {
+    margin: 0;
+}
+.prose .image-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 8px;
+    background: var(--surface);
+}
+.prose .image-grid figcaption {
+    margin-top: 0.45rem;
+}
+@media (min-width: 640px) {
+    .prose .image-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .prose .image-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
 .prose .footnotes,
 .prose [data-footnotes] {
     margin-top: 3rem;
@@ -560,6 +599,20 @@ pre code {
 }
 .tag-link:hover {
     color: var(--primary-active);
+}
+.page-updated {
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.page-hero-image {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 0 2rem;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--surface);
 }
 .case-section {
     margin-top: 3rem;

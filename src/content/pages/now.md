@@ -2,6 +2,7 @@
 title: "Now"
 description: "A semi-regularly updated list of things going on in my life at the moment."
 pubDate: 2025-02-23
+updatedDate: 2026-05-06
 tags:
 draft: false
 ---

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://meetdaniel.me/sitemap.xml

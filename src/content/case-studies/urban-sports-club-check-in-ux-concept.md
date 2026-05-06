@@ -2,6 +2,7 @@
 title: "Improved Urban Sports Check-In UX Concept"
 description: "A UX concept for improving the ease and accessibility of the Urban Sports Club check-in experience on iOS."
 pubDate: 2025-04-01
+order: 1
 tags:
   - "Work"
 draft: false
@@ -99,9 +100,20 @@ This integration dramatically reduces cognitive effort for users who are rushing
 
 As a side note: it’s *technically* possible to launch Urban Sports Club from the Lock Screen or even by pressing the Action Button already by using the “Open App” Shortcut. Unfortunately, this will open either the default “Venues” page (if the app wasn’t stored in memory) or whatever last page the user was at.
 
-![notifications collapsed](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-collapsed.png?resize=501%2C1024&ssl=1)
-![notifications expanded](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-expanded-501x1024.png?resize=501%2C1024&ssl=1)
-![control center](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/control-center.png?resize=501%2C1024&ssl=1)
+<div class="image-grid image-grid-3">
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-collapsed.png?resize=501%2C1024&ssl=1" alt="Collapsed Urban Sports Club notification concept">
+    <figcaption>Collapsed notification</figcaption>
+  </figure>
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/notifications-expanded-501x1024.png?resize=501%2C1024&ssl=1" alt="Expanded Urban Sports Club notification concept">
+    <figcaption>Expanded notification</figcaption>
+  </figure>
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/control-center.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club control center shortcut concept">
+    <figcaption>Control Center shortcut</figcaption>
+  </figure>
+</div>
 
 ### Control Center
 
@@ -115,9 +127,20 @@ This offers the most direct and universal access to check-in functionality — a
 
 These features support diverse user behaviors: some users glance at widgets daily, others long-press icons to save time. Together, they make Urban Sports Club feel tightly integrated into the iOS ecosystem and reduce the number of taps to check-in to just one or two.
 
-![home screen](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/home-screen.png?resize=501%2C1024&ssl=1)
-![quick actions](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/quick-actions.png?resize=501%2C1024&ssl=1)
-![spotlight top hit siri suggested apps](https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/spotlight-top-hit-siri-suggested-apps.png?resize=501%2C1024&ssl=1)
+<div class="image-grid image-grid-3">
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/home-screen.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club home screen widget concept">
+    <figcaption>Home Screen widget</figcaption>
+  </figure>
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/quick-actions.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club quick actions concept">
+    <figcaption>Quick Actions</figcaption>
+  </figure>
+  <figure>
+    <img src="https://i0.wp.com/meetdaniel.me/wp-content/uploads/2025/04/spotlight-top-hit-siri-suggested-apps.png?resize=501%2C1024&ssl=1" alt="Urban Sports Club Spotlight search suggestion concept">
+    <figcaption>Spotlight suggestion</figcaption>
+  </figure>
+</div>
 
 ### Spotlight Search
 

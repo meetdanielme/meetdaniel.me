@@ -2,6 +2,7 @@
 title: "Digital Marketing Specialist at ACELR8"
 description: "Building a marketing function, brand, content, social, and events for a Berlin recruitment startup."
 pubDate: 2025-04-01
+order: 4
 tags:
   - "Work"
 draft: false

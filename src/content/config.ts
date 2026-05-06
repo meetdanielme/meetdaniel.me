@@ -14,6 +14,7 @@ const shared = {
     .transform((tags) => tags ?? []),
   draft: z.boolean().optional().default(false),
   heroImage: z.string().optional(),
+  order: z.number().optional().default(999),
   metrics: z
     .array(
       z.object({

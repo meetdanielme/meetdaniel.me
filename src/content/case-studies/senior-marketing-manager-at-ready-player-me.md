@@ -2,10 +2,11 @@
 title: "Senior Marketing Manager at Ready Player Me"
 description: "Marketing strategy, community, content, SEO, and customer growth for a cross-game avatar platform."
 pubDate: 2025-04-01
+order: 3
 tags:
   - "Work"
 draft: false
-heroImage: "/images/pages/2025/ready-player-me-logo.png"
+heroImage: "/images/case-studies/ready-player-me/ready-player-me.png"
 metrics:
   - label: "Customer growth"
     value: "25 to 20,000+"

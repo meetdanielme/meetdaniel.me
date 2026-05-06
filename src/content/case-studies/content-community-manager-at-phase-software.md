@@ -2,6 +2,7 @@
 title: "Content & Community Manager at Phase Software"
 description: "Product marketing, content, community, and events work for a Berlin design-tool startup."
 pubDate: 2025-04-01
+order: 5
 tags:
   - "Work"
 draft: false
