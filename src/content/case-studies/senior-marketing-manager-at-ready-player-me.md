@@ -53,7 +53,8 @@ Amplitude, Google Analytics, HubSpot, Webflow, Ghost, Figma, Discord, Zapier, ah
     <img src="/images/case-studies/ready-player-me/screenshot-2025-03-20-at-12.43.57-pm.png" alt="Ready Player Me content and community screenshot">
   </figure>
 </div>
-![1668765288318](/images/case-studies/ready-player-me/1668765288318.jpeg)
+
+![Metaverse Mixer event at Slush 2022 in Helsinki](/images/case-studies/ready-player-me/1668765288318.jpeg)
 
 ## Testimonials
 
