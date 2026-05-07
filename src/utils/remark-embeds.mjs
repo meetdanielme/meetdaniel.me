@@ -54,7 +54,10 @@ const transformNode = (node) => {
     if (node.children?.length !== 1) return;
 
     const [child] = node.children;
-    const candidates = [child?.url, getPlainText(node)]
+    const linkText = child?.type === "link" ? getPlainText(child).trim() : "";
+    const linkUrl = child?.type === "link" ? child.url?.trim() : "";
+
+    const candidates = [linkText === linkUrl ? linkUrl : undefined, getPlainText(node)]
       .filter(Boolean)
       .map((value) => value.trim());
     const embed = candidates
