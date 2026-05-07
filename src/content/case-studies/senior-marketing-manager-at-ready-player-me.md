@@ -19,7 +19,7 @@ metrics:
     value: "25x"
 ---
 
-[Ready Player Me](https://readyplayer.me) was a cross-game avatar platform that enables users to create and use a consistent digital identity in virtual worlds. The company was acquired by Netflix in 2024.
+[Ready Player Me](https://readyplayer.me) was a cross-game avatar platform that enables users to create and use a consistent digital identity in virtual worlds. The company was acquired by Netflix in December 2025.
 
 * As the first marketing hire, I built the entire marketing function from zero and developed the company’s product marketing and messaging strategy, contributing to scaling the game developer tools customer base from 25 to over 20,000
 * Grew social media following 10× across LinkedIn, Twitter, Facebook, and Instagram through organic content strategy and community engagement
