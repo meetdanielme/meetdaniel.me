@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { hasYouTubeEmbed } from "../../utils/embeds";
+import { getImageMetadata } from "../../utils/image-metadata";
 import { getFeaturedImage } from "../../utils/images";
 
 export async function getStaticPaths() {
@@ -14,6 +16,7 @@ export async function getStaticPaths() {
 const { study } = Astro.props;
 const { Content } = await study.render();
 const featuredImage = getFeaturedImage(study);
+const featuredImageMetadata = getImageMetadata(featuredImage);
 const metadata = [
     {
         label: "Location",
@@ -39,6 +42,7 @@ const metadata = [
         `Case study by Daniel Marcinkowski: ${study.data.title}`}
     canonical={`/work/${study.slug}/`}
     socialImage={featuredImage}
+    hasYouTubeEmbeds={hasYouTubeEmbed(study.body)}
 >
     <article>
         <p>
@@ -64,6 +68,11 @@ const metadata = [
                         class="case-hero-image mt-8"
                         src={featuredImage}
                         alt=""
+                        width={featuredImageMetadata?.width}
+                        height={featuredImageMetadata?.height}
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
                     />
                 )
             }

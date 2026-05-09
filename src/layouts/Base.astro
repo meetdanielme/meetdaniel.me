@@ -1,15 +1,17 @@
 ---
 import "remixicon/fonts/remixicon.css";
-import "lite-youtube-embed/src/lite-yt-embed.css";
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import SearchBox from "../components/SearchBox.astro";
+import YouTubeEmbedAssets from "../components/YouTubeEmbedAssets.astro";
+import { getImageMetadata } from "../utils/image-metadata";
 const {
     title = "Daniel Marcinkowski",
     description = "Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.",
     canonical = Astro.url.pathname,
     socialImage = "/images/pages/2025/DSC_5324A-by-Karen-Harms-1-1024x683.jpeg",
+    hasYouTubeEmbeds = false,
 } = Astro.props;
 const url = new URL(canonical, Astro.site);
 const socialImageUrl = new URL(socialImage, Astro.site);
@@ -52,6 +54,7 @@ const socials = [
 ];
 const contactHref = "mailto:hey@meetdaniel.me";
 const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
+const profileImageMetadata = getImageMetadata(profileImage);
 ---
 
 <html lang="en-GB">
@@ -184,6 +187,11 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                             class="profile-image"
                             src={profileImage}
                             alt="Portrait of Daniel Marcinkowski"
+                            width={profileImageMetadata?.width}
+                            height={profileImageMetadata?.height}
+                            loading="eager"
+                            decoding="async"
+                            fetchpriority="low"
                         />
                         <a href="/" class="profile-name">Daniel Marcinkowski</a>
                     </div>
@@ -264,14 +272,15 @@ const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
                 ><i class="ri-close-line" aria-hidden="true"></i></button
             >
             <figure>
-                <img data-image-lightbox-img alt="" />
+                <img data-image-lightbox-img alt="" decoding="async" />
                 <figcaption data-image-lightbox-caption></figcaption>
             </figure>
         </dialog>
         <Analytics />
         <SpeedInsights />
+        {hasYouTubeEmbeds && <YouTubeEmbedAssets />}
         <script>
-            import "lite-youtube-embed";
+            import "../scripts/search";
         </script>
         <script is:inline>
             const openButton = document.getElementById("menu-open");

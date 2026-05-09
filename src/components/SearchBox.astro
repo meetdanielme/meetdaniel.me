@@ -9,30 +9,3 @@ const { id = 'site-search' } = Astro.props;
   </div>
   <div class="search-results" data-search-results hidden></div>
 </div>
-<script is:inline>
-  for (const root of document.querySelectorAll('[data-search-root]')) {
-    const input = root.querySelector('[data-search-input]');
-    const results = root.querySelector('[data-search-results]');
-    let index = [];
-    const render = (matches) => {
-      if (!results) return;
-      if (!matches.length) {
-        results.innerHTML = '<p class="search-empty">No matches yet.</p>';
-      } else {
-        results.innerHTML = matches.slice(0, 6).map((item) => `<a class="search-result" href="${item.url}"><span>${item.type}</span><strong>${item.title}</strong>${item.description ? `<small>${item.description}</small>` : ''}</a>`).join('');
-      }
-      results.hidden = false;
-    };
-    input?.addEventListener('input', async () => {
-      const query = input.value.trim().toLowerCase();
-      if (!query) { results.hidden = true; results.innerHTML = ''; return; }
-      if (!index.length) {
-        index = await fetch('/search.json').then((response) => response.json()).catch(() => []);
-      }
-      render(index.filter((item) => [item.title, item.description, ...(item.tags || [])].join(' ').toLowerCase().includes(query)));
-    });
-    input?.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') { input.value = ''; results.hidden = true; results.innerHTML = ''; }
-    });
-  }
-</script>

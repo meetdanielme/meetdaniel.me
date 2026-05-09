@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
+import { hasYouTubeEmbed } from "../utils/embeds";
+import { getImageMetadata } from "../utils/image-metadata";
 import { getFeaturedImage } from "../utils/images";
 export async function getStaticPaths() {
     const pages = await getCollection("pages", ({ data }) => !data.draft);
@@ -9,6 +11,7 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = await page.render();
 const pageFeaturedImage = getFeaturedImage(page);
+const pageHeroImageMetadata = getImageMetadata(page.data.heroImage);
 const pagesWithUpdatedDate = new Set(["about", "work", "uses", "now"]);
 const showUpdatedDate = pagesWithUpdatedDate.has(page.slug) && page.data.updatedDate;
 const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString("en-GB", {
@@ -32,6 +35,7 @@ const caseStudies =
         `${page.data.title} page for Daniel Marcinkowski.`}
     canonical={`/${page.slug}/`}
     socialImage={pageFeaturedImage}
+    hasYouTubeEmbeds={hasYouTubeEmbed(page.body)}
 >
     <article>
         <h1
@@ -50,7 +54,11 @@ const caseStudies =
                     class="page-hero-image"
                     src={page.data.heroImage}
                     alt=""
+                    width={pageHeroImageMetadata?.width}
+                    height={pageHeroImageMetadata?.height}
                     loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
                 />
             )
         }
@@ -63,6 +71,8 @@ const caseStudies =
                 <div class="case-list">
                     {caseStudies.map((study) => {
                         const featuredImage = getFeaturedImage(study);
+                        const featuredImageMetadata =
+                            getImageMetadata(featuredImage);
                         return (
                             <article
                                 class={`post-card ${featuredImage ? "with-image" : ""}`}
@@ -73,7 +83,10 @@ const caseStudies =
                                             class="post-thumb"
                                             src={featuredImage}
                                             alt=""
+                                            width={featuredImageMetadata?.width}
+                                            height={featuredImageMetadata?.height}
                                             loading="lazy"
+                                            decoding="async"
                                         />
                                     </a>
                                 )}

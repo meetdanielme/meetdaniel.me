@@ -900,24 +900,6 @@ html[data-theme="light"] .search-results {
     background: #fff;
     color: #000;
 }
-
-html[data-theme="light"],
-html[data-theme="light"] body,
-html[data-theme="light"] .site-shell {
-    background: #fff;
-    color: #000;
-}
-html[data-theme="light"] .sidebar {
-    background: #f1f1f1;
-}
-html[data-theme="light"] .mobile-menu,
-html[data-theme="light"] .mobile-header,
-html[data-theme="light"] .icon-button,
-html[data-theme="light"] .search-input-wrap,
-html[data-theme="light"] .search-results {
-    background: #fff;
-    color: #000;
-}
 html[data-theme="light"] .profile-name,
 html[data-theme="light"] .site-name-link,
 html[data-theme="light"] .post-title-link {

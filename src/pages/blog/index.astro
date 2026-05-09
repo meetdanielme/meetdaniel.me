@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import { getImageMetadata } from "../../utils/image-metadata";
 import { getFeaturedImage } from "../../utils/images";
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -20,6 +21,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
         {
             posts.map((post) => {
                 const featuredImage = getFeaturedImage(post);
+                const featuredImageMetadata = getImageMetadata(featuredImage);
                 return (
                 <article
                     class={`post-card ${featuredImage ? "with-image" : ""}`}
@@ -30,7 +32,10 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
                                 class="post-thumb"
                                 src={featuredImage}
                                 alt=""
+                                width={featuredImageMetadata?.width}
+                                height={featuredImageMetadata?.height}
                                 loading="lazy"
+                                decoding="async"
                             />
                         </a>
                     )}
