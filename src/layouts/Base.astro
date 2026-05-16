@@ -61,9 +61,11 @@ const profileImageMetadata = getImageMetadata(profileImage);
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="color-scheme" content="light dark" />
         <script is:inline>
             (() => {
-                const saved = localStorage.getItem("theme-preference");
+                const preferenceKey = "theme-preference-v2";
+                const saved = localStorage.getItem(preferenceKey);
                 const prefersDark = window.matchMedia(
                     "(prefers-color-scheme: dark)",
                 ).matches;
@@ -321,8 +323,9 @@ const profileImageMetadata = getImageMetadata(profileImage);
             );
             const getSystemTheme = () =>
                 systemTheme.matches ? "dark" : "light";
-            const themePreferenceKey = "theme-preference";
+            const themePreferenceKey = "theme-preference-v2";
             localStorage.removeItem("theme");
+            localStorage.removeItem("theme-preference");
             const applyTheme = (theme) => {
                 document.documentElement.dataset.theme = theme;
                 document
