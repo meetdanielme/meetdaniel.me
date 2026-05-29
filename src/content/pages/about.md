@@ -2,12 +2,12 @@
 title: "About"
 description: "Learn more about me, this website, and my work experience to-date."
 pubDate: 2025-01-15
-updatedDate: 2026-05-06
+updatedDate: 2026-06-01
 tags:
 draft: false
 ---
 
-Hey! I'm Daniel Marcinkowski. Originally from Warsaw, Poland, permanently based in Berlin, Germany between 2018 and 2025, and now taking on university in Cork, Ireland. I'm a multi-disciplinary tech professional with 9 years of experience in marketing. Starting from September 2025, I'm taking on a Bachelor of Science degree in Business Information Systems at the University College Cork.
+Hey! I'm Daniel Marcinkowski. Originally from Warsaw, Poland, permanently based in Berlin, Germany between 2018 and 2025, and now taking on university in Cork, Ireland. I'm a multi-disciplinary tech professional with 10 years of experience in marketing. Starting from September 2025, I'm taking on a Bachelor of Science degree in Business Information Systems at the University College Cork.
 
 On this website, I explore how I use technology to be creative, productive, and healthy while coping with ADHD in a world full of distractions and attention-grabbing platforms.
 

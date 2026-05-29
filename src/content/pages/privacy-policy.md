@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: "Privacy notes for meetdaniel.me, a personal static website hosted on Vercel."
+description: "Privacy notes for meetdaniel.me"
 pubDate: 2026-05-06
 tags:
 draft: false

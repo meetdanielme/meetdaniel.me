@@ -2,7 +2,7 @@
 title: "Work"
 description: "Learn more about my work experience to-date and my versatile skillset across marketing, content, design, project management, and more."
 pubDate: 2025-02-06
-updatedDate: 2026-05-06
+updatedDate: 2026-06-01
 tags:
 draft: false
 ---
@@ -11,11 +11,13 @@ draft: false
 
 ### Cześć!
 
-I'm Daniel — a former startup marketer turned Business Information Systems student at University College Cork.
+I'm Daniel — a marketer with 10 years of work experience and Business Information Systems student at University College Cork.
 
 Over the past decade, I helped early-stage tech companies in Berlin grow from the ground up. I served as the first marketing hire at multiple startups, building marketing functions from zero and working cross-functionally across product, design, and leadership. My most recent role was Senior Marketing Manager at Ready Player Me, a cross-game avatar platform later acquired by Netflix, where I contributed to scaling the customer base from 25 to 20,000+.
 
-Now, I'm expanding my toolkit through formal education — gaining foundations in programming, databases, systems analysis, and analytics. I'm particularly drawn to roles that combine strategy, user insights, and data.
+Now, I'm expanding my toolkit through formal education at University College Cork — gaining foundations in programming, databases, systems analysis, and analytics during the course of the Business Information Systems degree. 
+
+I'm currently working part-time as a Marketing Specialist at [Zartis](https://www.zartis.com).
 
 ### Highlights
 

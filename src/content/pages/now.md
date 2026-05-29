@@ -1,13 +1,27 @@
 ---
 title: "Now"
-description: "A semi-regularly updated list of things going on in my life at the moment."
+description: "A monthly updated list of things going on in my life at the moment."
 pubDate: 2025-02-23
-updatedDate: 2026-05-06
+updatedDate: 2026-06-01
 tags:
 draft: false
 ---
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
+
+## June 2026
+
+📍 Berlin, Germany
+
+- I'm back in Berlin for the summer break from the university. 
+
+- I'm excited to share that I have joined [Zartis](https://www.zartis.com) as a part-time Marketing Specialist! 
+
+---
+
+# Then
+
+Archival entries.
 
 ## May 2026
 
@@ -16,12 +30,6 @@ Things going on in my life right now. _Inspired by [nownownow.com](https://nowno
 - I'm almost done with my first year final exams. I can't believe how fast this year went by. I'm looking forward to what's coming for me this summer and the next year at UCC.
 
 - It hurts me to admit it, but I'm quietly back on [Twitter](https://x.com/meetdanielme) (won't call it any other way). I'm trying to stay on top of the AI news and, unfortunately, it's the best place for it.
-
----
-
-# Then
-
-Archival entries.
 
 ## April 2026
 
