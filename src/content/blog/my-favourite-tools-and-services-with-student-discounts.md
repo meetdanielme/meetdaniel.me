@@ -1,8 +1,8 @@
 ---
 title: "My Favourite Tools and Services with Student Discounts"
 description: "A practical list of the student discounts, free plans, and education offers I have found most useful since going back to university."
-pubDate: 2026-06-06
-updatedDate: 2026-06-06
+pubDate: 2026-06-11
+updatedDate: 2026-06-11
 tags:
   - "Tech"
   - "University"
@@ -24,7 +24,7 @@ Verified students get GitHub Pro-level benefits, including more GitHub Actions m
 
 [GitHub Copilot Student](https://docs.github.com/copilot/how-tos/manage-your-account/getting-free-access-to-copilot-pro-as-a-student-teacher-or-maintainer) is free for verified students. 
 
-Just a few months ago, GitHub was offering a Pro version of Copilot, which has access to all of the latest frontier models, including Claude Opus. Unfortunately, that's no longer the case, and GitHub continues to decrease the value that Copilot offers to students. Personally, I'm back to paying for ChatGPT, which offers generous limits with Codex. Still, for basic use on GitHub on in VS Code, even Copilot Student plan is a nice-to-have.
+Just a few months ago, GitHub was offering a Pro version of Copilot, which has access to all of the latest frontier models, including Claude Opus. Unfortunately, that's no longer the case, and GitHub continues to decrease the value that Copilot offers to students. Personally, I'm back to paying for ChatGPT, which offers generous limits with Codex. Still, for basic use on GitHub or in VS Code, even the Copilot Student plan is a nice-to-have.
 
 ## DigitalOcean
 
@@ -100,7 +100,7 @@ Before paying for anything student-adjacent, I usually check:
 
 - [GitHub Student Developer Pack](https://education.github.com/pack)
 - [UNiDAYS](https://www.myunidays.com)
-- [StudentBeans](https://www.studentbeans.com)
+- [Student Beans](https://www.studentbeans.com)
 - [SheerID-powered student offer page](https://shop.sheerid.com)
 - [International Student Identity Card](https://www.isic.org/)
 - [Student App Centre](https://www.studentappcentre.com/) for Mac apps
