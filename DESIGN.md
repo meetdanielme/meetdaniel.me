@@ -191,6 +191,31 @@ Layout is constrained and content-first:
 
 Use a simple, consistent flow layout with clear section breaks and generous breathing room.
 
+## Blog Hero Images
+
+The blog archive contains a mix of photography, product shots, screenshots, composites, and illustrations. Older imported posts vary widely in format, including portrait screenshots and extra-wide banners. More recent hero images establish the direction to follow.
+
+### Typical style
+
+- **Editorial and personal:** Images should feel like part of an independent technology and lifestyle publication, not a generic corporate campaign.
+- **Directly related to the article:** Feature the device, app, place, activity, or personal moment at the centre of the story.
+- **One clear focal point:** Prefer a single dominant subject or a small, deliberately arranged group of objects.
+- **Clean composition:** Use uncluttered surfaces, generous negative space, and simple backgrounds. Centred or balanced framing is common.
+- **Restrained colour:** Neutral whites, blacks, greys, and warm natural tones dominate. Product or interface colours can provide the accent.
+- **Natural texture and lighting:** Photography often uses daylight, warm indoor light, or subdued high-contrast light rather than glossy studio effects.
+- **Technology in context:** Devices and software may appear as real desk scenes, close product photographs, clean interface compositions, or screenshots placed in simple mockups.
+- **Human when relevant:** Personal essays can use candid portraits, documentary-style photographs, or simple hand-drawn illustration.
+- **Minimal embedded text:** Do not add the article title to the image. Incidental interface or brand text is acceptable when it belongs to the photographed subject.
+
+### Format and composition
+
+- Create new blog hero images at **2000 × 1047 px** (**1.91:1**) where possible.
+- Keep the main subject inside a generous central safe area. Blog listing thumbnails use a **16:10** crop and may remove content from the left and right edges.
+- Avoid placing faces, device edges, logos, or essential interface details close to the frame boundary.
+- The image should remain recognisable at small card size and still have enough detail for the full article view.
+- Prefer a real photograph or purposeful editorial composition over a generic stock image.
+- Older hero images are historical content, not strict visual references. Use the recent 2025–2026 images as the stronger style signal.
+
 ## Elevation & Depth
 
 Depth is mostly flat. Hierarchy should come from:

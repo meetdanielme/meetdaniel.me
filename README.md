@@ -147,6 +147,8 @@ Keep site assets local instead of hotlinking remote WordPress media. Public file
 
 If a post or case study has no `heroImage`, preview cards fall back to the first local Markdown image where possible.
 
+For new blog hero images, use **2000 × 1047 px** where possible. This gives a **1.91:1** aspect ratio suited to link and social previews. Keep important subjects and text away from the edges because listing cards may crop the image.
+
 Recommended image locations:
 
 - Blog images: `public/images/posts/YYYY/image-name.jpg`
