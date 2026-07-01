@@ -248,8 +248,3 @@ Movies & TV shows ([follow me on Trakt](https://trakt.tv/users/meetdanielme)):
 - Daredevil: Born Again
 
 - (Rewatching) Star Wars
-
----
-Annotations: 0,9641 SHA-256 a87ae85e43b8f13bd297  
-&Writing Tools: 408,4 567  
-...
