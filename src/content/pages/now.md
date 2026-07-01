@@ -2,12 +2,26 @@
 title: "Now"
 description: "A monthly updated list of things going on in my life at the moment."
 pubDate: 2025-02-23
-updatedDate: 2026-06-01
+updatedDate: 2026-07-01
 tags:
 draft: false
 ---
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
+
+## July 2026
+
+📍 Berlin, Germany
+
+- It's been a month since I joined Zartis. It's truly fascinating to me how different my job as a marketer is now from what it used to be just two years ago when I worked at Ready Player Me. Working with AI (specifically, Claude Code) compared to writing everything myself is a huge shift in the way I approach work. I wrote more about it [here](/blog/why-im-betting-on-business-technology-and-ai/). Also, my colleague Adnan [wrote](https://www.linkedin.com/feed/update/urn:li:activity:7477713711168643072/) about how my “outside-the-box" thinking has influenced his work. 
+- Also in June, I posted an [overview of some of my favourite student discounts](https://meetdaniel.me/blog/my-favourite-tools-and-services-with-student-discounts/).
+- I'm going back to Taiwan in a few weeks — really looking forward to that!
+
+---
+
+# Then
+
+Archival entries.
 
 ## June 2026
 
@@ -16,12 +30,6 @@ Things going on in my life right now. _Inspired by [nownownow.com](https://nowno
 - I'm back in Berlin for the summer break from the university. 
 
 - I'm excited to share that I have joined [Zartis](https://www.zartis.com) as a part-time Marketing Specialist! 
-
----
-
-# Then
-
-Archival entries.
 
 ## May 2026
 
@@ -240,3 +248,8 @@ Movies & TV shows ([follow me on Trakt](https://trakt.tv/users/meetdanielme)):
 - Daredevil: Born Again
 
 - (Rewatching) Star Wars
+
+---
+Annotations: 0,9641 SHA-256 a87ae85e43b8f13bd297  
+&Writing Tools: 408,4 567  
+...

@@ -40,7 +40,7 @@ It also made technical tools feel less intimidating. I am no longer afraid of op
 
 ## The interface of my work has changed
 
-In June 2026, I joined Zartis as a Marketing Specialist. It is my first time working after roughly a year and a half away from full-time work, and my workdays already feel different, even though the responsibilities do not look that different on paper.
+In June 2026, [I joined Zartis as a Marketing Specialist](https://www.linkedin.com/feed/update/urn:li:activity:7467548365065609216/). It is my first time working after roughly a year and a half away from full-time work, and my workdays already feel different, even though the responsibilities do not look that different on paper.
 
 I still spend a lot of time talking to colleagues on Slack, joining meetings, thinking about content, and working on marketing tasks. But the interface of the work has changed.
 
