@@ -1,26 +1,35 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { hasYouTubeEmbed } from "../utils/embeds";
 import { getImageMetadata } from "../utils/image-metadata";
+import { getEntrySlug } from "../utils/content";
 import { getFeaturedImage } from "../utils/images";
 export async function getStaticPaths() {
     const pages = await getCollection("pages", ({ data }) => !data.draft);
-    return pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+    return pages.map((page) => ({
+        params: { slug: getEntrySlug(page) },
+        props: { page },
+    }));
 }
 const { page } = Astro.props;
-const { Content } = await page.render();
+const pageSlug = getEntrySlug(page);
+const { Content } = await render(page);
 const pageFeaturedImage = getFeaturedImage(page);
 const pageHeroImageMetadata = getImageMetadata(page.data.heroImage);
 const pagesWithUpdatedDate = new Set(["about", "work", "uses", "now"]);
-const showUpdatedDate = pagesWithUpdatedDate.has(page.slug) && page.data.updatedDate;
-const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-});
+const showUpdatedDate =
+    pagesWithUpdatedDate.has(pageSlug) && page.data.updatedDate;
+const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString(
+    "en-GB",
+    {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    },
+);
 const caseStudies =
-    page.slug === "work"
+    pageSlug === "work"
         ? (await getCollection("case-studies", ({ data }) => !data.draft)).sort(
               (a, b) =>
                   a.data.order - b.data.order ||
@@ -33,7 +42,7 @@ const caseStudies =
     title={page.data.title}
     description={page.data.description ||
         `${page.data.title} page for Daniel Marcinkowski.`}
-    canonical={`/${page.slug}/`}
+    canonical={`/${pageSlug}/`}
     socialImage={pageFeaturedImage}
     hasYouTubeEmbeds={hasYouTubeEmbed(page.body)}
 >
@@ -65,7 +74,7 @@ const caseStudies =
         <div class="prose prose-zinc dark:prose-invert"><Content /></div>
     </article>
     {
-        page.slug === "work" && caseStudies.length > 0 && (
+        pageSlug === "work" && caseStudies.length > 0 && (
             <section class="case-section">
                 <h2 class="text-2xl font-bold">Case studies</h2>
                 <div class="case-list">
@@ -78,13 +87,15 @@ const caseStudies =
                                 class={`post-card ${featuredImage ? "with-image" : ""}`}
                             >
                                 {featuredImage && (
-                                    <a href={`/work/${study.slug}/`}>
+                                    <a href={`/work/${getEntrySlug(study)}/`}>
                                         <img
                                             class="post-thumb"
                                             src={featuredImage}
                                             alt=""
                                             width={featuredImageMetadata?.width}
-                                            height={featuredImageMetadata?.height}
+                                            height={
+                                                featuredImageMetadata?.height
+                                            }
                                             loading="lazy"
                                             decoding="async"
                                         />
@@ -94,7 +105,7 @@ const caseStudies =
                                     <h3 class="text-xl font-bold">
                                         <a
                                             class="post-title-link"
-                                            href={`/work/${study.slug}/`}
+                                            href={`/work/${getEntrySlug(study)}/`}
                                         >
                                             {study.data.title}
                                         </a>

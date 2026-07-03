@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const shared = {
   title: z.string(),
@@ -29,10 +30,18 @@ const shared = {
     .default([]),
 };
 
-const blog = defineCollection({ type: "content", schema: z.object(shared) });
-const pages = defineCollection({ type: "content", schema: z.object(shared) });
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  schema: z.object(shared),
+});
+
+const pages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: z.object(shared),
+});
+
 const caseStudies = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/case-studies" }),
   schema: z.object(shared),
 });
 

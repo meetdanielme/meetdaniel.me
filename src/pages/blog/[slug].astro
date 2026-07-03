@@ -1,18 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { hasYouTubeEmbed } from "../../utils/embeds";
 import { getImageMetadata } from "../../utils/image-metadata";
+import { getEntrySlug } from "../../utils/content";
 import { getFeaturedImage } from "../../utils/images";
 export async function getStaticPaths() {
     const posts = await getCollection("blog", ({ data }) => !data.draft);
     return posts.map((post) => ({
-        params: { slug: post.slug },
+        params: { slug: getEntrySlug(post) },
         props: { post },
     }));
 }
 const { post } = Astro.props;
-const { Content } = await post.render();
+const postSlug = getEntrySlug(post);
+const { Content } = await render(post);
 const featuredImage = getFeaturedImage(post);
 const heroImageMetadata = getImageMetadata(post.data.heroImage);
 ---
@@ -21,7 +23,7 @@ const heroImageMetadata = getImageMetadata(post.data.heroImage);
     title={post.data.title}
     description={post.data.description ||
         `Blog post by Daniel Marcinkowski: ${post.data.title}`}
-    canonical={`/blog/${post.slug}/`}
+    canonical={`/blog/${postSlug}/`}
     socialImage={featuredImage}
     hasYouTubeEmbeds={hasYouTubeEmbed(post.body)}
 >

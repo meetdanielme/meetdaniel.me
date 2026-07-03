@@ -1,5 +1,5 @@
+import { unified } from "@astrojs/markdown-remark";
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import remarkEmbeds from "./src/utils/remark-embeds.mjs";
 import remarkImageAttributes from "./src/utils/remark-image-attributes.mjs";
@@ -10,12 +10,14 @@ export default defineConfig({
   trailingSlash: "always",
   markdown: {
     syntaxHighlight: "shiki",
-    remarkPlugins: [remarkEmbeds, remarkImageAttributes],
-    rehypePlugins: [rehypeImages],
+    processor: unified({
+      remarkPlugins: [remarkEmbeds, remarkImageAttributes],
+      rehypePlugins: [rehypeImages],
+    }),
     shikiConfig: {
       theme: "github-light",
       wrap: true,
     },
   },
-  integrations: [tailwind(), sitemap()],
+  integrations: [sitemap()],
 });

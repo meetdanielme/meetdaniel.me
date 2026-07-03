@@ -1,20 +1,25 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { hasYouTubeEmbed } from "../../utils/embeds";
 import { getImageMetadata } from "../../utils/image-metadata";
+import { getEntrySlug } from "../../utils/content";
 import { getFeaturedImage } from "../../utils/images";
 
 export async function getStaticPaths() {
-    const studies = await getCollection("case-studies", ({ data }) => !data.draft);
+    const studies = await getCollection(
+        "case-studies",
+        ({ data }) => !data.draft,
+    );
     return studies.map((study) => ({
-        params: { slug: study.slug },
+        params: { slug: getEntrySlug(study) },
         props: { study },
     }));
 }
 
 const { study } = Astro.props;
-const { Content } = await study.render();
+const studySlug = getEntrySlug(study);
+const { Content } = await render(study);
 const featuredImage = getFeaturedImage(study);
 const featuredImageMetadata = getImageMetadata(featuredImage);
 const metadata = [
@@ -40,7 +45,7 @@ const metadata = [
     title={study.data.title}
     description={study.data.description ||
         `Case study by Daniel Marcinkowski: ${study.data.title}`}
-    canonical={`/work/${study.slug}/`}
+    canonical={`/work/${studySlug}/`}
     socialImage={featuredImage}
     hasYouTubeEmbeds={hasYouTubeEmbed(study.body)}
 >
