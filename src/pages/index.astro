@@ -7,6 +7,21 @@ import { getFeaturedImage } from "../utils/images";
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 5);
+
+const getCardImage = (src: string) => {
+    const resizedSrc = src.replace(/(\.[^.]+)$/, "-800$1");
+    const resizedMetadata = getImageMetadata(resizedSrc);
+    const originalMetadata = getImageMetadata(src);
+
+    return {
+        src: resizedMetadata ? resizedSrc : src,
+        metadata: resizedMetadata ?? originalMetadata,
+        srcset:
+            resizedMetadata && originalMetadata
+                ? `${resizedSrc} 800w, ${src} ${originalMetadata.width}w`
+                : undefined,
+    };
+};
 ---
 
 <Base>
@@ -31,20 +46,26 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
             {
                 posts.map((post, index) => {
                     const featuredImage = getFeaturedImage(post);
-                    const featuredImageMetadata =
-                        getImageMetadata(featuredImage);
+                    const cardImage = featuredImage
+                        ? getCardImage(featuredImage)
+                        : undefined;
                     return (
                         <article
                             class={`post-card ${featuredImage ? "with-image" : ""}`}
                         >
                             {featuredImage && (
-                                <a href={`/blog/${getEntrySlug(post)}/`}>
+                                <a
+                                    href={`/blog/${getEntrySlug(post)}/`}
+                                    aria-label={`Read ${post.data.title}`}
+                                >
                                     <img
                                         class="post-thumb"
-                                        src={featuredImage}
+                                        src={cardImage?.src}
+                                        srcset={cardImage?.srcset}
+                                        sizes="(min-width: 768px) 364px, calc(100vw - 48px)"
                                         alt=""
-                                        width={featuredImageMetadata?.width}
-                                        height={featuredImageMetadata?.height}
+                                        width={cardImage?.metadata?.width}
+                                        height={cardImage?.metadata?.height}
                                         loading={index === 0 ? "eager" : "lazy"}
                                         decoding="async"
                                         fetchpriority={
