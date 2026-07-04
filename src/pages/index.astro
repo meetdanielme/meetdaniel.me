@@ -29,7 +29,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
         <h2 class="text-2xl font-bold">Recently published</h2>
         <div class="mt-6 grid gap-8">
             {
-                posts.map((post) => {
+                posts.map((post, index) => {
                     const featuredImage = getFeaturedImage(post);
                     const featuredImageMetadata =
                         getImageMetadata(featuredImage);
@@ -45,8 +45,11 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
                                         alt=""
                                         width={featuredImageMetadata?.width}
                                         height={featuredImageMetadata?.height}
-                                        loading="lazy"
+                                        loading={index === 0 ? "eager" : "lazy"}
                                         decoding="async"
+                                        fetchpriority={
+                                            index === 0 ? "high" : undefined
+                                        }
                                     />
                                 </a>
                             )}
