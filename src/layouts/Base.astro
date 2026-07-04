@@ -55,6 +55,41 @@ const socials = [
 const contactHref = "mailto:hey@meetdaniel.me";
 const profileImage = "/images/profile/daniel-marcinkowski-profile-picture.jpg";
 const profileImageMetadata = getImageMetadata(profileImage);
+const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": new URL("/#person", Astro.site).href,
+            name: "Daniel Marcinkowski",
+            url: new URL("/", Astro.site).href,
+            image: new URL(profileImage, Astro.site).href,
+            jobTitle: "Marketer and Business Information Systems student",
+            sameAs: socials
+                .filter((item) => item.href.startsWith("https://"))
+                .map((item) => item.href),
+        },
+        {
+            "@type": "WebSite",
+            "@id": new URL("/#website", Astro.site).href,
+            name: "Daniel Marcinkowski",
+            url: new URL("/", Astro.site).href,
+            description,
+            inLanguage: "en-GB",
+            author: { "@id": new URL("/#person", Astro.site).href },
+        },
+        {
+            "@type": "WebPage",
+            "@id": `${url.href}#webpage`,
+            url: url.href,
+            name: title,
+            description,
+            isPartOf: { "@id": new URL("/#website", Astro.site).href },
+            author: { "@id": new URL("/#person", Astro.site).href },
+            inLanguage: "en-GB",
+        },
+    ],
+};
 ---
 
 <html lang="en-GB">
@@ -76,7 +111,10 @@ const profileImageMetadata = getImageMetadata(profileImage);
 
                 if (saved && !savedSystemTheme) {
                     localStorage.setItem(preferenceSystemKey, systemTheme);
-                } else if (savedSystemTheme && savedSystemTheme !== systemTheme) {
+                } else if (
+                    savedSystemTheme &&
+                    savedSystemTheme !== systemTheme
+                ) {
                     localStorage.removeItem(preferenceKey);
                     localStorage.removeItem(preferenceSystemKey);
                 }
@@ -110,6 +148,16 @@ const profileImageMetadata = getImageMetadata(profileImage);
             type="application/rss+xml"
             title="Daniel Marcinkowski RSS"
             href="/rss.xml"
+        />
+        <link
+            rel="alternate"
+            type="text/plain"
+            title="LLMs text file"
+            href="/llms.txt"
+        />
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify(structuredData)}
         />
     </head>
     <body>

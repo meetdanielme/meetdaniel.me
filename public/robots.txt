@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://meetdaniel.me/sitemap.xml
+LLMs: https://meetdaniel.me/llms.txt
