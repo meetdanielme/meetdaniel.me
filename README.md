@@ -188,7 +188,6 @@ Optional environment variables:
 - `RIGHT_NOW_GITHUB_REPO`: repository to commit posts into. Defaults to `meetdanielme/meetdaniel.me`.
 - `RIGHT_NOW_GITHUB_BRANCH`: branch to commit posts into. Defaults to Vercel's deployment branch, then `main`.
 - `RIGHT_NOW_LOCAL_PUBLISH`: set to `true` for local testing. Posts are written to `src/content/right-now`, and media files are written to `public/images/right-now/local`.
-- `RIGHT_NOW_ENABLE_CROSSPOSTING`: set to `true` to allow Mastodon and Bluesky publishing. Keep this as `false` while testing locally unless you intentionally want to create real social posts.
 
 Optional Mastodon cross-posting variables:
 
@@ -200,6 +199,8 @@ Optional Bluesky cross-posting variables:
 - `BLUESKY_HANDLE`: Bluesky handle, such as `meetdaniel.me`.
 - `BLUESKY_APP_PASSWORD`: Bluesky app password.
 - `BLUESKY_SERVICE_URL`: Bluesky service URL. Defaults to `https://bsky.social`.
+
+Cross-posting is enabled per platform when that platform's required variables are present. Leave a platform's variables unset to hide and disable that cross-posting button.
 
 ### Things to watch for
 

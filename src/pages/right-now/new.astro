@@ -8,8 +8,13 @@ export const prerender = false;
 const isAuthenticated = await hasValidRightNowSession(Astro.cookies);
 const loginFailed = Astro.url.searchParams.get("error") === "1";
 const isLocalPublish = import.meta.env.RIGHT_NOW_LOCAL_PUBLISH === "true";
-const isCrossPostingEnabled =
-    import.meta.env.RIGHT_NOW_ENABLE_CROSSPOSTING === "true";
+const isMastodonConfigured = Boolean(
+    import.meta.env.MASTODON_INSTANCE_URL && import.meta.env.MASTODON_ACCESS_TOKEN,
+);
+const isBlueskyConfigured = Boolean(
+    import.meta.env.BLUESKY_HANDLE && import.meta.env.BLUESKY_APP_PASSWORD,
+);
+const isCrossPostingConfigured = isMastodonConfigured || isBlueskyConfigured;
 ---
 
 <Base
@@ -123,7 +128,7 @@ const isCrossPostingEnabled =
                                             "right-now-social-toggle",
                                             {
                                                 "right-now-social-toggle-disabled":
-                                                    !isCrossPostingEnabled,
+                                                    !isMastodonConfigured,
                                             },
                                         ]}
                                         aria-label="Cross-post to Mastodon"
@@ -133,8 +138,8 @@ const isCrossPostingEnabled =
                                             class="sr-only"
                                             type="checkbox"
                                             name="crosspostMastodon"
-                                            checked={isCrossPostingEnabled}
-                                            disabled={!isCrossPostingEnabled}
+                                            checked={isMastodonConfigured}
+                                            disabled={!isMastodonConfigured}
                                         />
                                         <i
                                             class="ri-mastodon-fill"
@@ -146,7 +151,7 @@ const isCrossPostingEnabled =
                                             "right-now-social-toggle",
                                             {
                                                 "right-now-social-toggle-disabled":
-                                                    !isCrossPostingEnabled,
+                                                    !isBlueskyConfigured,
                                             },
                                         ]}
                                         aria-label="Cross-post to Bluesky"
@@ -156,8 +161,8 @@ const isCrossPostingEnabled =
                                             class="sr-only"
                                             type="checkbox"
                                             name="crosspostBluesky"
-                                            checked={isCrossPostingEnabled}
-                                            disabled={!isCrossPostingEnabled}
+                                            checked={isBlueskyConfigured}
+                                            disabled={!isBlueskyConfigured}
                                         />
                                         <i
                                             class="ri-bluesky-fill"
@@ -175,9 +180,10 @@ const isCrossPostingEnabled =
                                     </button>
                                 </div>
                             </div>
-                            {!isCrossPostingEnabled && (
+                            {!isCrossPostingConfigured && (
                                 <p class="form-help">
-                                    Cross-posting is disabled in this environment.
+                                    Add Mastodon or Bluesky environment variables
+                                    to enable cross-posting.
                                 </p>
                             )}
                             <p class="form-status" data-right-now-status></p>

@@ -41,8 +41,12 @@ const maxFiles = 4;
 const maxImageSize = 10 * 1024 * 1024;
 const maxVideoSize = 100 * 1024 * 1024;
 const isLocalPublish = import.meta.env.RIGHT_NOW_LOCAL_PUBLISH === "true";
-const isCrossPostingEnabled =
-  import.meta.env.RIGHT_NOW_ENABLE_CROSSPOSTING === "true";
+const isMastodonConfigured = Boolean(
+  import.meta.env.MASTODON_INSTANCE_URL && import.meta.env.MASTODON_ACCESS_TOKEN,
+);
+const isBlueskyConfigured = Boolean(
+  import.meta.env.BLUESKY_HANDLE && import.meta.env.BLUESKY_APP_PASSWORD,
+);
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
@@ -438,13 +442,11 @@ export async function POST(context: APIContext) {
     const media = isLocalPublish
       ? await uploadLocalMedia(files, altTexts, createdAt)
       : await uploadMedia(files, altTexts, createdAt);
-    const syndication = isCrossPostingEnabled
-      ? await crossPostRightNow({
-          text,
-          mastodon: shouldCrossPostToMastodon,
-          bluesky: shouldCrossPostToBluesky,
-        })
-      : {};
+    const syndication = await crossPostRightNow({
+      text,
+      mastodon: shouldCrossPostToMastodon && isMastodonConfigured,
+      bluesky: shouldCrossPostToBluesky && isBlueskyConfigured,
+    });
     const links = await getLinkPreviews(text);
     const markdown = buildPostMarkdown({
       text,
