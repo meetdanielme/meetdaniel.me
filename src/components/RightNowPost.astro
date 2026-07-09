@@ -136,17 +136,6 @@ const syndicationLinks = [
     </header>
     <div class="right-now-post-body">
         <p class="right-now-text" set:html={renderRightNowText(post.data.text)} />
-        {
-            syndicationLinks.length > 0 && (
-                <div class="right-now-syndication" aria-label="Also posted on">
-                    {syndicationLinks.map((item) => (
-                        <a href={item.href} aria-label={`View on ${item.label}`}>
-                            <i class={item.icon} aria-hidden="true"></i>
-                        </a>
-                    ))}
-                </div>
-            )
-        }
     </div>
     {
         media.length === 1 && (
@@ -294,6 +283,17 @@ const syndicationLinks = [
                                 {formatRightNowDomain(link.url)}
                             </span>
                         </span>
+                    </a>
+                ))}
+            </div>
+        )
+    }
+    {
+        syndicationLinks.length > 0 && (
+            <div class="right-now-syndication" aria-label="Also posted on">
+                {syndicationLinks.map((item) => (
+                    <a href={item.href} aria-label={`View on ${item.label}`}>
+                        <i class={item.icon} aria-hidden="true"></i>
                     </a>
                 ))}
             </div>
