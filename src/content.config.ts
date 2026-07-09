@@ -45,4 +45,69 @@ const caseStudies = defineCollection({
   schema: z.object(shared),
 });
 
-export const collections = { blog, pages, "case-studies": caseStudies };
+const urlOrRootRelativePath = z.string().refine(
+  (value) => {
+    if (value.startsWith("/")) return true;
+
+    try {
+      new URL(value);
+      return true;
+    } catch {
+      return false;
+    }
+  },
+  { message: "Expected a full URL or a root-relative path." },
+);
+
+const rightNow = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/right-now" }),
+  schema: z.object({
+    text: z.string().max(280),
+    createdAt: z.coerce.date(),
+    updatedAt: z.coerce.date().optional(),
+    location: z.string().optional(),
+    media: z
+      .array(
+        z.object({
+          type: z.enum(["image", "video"]),
+          src: urlOrRootRelativePath,
+          alt: z.string().optional().default(""),
+          width: z.number().optional(),
+          height: z.number().optional(),
+          mimeType: z.string().optional(),
+          size: z.number().optional(),
+        }),
+      )
+      .optional()
+      .default([]),
+    links: z
+      .array(
+        z.object({
+          url: z.string().url(),
+          title: z.string().optional(),
+          description: z.string().optional(),
+          image: z.string().url().optional(),
+          siteName: z.string().optional(),
+        }),
+      )
+      .optional()
+      .default([]),
+    syndication: z
+      .object({
+        mastodon: z.string().url().nullable().optional(),
+        bluesky: z.string().url().nullable().optional(),
+        threads: z.string().url().nullable().optional(),
+        twitter: z.string().url().nullable().optional(),
+      })
+      .optional()
+      .default({}),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
+export const collections = {
+  blog,
+  pages,
+  "case-studies": caseStudies,
+  "right-now": rightNow,
+};

@@ -4,9 +4,21 @@ import Base from "../layouts/Base.astro";
 import { getImageMetadata } from "../utils/image-metadata";
 import { getEntrySlug } from "../utils/content";
 import { getFeaturedImage } from "../utils/images";
+import RightNowPreview from "../components/RightNowPreview.astro";
+import {
+    buildRightNowPermalinkMap,
+    getRightNowPermalinkSlug,
+} from "../utils/right-now";
+import { getPublishedRightNowPosts } from "../utils/right-now-collection";
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     .slice(0, 5);
+const rightNowPosts = await getPublishedRightNowPosts();
+const rightNowPermalinkMap = buildRightNowPermalinkMap(rightNowPosts);
+const latestRightNowPost = rightNowPosts[0];
+const latestRightNowPermalink = latestRightNowPost
+    ? getRightNowPermalinkSlug(latestRightNowPost, rightNowPermalinkMap)
+    : undefined;
 
 const getCardImage = (src: string) => {
     const resizedSrc = src.replace(/(\.[^.]+)$/, "-800$1");
@@ -40,8 +52,21 @@ const getCardImage = (src: string) => {
         </p>
     </section>
     <hr class="my-10 border-zinc-200 dark:border-zinc-800" />
+    {latestRightNowPost && latestRightNowPermalink && (
+        <RightNowPreview
+            post={latestRightNowPost}
+            permalink={latestRightNowPermalink}
+        />
+    )}
+    {
+        latestRightNowPost && (
+            <hr class="my-10 border-zinc-200 dark:border-zinc-800" />
+        )
+    }
     <section>
-        <h2 class="text-2xl font-bold">Recently published</h2>
+        <h2 class="text-2xl font-bold">
+            <a class="section-heading-link" href="/blog/">Blog</a>
+        </h2>
         <div class="mt-6 grid gap-8">
             {
                 posts.map((post, index) => {

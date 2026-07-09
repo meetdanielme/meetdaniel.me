@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from "astro:content";
+import RightNowPost from "../../components/RightNowPost.astro";
+import Base from "../../layouts/Base.astro";
+import {
+    buildRightNowPermalinkMap,
+    formatRightNowDateTime,
+    getRightNowPermalinkSlug,
+    getRightNowPostPath,
+    getRightNowSlug,
+} from "../../utils/right-now";
+import { getPublishedRightNowPosts } from "../../utils/right-now-collection";
+
+export async function getStaticPaths() {
+    const posts = await getPublishedRightNowPosts();
+    const permalinkMap = buildRightNowPermalinkMap(posts);
+    const paths: {
+        params: { slug: string };
+        props: { post: CollectionEntry<"right-now">; permalink: string };
+    }[] = [];
+
+    for (const post of posts) {
+        const permalink = getRightNowPermalinkSlug(post, permalinkMap);
+        const legacySlug = getRightNowSlug(post);
+
+        paths.push({
+            params: { slug: permalink },
+            props: { post, permalink },
+        });
+
+        if (legacySlug !== permalink) {
+            paths.push({
+                params: { slug: legacySlug },
+                props: { post, permalink },
+            });
+        }
+    }
+
+    return paths;
+}
+
+const { post, permalink } = Astro.props as {
+    post: CollectionEntry<"right-now">;
+    permalink: string;
+};
+const title = `Right Now · ${formatRightNowDateTime(post.data.createdAt)}`;
+const description =
+    post.data.text.length > 160
+        ? `${post.data.text.slice(0, 157)}...`
+        : post.data.text;
+const socialImage =
+    post.data.media.find((item) => item.type === "image")?.src ||
+    post.data.links.find((item) => item.image)?.image;
+---
+
+<Base
+    title={title}
+    description={description}
+    canonical={getRightNowPostPath(permalink)}
+    socialImage={socialImage}
+>
+    <header class="right-now-header">
+        <a class="back-link" href="/right-now/">
+            <i class="ri-arrow-left-line" aria-hidden="true"></i>
+            Back to all updates
+        </a>
+    </header>
+    <div class="right-now-feed right-now-feed-single">
+        <RightNowPost post={post} permalink={permalink} />
+    </div>
+</Base>

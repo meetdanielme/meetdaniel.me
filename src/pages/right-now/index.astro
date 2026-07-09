@@ -1,0 +1,44 @@
+---
+import Base from "../../layouts/Base.astro";
+import RightNowPost from "../../components/RightNowPost.astro";
+import {
+    buildRightNowPermalinkMap,
+    getRightNowPermalinkSlug,
+    RIGHT_NOW_DESCRIPTION,
+} from "../../utils/right-now";
+import { getPublishedRightNowPosts } from "../../utils/right-now-collection";
+
+const posts = await getPublishedRightNowPosts();
+const permalinkMap = buildRightNowPermalinkMap(posts);
+---
+
+<Base
+    title="Right Now"
+    description="Short updates from Daniel Marcinkowski: what I am doing, thinking, or noticing right now."
+    canonical="/right-now/"
+>
+    <header class="right-now-header">
+        <h1 class="text-4xl font-bold">Right Now</h1>
+        <p>{RIGHT_NOW_DESCRIPTION}</p>
+    </header>
+    {
+        posts.length > 0 ? (
+            <div class="right-now-feed">
+                {posts.map((post) => (
+                    <RightNowPost
+                        post={post}
+                        permalink={getRightNowPermalinkSlug(
+                            post,
+                            permalinkMap,
+                        )}
+                    />
+                ))}
+            </div>
+        ) : (
+            <p class="empty-state">
+                Nothing here yet. The archive will fill up once the first post
+                is published.
+            </p>
+        )
+    }
+</Base>
