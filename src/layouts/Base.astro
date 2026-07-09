@@ -6,12 +6,14 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 import SearchBox from "../components/SearchBox.astro";
 import YouTubeEmbedAssets from "../components/YouTubeEmbedAssets.astro";
 import { getImageMetadata } from "../utils/image-metadata";
+import { getPublishedRightNowPosts } from "../utils/right-now-collection";
 const {
     title = "Daniel Marcinkowski",
     description = "Personal website and writing by Daniel Marcinkowski about technology, productivity, marketing, university, and humane digital life.",
     canonical = Astro.url.pathname,
     socialImage = "/images/pages/2025/DSC_5324A-by-Karen-Harms-1-1024x683.jpeg",
     hasYouTubeEmbeds = false,
+    hideFooter = false,
 } = Astro.props;
 const url = new URL(canonical, Astro.site);
 const socialImageUrl = new URL(socialImage, Astro.site);
@@ -23,7 +25,13 @@ const nav = [
     { href: "/work/", label: "Work", icon: "ri-briefcase-4-line" },
     { href: "/uses/", label: "Uses", icon: "ri-tools-line" },
     { href: "/now/", label: "Now", icon: "ri-time-line" },
+    { href: "/right-now/", label: "Right Now", icon: "ri-chat-smile-3-line" },
 ];
+const latestRightNowPost = (await getPublishedRightNowPosts())[0];
+const hasNewRightNowPost =
+    latestRightNowPost &&
+    Date.now() - latestRightNowPost.data.createdAt.valueOf() <
+        24 * 60 * 60 * 1000;
 const socials = [
     {
         href: "https://www.linkedin.com/in/meetdanielme/",
@@ -214,6 +222,13 @@ const structuredData = {
                             >
                                 <i class={item.icon} aria-hidden="true" />
                                 {item.label}
+                                {item.href === "/right-now/" &&
+                                    hasNewRightNowPost && (
+                                        <span
+                                            class="nav-new-dot"
+                                            aria-label="New post in the last 24 hours"
+                                        />
+                                    )}
                             </a>
                         ))
                     }
@@ -272,6 +287,13 @@ const structuredData = {
                                 >
                                     <i class={item.icon} aria-hidden="true" />
                                     {item.label}
+                                    {item.href === "/right-now/" &&
+                                        hasNewRightNowPost && (
+                                            <span
+                                                class="nav-new-dot"
+                                                aria-label="New post in the last 24 hours"
+                                            />
+                                        )}
                                 </a>
                             ))
                         }
@@ -310,14 +332,17 @@ const structuredData = {
                                 aria-hidden="true"></i></button
                         >
                     </div><slot />
-                    <footer class="site-footer">
-                        <hr />
-                        <p>
-                            © 2026 Daniel Marcinkowski · <a
-                                href="/privacy-policy/">Privacy Policy</a
-                            >
-                        </p>
-                    </footer>
+                    {
+                        !hideFooter && (
+                            <footer class="site-footer">
+                                <hr />
+                                <p>
+                                    © 2026 Daniel Marcinkowski ·{" "}
+                                    <a href="/privacy-policy/">Privacy Policy</a>
+                                </p>
+                            </footer>
+                        )
+                    }
                 </main>
             </div>
         </div>
@@ -343,6 +368,8 @@ const structuredData = {
         {hasYouTubeEmbeds && <YouTubeEmbedAssets />}
         <script>
             import "../scripts/search";
+            import "../scripts/right-now-time";
+            import "../scripts/right-now-carousel";
         </script>
         <script is:inline>
             const openButton = document.getElementById("menu-open");
@@ -453,7 +480,7 @@ const structuredData = {
             };
             document
                 .querySelectorAll(
-                    ".prose img, .case-hero-image, .page-hero-image, .post-hero-image",
+                    ".prose img, .case-hero-image, .page-hero-image, .post-hero-image, .right-now-media img",
                 )
                 .forEach((image) => {
                     if (image.closest("a")) return;

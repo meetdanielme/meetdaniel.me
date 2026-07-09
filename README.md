@@ -13,6 +13,7 @@ Personal website of Daniel Marcinkowski — a static, Markdown-first site for wr
 ## What is included
 
 - Blog posts with tags, RSS, and sitemap support
+- Right Now micro-posts with a private owner-only posting page
 - Work page and dedicated case study pages
 - About, Now, Uses, and Privacy Policy pages
 - Static client-side search
@@ -20,7 +21,7 @@ Personal website of Daniel Marcinkowski — a static, Markdown-first site for wr
 
 ## Content authoring notes
 
-Most content lives in Markdown files under `src/content`. Blog posts are in `src/content/blog`, static pages are in `src/content/pages`, and case studies are in `src/content/case-studies`.
+Most content lives in Markdown files under `src/content`. Blog posts are in `src/content/blog`, static pages are in `src/content/pages`, case studies are in `src/content/case-studies`, and Right Now micro-posts are in `src/content/right-now`.
 
 ### Frontmatter
 
@@ -66,6 +67,8 @@ To add a new article, copy the frontmatter shape above into a new file in `src/c
 To add a new case study, create a Markdown file in `src/content/case-studies`, add `order` so the `/work/` listing appears in the intended order, and include any supported metadata such as `location`, `period`, `teamSize`, or `metrics` only when the content supports it. Do not invent metrics just to fill the layout.
 
 To add a new static page, create a Markdown file in `src/content/pages`. If it should show a “Last updated” line, add `updatedDate` and update `src/pages/[slug].astro` only if the page slug is not already in the allowed list.
+
+To add a Right Now post manually, create a Markdown file in `src/content/right-now`. Keep `text` at or below 280 characters, use an ISO timestamp for `createdAt`, optionally add `location` as `City, Country`, and store media URLs in the `media` array. The private `/right-now/new/` posting page normally creates these files by committing them back to the repository.
 
 To update existing content, edit the existing Markdown file rather than changing its filename. Filenames define public URLs, so renaming a file changes the route and can break old links unless a redirect is added.
 
@@ -169,6 +172,34 @@ heroImage: "/images/case-studies/project-slug/cover.png"
 Use descriptive filenames, keep extensions lowercase, and avoid spaces in file names. Always include useful alt text unless the image is purely decorative. Prefer local images over remote URLs, especially for WordPress export media, so the site does not depend on the old WordPress uploads directory.
 
 After adding or moving images, run `pnpm run build` and check the affected page, its preview card, and any tag or work listing that should display the image.
+
+### Right Now posting environment
+
+The public archive at `/right-now/` is static, but the private posting page at `/right-now/new/` uses server routes on Vercel.
+
+Required environment variables:
+
+- `RIGHT_NOW_POSTING_SECRET`: owner-only password for the posting page.
+- `RIGHT_NOW_GITHUB_TOKEN`: fine-grained GitHub token with contents write access to this repository. `GITHUB_TOKEN` is also accepted as a fallback.
+- `BLOB_READ_WRITE_TOKEN`: Vercel Blob read/write token for media uploads.
+
+Optional environment variables:
+
+- `RIGHT_NOW_GITHUB_REPO`: repository to commit posts into. Defaults to `meetdanielme/meetdaniel.me`.
+- `RIGHT_NOW_GITHUB_BRANCH`: branch to commit posts into. Defaults to Vercel's deployment branch, then `main`.
+- `RIGHT_NOW_LOCAL_PUBLISH`: set to `true` for local testing. Posts are written to `src/content/right-now`, and media files are written to `public/images/right-now/local`.
+- `RIGHT_NOW_ENABLE_CROSSPOSTING`: set to `true` to allow Mastodon and Bluesky publishing. Keep this as `false` while testing locally unless you intentionally want to create real social posts.
+
+Optional Mastodon cross-posting variables:
+
+- `MASTODON_INSTANCE_URL`: Mastodon instance URL, such as `https://mastodon.social`.
+- `MASTODON_ACCESS_TOKEN`: Mastodon access token with `write:statuses`.
+
+Optional Bluesky cross-posting variables:
+
+- `BLUESKY_HANDLE`: Bluesky handle, such as `meetdaniel.me`.
+- `BLUESKY_APP_PASSWORD`: Bluesky app password.
+- `BLUESKY_SERVICE_URL`: Bluesky service URL. Defaults to `https://bsky.social`.
 
 ### Things to watch for
 

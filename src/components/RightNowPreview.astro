@@ -1,0 +1,36 @@
+---
+import type { RightNowEntry } from "../utils/right-now";
+import { RIGHT_NOW_DESCRIPTION } from "../utils/right-now";
+import RightNowPost from "./RightNowPost.astro";
+
+type Props = {
+    post: RightNowEntry;
+    permalink: string;
+};
+
+const { post, permalink } = Astro.props;
+---
+
+<section class="right-now-preview" aria-labelledby="right-now-preview-title">
+    <div class="right-now-preview-heading">
+        <h2 id="right-now-preview-title" class="text-2xl font-bold">
+            <a class="section-heading-link" href="/right-now/">Right Now</a>
+        </h2>
+        <span class="info-tooltip">
+            <button
+                class="icon-button info-tooltip-button"
+                type="button"
+                aria-label={`What Right Now means: ${RIGHT_NOW_DESCRIPTION}`}
+            >
+                <i class="ri-information-line" aria-hidden="true"></i>
+            </button>
+            <span class="info-tooltip-bubble" role="tooltip">
+                {RIGHT_NOW_DESCRIPTION}
+            </span>
+        </span>
+    </div>
+    <RightNowPost post={post} permalink={permalink} compact />
+    <a class="btn btn-secondary right-now-preview-cta" href="/right-now/">
+        View all updates →
+    </a>
+</section>
