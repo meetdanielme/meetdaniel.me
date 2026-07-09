@@ -9,6 +9,8 @@ type CrossPostOptions = {
   bluesky: boolean;
 };
 
+const blueskyUrlPattern = /https?:\/\/[^\s<>"')]+/gi;
+
 const trimTrailingSlash = (value: string) => value.replace(/\/+$/, "");
 
 const requireEnv = (name: string, value: string | undefined) => {
@@ -18,6 +20,26 @@ const requireEnv = (name: string, value: string | undefined) => {
 
   return value;
 };
+
+export const buildBlueskyLinkFacets = (text: string) =>
+  Array.from(text.matchAll(blueskyUrlPattern)).map((match) => {
+    const url = match[0];
+    const characterStart = match.index ?? 0;
+    const characterEnd = characterStart + url.length;
+
+    return {
+      index: {
+        byteStart: new TextEncoder().encode(text.slice(0, characterStart)).length,
+        byteEnd: new TextEncoder().encode(text.slice(0, characterEnd)).length,
+      },
+      features: [
+        {
+          "$type": "app.bsky.richtext.facet#link",
+          uri: url,
+        },
+      ],
+    };
+  });
 
 const postToMastodon = async (text: string) => {
   const instanceUrl = trimTrailingSlash(
@@ -85,6 +107,7 @@ const createBlueskySession = async () => {
 
 const postToBluesky = async (text: string) => {
   const session = await createBlueskySession();
+  const facets = buildBlueskyLinkFacets(text);
   const response = await fetch(
     `${session.serviceUrl}/xrpc/com.atproto.repo.createRecord`,
     {
@@ -100,6 +123,7 @@ const postToBluesky = async (text: string) => {
           "$type": "app.bsky.feed.post",
           text,
           createdAt: new Date().toISOString(),
+          ...(facets.length > 0 ? { facets } : {}),
         },
       }),
     },
