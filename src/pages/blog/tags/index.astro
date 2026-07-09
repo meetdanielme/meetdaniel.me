@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const tags = [...new Set(posts.flatMap((post) => post.data.tags))].sort((a, b) => a.localeCompare(b));
-const countFor = (tag) => posts.filter((post) => post.data.tags.includes(tag)).length;
+const countFor = (tag: string) => posts.filter((post) => post.data.tags.includes(tag)).length;
 ---
 <Base title="Blog tags" description="Browse Daniel Marcinkowski's blog posts by tag.">
   <h1 class="text-4xl font-bold">Blog tags</h1>

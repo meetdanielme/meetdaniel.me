@@ -22,9 +22,12 @@ const escapeHtml = (value: string) =>
     );
 
 const loadIndex = async () => {
-    searchIndex ??= await fetch("/search.json")
-        .then((response) => response.json())
-        .catch(() => []);
+    if (searchIndex) return searchIndex;
+
+    searchIndex = await fetch("/search.json")
+        .then((response) => response.json() as Promise<SearchItem[]>)
+        .catch((): SearchItem[] => []);
+
     return searchIndex;
 };
 

@@ -4,7 +4,7 @@ import Base from "../../../layouts/Base.astro";
 import { getEntrySlug } from "../../../utils/content";
 import { getFeaturedImage } from "../../../utils/images";
 export async function getStaticPaths() {
-    const toSlug = (tag) => tag.toLowerCase().replaceAll(" ", "-");
+    const toSlug = (tag: string) => tag.toLowerCase().replaceAll(" ", "-");
     const posts = await getCollection("blog", ({ data }) => !data.draft);
     const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
     return tags.map((tag) => ({
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
         },
     }));
 }
-const tagSlug = (tag) => tag.toLowerCase().replaceAll(" ", "-");
+const tagSlug = (tag: string) => tag.toLowerCase().replaceAll(" ", "-");
 const { tag, posts } = Astro.props;
 ---
 

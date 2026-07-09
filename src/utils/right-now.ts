@@ -6,7 +6,10 @@ export const RIGHT_NOW_DESCRIPTION =
   "Short posts from what I am doing, thinking, or noticing right now.";
 
 export type RightNowEntry = CollectionEntry<"right-now">;
-type RightNowEntryIdentifier = Pick<RightNowEntry, "id" | "slug">;
+type RightNowEntryIdentifier = {
+  id: string;
+  slug?: string;
+};
 type RightNowPermalinkMap = Map<string, string>;
 const urlPattern = /https?:\/\/[^\s<>"')]+/gi;
 

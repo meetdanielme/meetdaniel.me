@@ -1,5 +1,6 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const shared = {
   title: z.string(),
@@ -83,10 +84,10 @@ const rightNow = defineCollection({
     links: z
       .array(
         z.object({
-          url: z.string().url(),
+          url: z.url(),
           title: z.string().optional(),
           description: z.string().optional(),
-          image: z.string().url().optional(),
+          image: z.url().optional(),
           siteName: z.string().optional(),
         }),
       )
@@ -94,10 +95,10 @@ const rightNow = defineCollection({
       .default([]),
     syndication: z
       .object({
-        mastodon: z.string().url().nullable().optional(),
-        bluesky: z.string().url().nullable().optional(),
-        threads: z.string().url().nullable().optional(),
-        twitter: z.string().url().nullable().optional(),
+        mastodon: z.url().nullable().optional(),
+        bluesky: z.url().nullable().optional(),
+        threads: z.url().nullable().optional(),
+        twitter: z.url().nullable().optional(),
       })
       .optional()
       .default({}),
