@@ -14,6 +14,7 @@ const {
     socialImage = "/images/pages/2025/DSC_5324A-by-Karen-Harms-1-1024x683.jpeg",
     hasYouTubeEmbeds = false,
     hideFooter = false,
+    noindex = false,
 } = Astro.props;
 const url = new URL(canonical, Astro.site);
 const socialImageUrl = new URL(socialImage, Astro.site);
@@ -139,6 +140,7 @@ const structuredData = {
             }
         </title>
         <meta name="description" content={description} />
+        {noindex && <meta name="robots" content="noindex, nofollow" />}
         <link rel="canonical" href={url.href} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
