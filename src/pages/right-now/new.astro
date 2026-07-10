@@ -14,7 +14,11 @@ const isMastodonConfigured = Boolean(
 const isBlueskyConfigured = Boolean(
     import.meta.env.BLUESKY_HANDLE && import.meta.env.BLUESKY_APP_PASSWORD,
 );
-const isCrossPostingConfigured = isMastodonConfigured || isBlueskyConfigured;
+const isThreadsConfigured = Boolean(
+    import.meta.env.THREADS_ACCESS_TOKEN && import.meta.env.THREADS_USER_ID,
+);
+const isCrossPostingConfigured =
+    isMastodonConfigured || isBlueskyConfigured || isThreadsConfigured;
 ---
 
 <Base
@@ -151,6 +155,29 @@ const isCrossPostingConfigured = isMastodonConfigured || isBlueskyConfigured;
                                             "right-now-social-toggle",
                                             {
                                                 "right-now-social-toggle-disabled":
+                                                    !isThreadsConfigured,
+                                            },
+                                        ]}
+                                        aria-label="Cross-post to Threads"
+                                        title="Cross-post to Threads"
+                                    >
+                                        <input
+                                            class="sr-only"
+                                            type="checkbox"
+                                            name="crosspostThreads"
+                                            checked={isThreadsConfigured}
+                                            disabled={!isThreadsConfigured}
+                                        />
+                                        <i
+                                            class="ri-threads-fill"
+                                            aria-hidden="true"
+                                        ></i>
+                                    </label>
+                                    <label
+                                        class:list={[
+                                            "right-now-social-toggle",
+                                            {
+                                                "right-now-social-toggle-disabled":
                                                     !isBlueskyConfigured,
                                             },
                                         ]}
@@ -182,8 +209,8 @@ const isCrossPostingConfigured = isMastodonConfigured || isBlueskyConfigured;
                             </div>
                             {!isCrossPostingConfigured && (
                                 <p class="form-help">
-                                    Add Mastodon or Bluesky environment variables
-                                    to enable cross-posting.
+                                    Add social platform environment variables to
+                                    enable cross-posting.
                                 </p>
                             )}
                             <p class="form-status" data-right-now-status></p>
@@ -546,7 +573,15 @@ const isCrossPostingConfigured = isMastodonConfigured || isBlueskyConfigured;
                     altTexts = [];
                     updateCount();
                     renderMediaList();
-                    setStatus(result.message || "Published.");
+                    const warningText = Array.isArray(result.warnings)
+                        ? result.warnings.join(" ")
+                        : "";
+                    setStatus(
+                        [result.message || "Published.", warningText]
+                            .filter(Boolean)
+                            .join(" "),
+                        Boolean(warningText),
+                    );
                 });
             </script>
         )

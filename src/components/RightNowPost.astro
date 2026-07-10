@@ -1,302 +1,298 @@
 ---
 import type { RightNowEntry } from "../utils/right-now";
 import {
-    extractRightNowUrls,
-    formatRightNowDomain,
-    formatRightNowDateTime,
-    formatRightNowRelativeTime,
-    getRightNowPostPath,
-    renderRightNowText,
+  extractRightNowUrls,
+  formatRightNowDomain,
+  formatRightNowDateTime,
+  formatRightNowRelativeTime,
+  getRightNowPostPath,
+  renderRightNowText,
 } from "../utils/right-now";
 
 type Props = {
-    post: RightNowEntry;
-    permalink: string;
-    compact?: boolean;
+  post: RightNowEntry;
+  permalink: string;
+  compact?: boolean;
 };
 
 const { post, permalink, compact = false } = Astro.props;
 const media = post.data.media;
 const links = post.data.links;
 const linkCards =
-    links.length > 0
-        ? links
-        : extractRightNowUrls(post.data.text).map((url) => ({
-              url,
-              title: undefined,
-              description: undefined,
-              image: undefined,
-              siteName: undefined,
-          }));
+  links.length > 0
+    ? links
+    : extractRightNowUrls(post.data.text).map((url) => ({
+        url,
+        title: undefined,
+        description: undefined,
+        image: undefined,
+        siteName: undefined,
+      }));
 const fullTimestamp = formatRightNowDateTime(post.data.createdAt);
 const postPermalink = getRightNowPostPath(permalink);
 const authorLinks = [
-    {
-        href: "https://www.linkedin.com/in/meetdanielme/",
-        label: "LinkedIn",
-        icon: "ri-linkedin-box-fill",
-    },
-    {
-        href: "https://x.com/meetdanielme",
-        label: "Twitter",
-        icon: "ri-twitter-fill",
-    },
-    {
-        href: "https://github.com/meetdanielme",
-        label: "GitHub",
-        icon: "ri-github-fill",
-    },
-    {
-        href: "https://bsky.app/profile/meetdaniel.me",
-        label: "Bluesky",
-        icon: "ri-bluesky-fill",
-    },
-    {
-        href: "https://www.threads.net/@meetdaniel.me",
-        label: "Threads",
-        icon: "ri-threads-fill",
-    },
+  {
+    href: "https://www.linkedin.com/in/meetdanielme/",
+    label: "LinkedIn",
+    icon: "ri-linkedin-box-fill",
+  },
+  {
+    href: "https://x.com/meetdanielme",
+    label: "Twitter",
+    icon: "ri-twitter-fill",
+  },
+  {
+    href: "https://github.com/meetdanielme",
+    label: "GitHub",
+    icon: "ri-github-fill",
+  },
+  {
+    href: "https://bsky.app/profile/meetdaniel.me",
+    label: "Bluesky",
+    icon: "ri-bluesky-fill",
+  },
+  {
+    href: "https://www.threads.net/@meetdaniel.me",
+    label: "Threads",
+    icon: "ri-threads-fill",
+  },
 ];
 const syndicationLinks = [
-    {
-        href: post.data.syndication.mastodon,
-        label: "Mastodon",
-        icon: "ri-mastodon-fill",
-    },
-    {
-        href: post.data.syndication.bluesky,
-        label: "Bluesky",
-        icon: "ri-bluesky-fill",
-    },
+  {
+    href: post.data.syndication.mastodon,
+    label: "Mastodon",
+    icon: "ri-mastodon-fill",
+  },
+  {
+    href: post.data.syndication.bluesky,
+    label: "Bluesky",
+    icon: "ri-bluesky-fill",
+  },
+  {
+    href: post.data.syndication.threads,
+    label: "Threads",
+    icon: "ri-threads-fill",
+  },
 ].filter((item) => item.href);
 ---
 
 <article class:list={["right-now-post", { "right-now-post-compact": compact }]}>
-    <img
-        class="right-now-avatar"
-        src="/images/profile/daniel-marcinkowski-profile-picture.jpg"
-        alt=""
-        width="44"
-        height="44"
-        loading="lazy"
-        decoding="async"
-    />
-    <header class="right-now-post-header">
-        <details class="right-now-author-menu">
-            <summary aria-label="Daniel Marcinkowski social links">
-                <span class="right-now-author-copy">
-                    <span class="right-now-author-line">
-                        <span class="right-now-author-name">
-                            Daniel Marcinkowski
-                        </span>
-                        <span class="right-now-author-handle">
-                            @meetdaniel.me
-                        </span>
-                    </span>
-                    {
-                        post.data.location && (
-                            <span class="right-now-author-location">
-                                <i class="ri-map-pin-line" aria-hidden="true"></i>
-                                {post.data.location}
-                            </span>
-                        )
-                    }
-                </span>
-            </summary>
-            <span class="right-now-author-links" aria-label="Social links">
-                {
-                    authorLinks.map((item) => (
-                        <a href={item.href} aria-label={item.label}>
-                            <i class={item.icon} aria-hidden="true"></i>
-                        </a>
-                    ))
-                }
-            </span>
-        </details>
-        <span class="right-now-meta-separator" aria-hidden="true">·</span>
-        <span class="right-now-time-wrap">
-            <a
-                class="right-now-time-link"
-                href={postPermalink}
-                aria-label={`Open permalink from ${fullTimestamp}`}
-            >
-                <time
-                    class="right-now-meta"
-                    datetime={post.data.createdAt.toISOString()}
-                    aria-label={fullTimestamp}
-                    data-right-now-time={post.data.createdAt.toISOString()}
-                >
-                    {formatRightNowRelativeTime(post.data.createdAt)}
-                </time>
-            </a>
-            <span class="right-now-time-tooltip" role="tooltip">
-                {fullTimestamp}
-            </span>
+  <img
+    class="right-now-avatar"
+    src="/images/profile/daniel-marcinkowski-profile-picture.jpg"
+    alt=""
+    width="44"
+    height="44"
+    loading="lazy"
+    decoding="async"
+  />
+  <header class="right-now-post-header">
+    <details class="right-now-author-menu">
+      <summary aria-label="Daniel Marcinkowski social links">
+        <span class="right-now-author-copy">
+          <span class="right-now-author-line">
+            <span class="right-now-author-name"> Daniel Marcinkowski </span>
+            <span class="right-now-author-handle"> @meetdaniel.me </span>
+          </span>
+          {
+            post.data.location && (
+              <span class="right-now-author-location">
+                <i class="ri-map-pin-line" aria-hidden="true" />
+                {post.data.location}
+              </span>
+            )
+          }
         </span>
-    </header>
-    <div class="right-now-post-body">
-        <p class="right-now-text" set:html={renderRightNowText(post.data.text)} />
-    </div>
-    {
-        media.length === 1 && (
-            <div
-                class:list={[
-                    "right-now-media-grid",
-                    "right-now-media-count-1",
-                    { "right-now-media-grid-compact": compact },
-                ]}
-                aria-label="Media attachments"
-            >
-                {media.map((item) => (
-                    <figure class="right-now-media">
-                        {item.type === "image" ? (
-                            <img
-                                src={item.src}
-                                alt={item.alt}
-                                width={item.width}
-                                height={item.height}
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        ) : (
-                            <video
-                                src={item.src}
-                                controls
-                                preload="metadata"
-                                playsinline
-                                aria-label={item.alt || "Right Now video"}
-                            />
-                        )}
-                        {item.alt && <figcaption>{item.alt}</figcaption>}
-                    </figure>
-                ))}
-            </div>
-        )
-    }
-    {
-        media.length > 1 && (
-            <div
-                class:list={[
-                    "right-now-media-carousel",
-                    { "right-now-media-grid-compact": compact },
-                ]}
-                data-right-now-carousel
-                aria-label="Media attachments"
-            >
-                <div class="right-now-media-carousel-viewport">
-                    <div
-                        class="right-now-media-carousel-track"
-                        data-right-now-carousel-track
-                    >
-                        {media.map((item, index) => (
-                            <figure
-                                class="right-now-media right-now-media-slide"
-                                data-right-now-carousel-slide
-                                aria-label={`Attachment ${index + 1} of ${media.length}`}
-                            >
-                                {item.type === "image" ? (
-                                    <img
-                                        src={item.src}
-                                        alt={item.alt}
-                                        width={item.width}
-                                        height={item.height}
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                ) : (
-                                    <video
-                                        src={item.src}
-                                        controls
-                                        preload="metadata"
-                                        playsinline
-                                        aria-label={
-                                            item.alt || "Right Now video"
-                                        }
-                                    />
-                                )}
-                                {item.alt && <figcaption>{item.alt}</figcaption>}
-                            </figure>
-                        ))}
-                    </div>
-                </div>
-                <button
-                    class="right-now-carousel-button right-now-carousel-button-prev"
-                    type="button"
-                    aria-label="Show previous attachment"
-                    data-right-now-carousel-prev
-                >
-                    <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
-                </button>
-                <button
-                    class="right-now-carousel-button right-now-carousel-button-next"
-                    type="button"
-                    aria-label="Show next attachment"
-                    data-right-now-carousel-next
-                >
-                    <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
-                </button>
-                <div class="right-now-carousel-dots" aria-hidden="true">
-                    {media.map((_, index) => (
-                        <span
-                            class:list={[
-                                "right-now-carousel-dot",
-                                {
-                                    "right-now-carousel-dot-active":
-                                        index === 0,
-                                },
-                            ]}
-                            data-right-now-carousel-dot
-                        />
-                    ))}
-                </div>
-                <span class="sr-only" data-right-now-carousel-status>
-                    Attachment 1 of {media.length}
-                </span>
-            </div>
-        )
-    }
-    {
-        linkCards.length > 0 && (
-            <div class="right-now-link-list">
-                {linkCards.map((link) => (
-                    <a
-                        class="right-now-link-card"
-                        href={link.url}
-                        rel="noopener noreferrer"
-                    >
-                        {link.image && (
-                            <img
-                                class="right-now-link-image"
-                                src={link.image}
-                                alt=""
-                                loading="lazy"
-                                decoding="async"
-                            />
-                        )}
-                        <span class="right-now-link-card-body">
-                            <strong>
-                                {link.title || formatRightNowDomain(link.url)}
-                            </strong>
-                            {link.description && <span>{link.description}</span>}
-                            <span class="right-now-link-domain">
-                                <i class="ri-global-line" aria-hidden="true"></i>
-                                {formatRightNowDomain(link.url)}
-                            </span>
-                        </span>
-                    </a>
-                ))}
-            </div>
-        )
-    }
-    {
-        syndicationLinks.length > 0 && (
-            <div class="right-now-syndication" aria-label="Also posted on">
-                {syndicationLinks.map((item) => (
-                    <a href={item.href} aria-label={`View on ${item.label}`}>
-                        <i class={item.icon} aria-hidden="true"></i>
-                    </a>
-                ))}
-            </div>
-        )
-    }
+      </summary>
+      <span class="right-now-author-links" aria-label="Social links">
+        {
+          authorLinks.map((item) => (
+            <a href={item.href} aria-label={item.label}>
+              <i class={item.icon} aria-hidden="true" />
+            </a>
+          ))
+        }
+      </span>
+    </details>
+    <span class="right-now-meta-separator" aria-hidden="true">·</span>
+    <span class="right-now-time-wrap">
+      <a
+        class="right-now-time-link"
+        href={postPermalink}
+        aria-label={`Open permalink from ${fullTimestamp}`}
+      >
+        <time
+          class="right-now-meta"
+          datetime={post.data.createdAt.toISOString()}
+          aria-label={fullTimestamp}
+          data-right-now-time={post.data.createdAt.toISOString()}
+        >
+          {formatRightNowRelativeTime(post.data.createdAt)}
+        </time>
+      </a>
+      <span class="right-now-time-tooltip" role="tooltip">
+        {fullTimestamp}
+      </span>
+    </span>
+  </header>
+  <div class="right-now-post-body">
+    <p class="right-now-text" set:html={renderRightNowText(post.data.text)} />
+  </div>
+  {
+    media.length === 1 && (
+      <div
+        class:list={[
+          "right-now-media-grid",
+          "right-now-media-count-1",
+          { "right-now-media-grid-compact": compact },
+        ]}
+        aria-label="Media attachments"
+      >
+        {media.map((item) => (
+          <figure class="right-now-media">
+            {item.type === "image" ? (
+              <img
+                src={item.src}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <video
+                src={item.src}
+                controls
+                preload="metadata"
+                playsinline
+                aria-label={item.alt || "Right Now video"}
+              />
+            )}
+            {item.alt && <figcaption>{item.alt}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )
+  }
+  {
+    media.length > 1 && (
+      <div
+        class:list={[
+          "right-now-media-carousel",
+          { "right-now-media-grid-compact": compact },
+        ]}
+        data-right-now-carousel
+        aria-label="Media attachments"
+      >
+        <div class="right-now-media-carousel-viewport">
+          <div
+            class="right-now-media-carousel-track"
+            data-right-now-carousel-track
+          >
+            {media.map((item, index) => (
+              <figure
+                class="right-now-media right-now-media-slide"
+                data-right-now-carousel-slide
+                aria-label={`Attachment ${index + 1} of ${media.length}`}
+              >
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    controls
+                    preload="metadata"
+                    playsinline
+                    aria-label={item.alt || "Right Now video"}
+                  />
+                )}
+                {item.alt && <figcaption>{item.alt}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </div>
+        <button
+          class="right-now-carousel-button right-now-carousel-button-prev"
+          type="button"
+          aria-label="Show previous attachment"
+          data-right-now-carousel-prev
+        >
+          <i class="ri-arrow-left-s-line" aria-hidden="true" />
+        </button>
+        <button
+          class="right-now-carousel-button right-now-carousel-button-next"
+          type="button"
+          aria-label="Show next attachment"
+          data-right-now-carousel-next
+        >
+          <i class="ri-arrow-right-s-line" aria-hidden="true" />
+        </button>
+        <div class="right-now-carousel-dots" aria-hidden="true">
+          {media.map((_, index) => (
+            <span
+              class:list={[
+                "right-now-carousel-dot",
+                {
+                  "right-now-carousel-dot-active": index === 0,
+                },
+              ]}
+              data-right-now-carousel-dot
+            />
+          ))}
+        </div>
+        <span class="sr-only" data-right-now-carousel-status>
+          Attachment 1 of {media.length}
+        </span>
+      </div>
+    )
+  }
+  {
+    linkCards.length > 0 && (
+      <div class="right-now-link-list">
+        {linkCards.map((link) => (
+          <a
+            class="right-now-link-card"
+            href={link.url}
+            rel="noopener noreferrer"
+          >
+            {link.image && (
+              <img
+                class="right-now-link-image"
+                src={link.image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            <span class="right-now-link-card-body">
+              <strong>{link.title || formatRightNowDomain(link.url)}</strong>
+              {link.description && <span>{link.description}</span>}
+              <span class="right-now-link-domain">
+                <i class="ri-global-line" aria-hidden="true" />
+                {formatRightNowDomain(link.url)}
+              </span>
+            </span>
+          </a>
+        ))}
+      </div>
+    )
+  }
+  {
+    syndicationLinks.length > 0 && (
+      <div class="right-now-syndication" aria-label="Also posted on">
+        {syndicationLinks.map((item) => (
+          <a href={item.href} aria-label={`View on ${item.label}`}>
+            <i class={item.icon} aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+    )
+  }
 </article>

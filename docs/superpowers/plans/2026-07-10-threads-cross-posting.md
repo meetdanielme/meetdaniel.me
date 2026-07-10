@@ -21,11 +21,13 @@
 ### Task 1: Threads publisher and isolated cross-post orchestration
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `src/utils/social.ts`
 - Modify: `src/utils/social.test.ts`
 
 **Interfaces:**
+
 - Consumes: `text: string`, `media: Array<{ type: "image" | "video"; src: string; alt?: string }>` and platform booleans.
 - Produces: `crossPostRightNow(options, fetchImpl?) => Promise<{ mastodon?: string | null; bluesky?: string | null; threads?: string | null; warnings: string[] }>`.
 
@@ -36,7 +38,10 @@ Add tests that inject a recording `fetch` implementation and assert:
 ```ts
 assert.equal(createBody.get("media_type"), "TEXT");
 assert.equal(createBody.get("text"), "A URL https://meetdaniel.me/");
-assert.equal(result.threads, "https://www.threads.net/@meetdaniel.me/post/example");
+assert.equal(
+  result.threads,
+  "https://www.threads.net/@meetdaniel.me/post/example",
+);
 ```
 
 Add single-image and mixed carousel cases that assert `image_url`, `video_url`, `is_carousel_item`, and comma-separated `children` request fields.
@@ -86,10 +91,12 @@ Expected: all social publisher tests pass.
 ### Task 2: Persist Threads results and warnings
 
 **Files:**
+
 - Modify: `src/pages/api/right-now/create.ts`
 - Modify: `src/content.config.ts`
 
 **Interfaces:**
+
 - Consumes: uploaded public media and `crosspostThreads` form value.
 - Produces: frontmatter `syndication.threads`, JSON `warnings`, and a success message that distinguishes partial syndication failures.
 
@@ -125,10 +132,12 @@ Expected: all tests pass.
 ### Task 3: Composer toggle and published Threads link
 
 **Files:**
+
 - Modify: `src/pages/right-now/new.astro`
 - Modify: `src/components/RightNowPost.astro`
 
 **Interfaces:**
+
 - Consumes: `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`, and stored `post.data.syndication.threads`.
 - Produces: checkbox `crosspostThreads`, warning-aware submission status, and a Threads link in `Also posted on`.
 
@@ -161,6 +170,7 @@ Expected: zero errors.
 ### Task 4: Full verification and publication
 
 **Files:**
+
 - Verify all modified files.
 
 - [ ] **Step 1: Run complete automated verification**

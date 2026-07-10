@@ -10,25 +10,14 @@ import {
   isValidRightNowText,
 } from "../../../utils/right-now";
 import { hasValidRightNowSession } from "../../../utils/right-now-auth";
+import {
+  buildRightNowPostMarkdown,
+  type RightNowLinkPreview as LinkPreview,
+  type RightNowMediaAttachment as MediaAttachment,
+} from "../../../utils/right-now-markdown";
 import { crossPostRightNow } from "../../../utils/social";
 
 export const prerender = false;
-
-type MediaAttachment = {
-  type: "image" | "video";
-  src: string;
-  alt: string;
-  mimeType: string;
-  size: number;
-};
-
-type LinkPreview = {
-  url: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  siteName?: string;
-};
 
 const allowedImageTypes = new Set([
   "image/jpeg",
@@ -36,16 +25,24 @@ const allowedImageTypes = new Set([
   "image/webp",
   "image/gif",
 ]);
-const allowedVideoTypes = new Set(["video/mp4", "video/quicktime", "video/webm"]);
+const allowedVideoTypes = new Set([
+  "video/mp4",
+  "video/quicktime",
+  "video/webm",
+]);
 const maxFiles = 4;
 const maxImageSize = 10 * 1024 * 1024;
 const maxVideoSize = 100 * 1024 * 1024;
 const isLocalPublish = import.meta.env.RIGHT_NOW_LOCAL_PUBLISH === "true";
 const isMastodonConfigured = Boolean(
-  import.meta.env.MASTODON_INSTANCE_URL && import.meta.env.MASTODON_ACCESS_TOKEN,
+  import.meta.env.MASTODON_INSTANCE_URL &&
+  import.meta.env.MASTODON_ACCESS_TOKEN,
 );
 const isBlueskyConfigured = Boolean(
   import.meta.env.BLUESKY_HANDLE && import.meta.env.BLUESKY_APP_PASSWORD,
+);
+const isThreadsConfigured = Boolean(
+  import.meta.env.THREADS_ACCESS_TOKEN && import.meta.env.THREADS_USER_ID,
 );
 
 const json = (body: unknown, status = 200) =>
@@ -87,7 +84,6 @@ const getMediaKind = (file: File): "image" | "video" | undefined => {
   return undefined;
 };
 
-const yamlString = (value: string) => JSON.stringify(value);
 const normalizeLocation = (value: FormDataEntryValue | null) =>
   typeof value === "string" ? value.trim().slice(0, 120) : "";
 const isChecked = (value: FormDataEntryValue | null) => value === "on";
@@ -97,69 +93,6 @@ const getPostSlug = (createdAt: Date) =>
     .replace(/[:.]/g, "-")
     .replace("T", "-")
     .replace("Z", "z");
-
-const formatMediaYaml = (media: MediaAttachment[]) => {
-  if (media.length === 0) return "media: []";
-
-  return [
-    "media:",
-    ...media.flatMap((item) => [
-      `  - type: ${yamlString(item.type)}`,
-      `    src: ${yamlString(item.src)}`,
-      `    alt: ${yamlString(item.alt)}`,
-      `    mimeType: ${yamlString(item.mimeType)}`,
-      `    size: ${item.size}`,
-    ]),
-  ].join("\n");
-};
-
-const formatLinksYaml = (links: LinkPreview[]) => {
-  if (links.length === 0) return "links: []";
-
-  return [
-    "links:",
-    ...links.flatMap((item) => [
-      `  - url: ${yamlString(item.url)}`,
-      ...(item.title ? [`    title: ${yamlString(item.title)}`] : []),
-      ...(item.description
-        ? [`    description: ${yamlString(item.description)}`]
-        : []),
-      ...(item.image ? [`    image: ${yamlString(item.image)}`] : []),
-      ...(item.siteName ? [`    siteName: ${yamlString(item.siteName)}`] : []),
-    ]),
-  ].join("\n");
-};
-
-const buildPostMarkdown = ({
-  text,
-  createdAt,
-  location,
-  media,
-  links,
-  syndication,
-}: {
-  text: string;
-  createdAt: string;
-  location: string;
-  media: MediaAttachment[];
-  links: LinkPreview[];
-  syndication: {
-    mastodon?: string | null;
-    bluesky?: string | null;
-  };
-}) => `---
-text: ${yamlString(text)}
-createdAt: ${yamlString(createdAt)}
-${location ? `location: ${yamlString(location)}\n` : ""}${formatMediaYaml(media)}
-${formatLinksYaml(links)}
-syndication:
-  mastodon: ${syndication.mastodon ? yamlString(syndication.mastodon) : "null"}
-  bluesky: ${syndication.bluesky ? yamlString(syndication.bluesky) : "null"}
-  threads: null
-  twitter: null
-draft: false
----
-`;
 
 const decodeHtmlEntities = (value: string) =>
   value
@@ -190,7 +123,8 @@ const getMetaContent = (html: string, key: string) => {
   return undefined;
 };
 
-const getTitle = (html: string) => html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1];
+const getTitle = (html: string) =>
+  html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1];
 
 const fetchLinkPreview = async (url: string): Promise<LinkPreview> => {
   try {
@@ -216,8 +150,7 @@ const fetchLinkPreview = async (url: string): Promise<LinkPreview> => {
       getMetaContent(html, "twitter:description") ||
       getMetaContent(html, "description");
     const image =
-      getMetaContent(html, "og:image") ||
-      getMetaContent(html, "twitter:image");
+      getMetaContent(html, "og:image") || getMetaContent(html, "twitter:image");
     const siteName = getMetaContent(html, "og:site_name");
 
     return {
@@ -297,7 +230,14 @@ const uploadLocalMedia = async (
     .toISOString()
     .replaceAll(":", "-")
     .replace(".", "-");
-  const outputDir = join(process.cwd(), "public", "images", "right-now", "local", datePath);
+  const outputDir = join(
+    process.cwd(),
+    "public",
+    "images",
+    "right-now",
+    "local",
+    datePath,
+  );
 
   await mkdir(outputDir, { recursive: true });
 
@@ -344,7 +284,8 @@ const commitPost = async ({
 }) => {
   const token =
     import.meta.env.RIGHT_NOW_GITHUB_TOKEN || import.meta.env.GITHUB_TOKEN;
-  const repo = import.meta.env.RIGHT_NOW_GITHUB_REPO || "meetdanielme/meetdaniel.me";
+  const repo =
+    import.meta.env.RIGHT_NOW_GITHUB_REPO || "meetdanielme/meetdaniel.me";
   const branch =
     import.meta.env.RIGHT_NOW_GITHUB_BRANCH ||
     import.meta.env.VERCEL_GIT_COMMIT_REF ||
@@ -412,8 +353,11 @@ export async function POST(context: APIContext) {
   const formData = await context.request.formData();
   const text = String(formData.get("text") || "").trim();
   const location = normalizeLocation(formData.get("location"));
-  const shouldCrossPostToMastodon = isChecked(formData.get("crosspostMastodon"));
+  const shouldCrossPostToMastodon = isChecked(
+    formData.get("crosspostMastodon"),
+  );
   const shouldCrossPostToBluesky = isChecked(formData.get("crosspostBluesky"));
+  const shouldCrossPostToThreads = isChecked(formData.get("crosspostThreads"));
 
   if (!isValidRightNowText(text)) {
     return json(
@@ -444,11 +388,13 @@ export async function POST(context: APIContext) {
       : await uploadMedia(files, altTexts, createdAt);
     const syndication = await crossPostRightNow({
       text,
+      media,
       mastodon: shouldCrossPostToMastodon && isMastodonConfigured,
       bluesky: shouldCrossPostToBluesky && isBlueskyConfigured,
+      threads: shouldCrossPostToThreads && isThreadsConfigured,
     });
     const links = await getLinkPreviews(text);
-    const markdown = buildPostMarkdown({
+    const markdown = buildRightNowPostMarkdown({
       text,
       media,
       links,
@@ -466,6 +412,7 @@ export async function POST(context: APIContext) {
         ? "Published locally. Restart or refresh the dev server if the new post does not appear immediately."
         : "Published. Vercel will show it after the next deployment.",
       commit,
+      warnings: syndication.warnings,
     });
   } catch (error) {
     return json(
