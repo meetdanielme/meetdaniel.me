@@ -21,5 +21,16 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+
+        return (
+          pathname !== "/right-now/new/" &&
+          !/^\/right-now\/\d{4}-\d{2}-\d{2}-.*z\/$/.test(pathname)
+        );
+      },
+    }),
+  ],
 });
