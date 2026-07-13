@@ -793,6 +793,8 @@ pre code {
 .right-now-feed {
     display: grid;
     gap: 1.75rem;
+    min-width: 0;
+    width: 100%;
 }
 .right-now-feed-single .right-now-post {
     border-bottom: 0;
@@ -806,6 +808,8 @@ pre code {
     display: grid;
     grid-template-columns: 2.75rem minmax(0, 1fr);
     gap: 0.3rem 0.9rem;
+    min-width: 0;
+    width: 100%;
     border-bottom: 1px solid var(--rule);
     padding-bottom: 1.75rem;
 }
@@ -822,6 +826,7 @@ pre code {
 }
 .right-now-post-body {
     grid-column: 2;
+    min-width: 0;
 }
 .right-now-avatar {
     grid-column: 1;
@@ -1021,6 +1026,7 @@ pre code {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.35rem;
     width: min(34rem, 100%);
+    max-width: 100%;
     margin-top: 0.25rem;
     margin-bottom: 0.35rem;
 }
@@ -1059,6 +1065,7 @@ pre code {
     display: grid;
     gap: 0.55rem;
     width: min(34rem, 100%);
+    max-width: 100%;
     margin-top: 0.25rem;
     margin-bottom: 0.35rem;
 }
@@ -1134,6 +1141,7 @@ pre code {
     display: grid;
     gap: 0.65rem;
     width: min(34rem, 100%);
+    max-width: 100%;
 }
 .right-now-link-card {
     display: grid;
@@ -1182,6 +1190,11 @@ pre code {
     font-weight: 700;
 }
 @media (max-width: 640px) {
+    .right-now-time-tooltip {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
     .right-now-media-grid {
         width: 100%;
     }
