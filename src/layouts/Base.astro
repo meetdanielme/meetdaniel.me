@@ -29,10 +29,8 @@ const nav = [
     { href: "/right-now/", label: "Right Now", icon: "ri-chat-smile-3-line" },
 ];
 const latestRightNowPost = (await getPublishedRightNowPosts())[0];
-const hasNewRightNowPost =
-    latestRightNowPost &&
-    Date.now() - latestRightNowPost.data.createdAt.valueOf() <
-        24 * 60 * 60 * 1000;
+const latestRightNowCreatedAt =
+    latestRightNowPost?.data.createdAt.toISOString();
 const socials = [
     {
         href: "https://www.linkedin.com/in/meetdanielme/",
@@ -226,10 +224,14 @@ const structuredData = {
                                 <i class={item.icon} aria-hidden="true" />
                                 {item.label}
                                 {item.href === "/right-now/" &&
-                                    hasNewRightNowPost && (
+                                    latestRightNowCreatedAt && (
                                         <span
                                             class="nav-new-dot"
+                                            data-right-now-created-at={
+                                                latestRightNowCreatedAt
+                                            }
                                             aria-label="New post in the last 24 hours"
+                                            hidden
                                         />
                                     )}
                             </a>
@@ -291,10 +293,14 @@ const structuredData = {
                                     <i class={item.icon} aria-hidden="true" />
                                     {item.label}
                                     {item.href === "/right-now/" &&
-                                        hasNewRightNowPost && (
+                                        latestRightNowCreatedAt && (
                                             <span
                                                 class="nav-new-dot"
+                                                data-right-now-created-at={
+                                                    latestRightNowCreatedAt
+                                                }
                                                 aria-label="New post in the last 24 hours"
+                                                hidden
                                             />
                                         )}
                                 </a>
@@ -373,6 +379,7 @@ const structuredData = {
             import "../scripts/search";
             import "../scripts/right-now-time";
             import "../scripts/right-now-carousel";
+            import "../scripts/right-now-new-dot";
         </script>
         <script is:inline>
             const openButton = document.getElementById("menu-open");

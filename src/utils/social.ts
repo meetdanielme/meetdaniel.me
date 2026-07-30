@@ -9,6 +9,7 @@ export type CrossPostMedia = {
   type: "image" | "video";
   src: string;
   alt?: string;
+  mimeType?: string;
 };
 
 type CrossPostOptions = {
@@ -46,16 +47,56 @@ const parseApiResponse = async (response: Response, platform: string) => {
       body &&
       typeof body === "object" &&
       "error" in body &&
-      body.error &&
-      typeof body.error === "object" &&
-      "message" in body.error &&
-      typeof body.error.message === "string"
-        ? body.error.message
-        : `${response.status} ${response.statusText}`.trim();
+      typeof body.error === "string"
+        ? body.error
+        : body &&
+            typeof body === "object" &&
+            "error" in body &&
+            body.error &&
+            typeof body.error === "object" &&
+            "message" in body.error &&
+            typeof body.error.message === "string"
+          ? body.error.message
+          : `${response.status} ${response.statusText}`.trim();
     throw new Error(`${platform} request failed: ${message}`);
   }
 
   return body;
+};
+
+const downloadMedia = async (
+  media: CrossPostMedia,
+  fetchImpl: typeof fetch,
+) => {
+  const url = new URL(media.src);
+  if (url.protocol !== "https:") {
+    throw new Error("Cross-posted media must use a public HTTPS URL.");
+  }
+
+  const response = await fetchImpl(url);
+  if (!response.ok) {
+    throw new Error(
+      `Could not download media: ${response.status} ${response.statusText}`.trim(),
+    );
+  }
+
+  const downloaded = await response.blob();
+  const mimeType =
+    downloaded.type ||
+    media.mimeType ||
+    (media.type === "image" ? "image/jpeg" : "video/mp4");
+  const pathname = url.pathname.split("/").pop();
+  const filename =
+    (pathname && decodeURIComponent(pathname)) ||
+    (media.type === "image" ? "image.jpg" : "video.mp4");
+
+  return {
+    blob:
+      downloaded.type === mimeType
+        ? downloaded
+        : new Blob([downloaded], { type: mimeType }),
+    filename,
+  };
 };
 
 const assertPublicMediaUrl = (value: string) => {
@@ -234,18 +275,93 @@ export const buildBlueskyLinkFacets = (text: string) =>
     };
   });
 
-const postToMastodon = async (text: string) => {
-  const instanceUrl = trimTrailingSlash(
-    requireEnv("MASTODON_INSTANCE_URL", import.meta.env.MASTODON_INSTANCE_URL),
-  );
-  const accessToken = requireEnv(
-    "MASTODON_ACCESS_TOKEN",
-    import.meta.env.MASTODON_ACCESS_TOKEN,
-  );
+const waitForMastodonMedia = async (
+  instanceUrl: string,
+  mediaId: string,
+  accessToken: string,
+  fetchImpl: typeof fetch,
+) => {
+  for (let attempt = 0; attempt < 30; attempt += 1) {
+    const response = await fetchImpl(
+      `${instanceUrl}/api/v1/media/${encodeURIComponent(mediaId)}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } },
+    );
+    const attachment = await parseApiResponse(response, "Mastodon");
+    if (
+      attachment &&
+      typeof attachment === "object" &&
+      "url" in attachment &&
+      typeof attachment.url === "string" &&
+      attachment.url
+    ) {
+      return;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+  }
+
+  throw new Error("Mastodon media was not ready after 30 seconds.");
+};
+
+export const postToMastodon = async (
+  {
+    text,
+    media,
+    instanceUrl,
+    accessToken,
+  }: {
+    text: string;
+    media: CrossPostMedia[];
+    instanceUrl: string;
+    accessToken: string;
+  },
+  fetchImpl: typeof fetch = fetch,
+) => {
+  const baseUrl = trimTrailingSlash(instanceUrl);
+  const mediaIds: string[] = [];
+
+  for (const item of media) {
+    const downloaded = await downloadMedia(item, fetchImpl);
+    const upload = new FormData();
+    upload.set("file", downloaded.blob, downloaded.filename);
+    if (item.alt) upload.set("description", item.alt);
+
+    const uploadResponse = await fetchImpl(`${baseUrl}/api/v2/media`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${accessToken}` },
+      body: upload,
+    });
+    const attachment = await parseApiResponse(uploadResponse, "Mastodon");
+    if (
+      !attachment ||
+      typeof attachment !== "object" ||
+      !("id" in attachment) ||
+      typeof attachment.id !== "string"
+    ) {
+      throw new Error("Mastodon did not return a media attachment ID.");
+    }
+
+    mediaIds.push(attachment.id);
+    if (
+      uploadResponse.status === 202 ||
+      !("url" in attachment) ||
+      typeof attachment.url !== "string" ||
+      !attachment.url
+    ) {
+      await waitForMastodonMedia(
+        baseUrl,
+        attachment.id,
+        accessToken,
+        fetchImpl,
+      );
+    }
+  }
+
   const formData = new FormData();
   formData.set("status", text);
+  mediaIds.forEach((id) => formData.append("media_ids[]", id));
 
-  const response = await fetch(`${instanceUrl}/api/v1/statuses`, {
+  const response = await fetchImpl(`${baseUrl}/api/v1/statuses`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -267,20 +383,21 @@ const postToMastodon = async (text: string) => {
   return status.url;
 };
 
-const createBlueskySession = async () => {
-  const serviceUrl = trimTrailingSlash(
-    import.meta.env.BLUESKY_SERVICE_URL || "https://bsky.social",
-  );
-  const identifier = requireEnv(
-    "BLUESKY_HANDLE",
-    import.meta.env.BLUESKY_HANDLE,
-  );
-  const password = requireEnv(
-    "BLUESKY_APP_PASSWORD",
-    import.meta.env.BLUESKY_APP_PASSWORD,
-  );
-  const response = await fetch(
-    `${serviceUrl}/xrpc/com.atproto.server.createSession`,
+const createBlueskySession = async (
+  {
+    serviceUrl,
+    identifier,
+    password,
+  }: {
+    serviceUrl: string;
+    identifier: string;
+    password: string;
+  },
+  fetchImpl: typeof fetch,
+) => {
+  const baseUrl = trimTrailingSlash(serviceUrl);
+  const response = await fetchImpl(
+    `${baseUrl}/xrpc/com.atproto.server.createSession`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -303,17 +420,88 @@ const createBlueskySession = async () => {
   }
 
   return {
-    serviceUrl,
+    serviceUrl: baseUrl,
     identifier,
     accessJwt: session.accessJwt,
     did: session.did,
   };
 };
 
-const postToBluesky = async (text: string) => {
-  const session = await createBlueskySession();
+export const postToBluesky = async (
+  {
+    text,
+    media,
+    serviceUrl,
+    identifier,
+    password,
+  }: {
+    text: string;
+    media: CrossPostMedia[];
+    serviceUrl: string;
+    identifier: string;
+    password: string;
+  },
+  fetchImpl: typeof fetch = fetch,
+) => {
+  const session = await createBlueskySession(
+    { serviceUrl, identifier, password },
+    fetchImpl,
+  );
   const facets = buildBlueskyLinkFacets(text);
-  const response = await fetch(
+  let embed: Record<string, unknown> | undefined;
+
+  if (media.length > 0) {
+    const hasImages = media.some((item) => item.type === "image");
+    const hasVideos = media.some((item) => item.type === "video");
+    if (hasImages && hasVideos) {
+      throw new Error("Bluesky cannot attach images and video to one post.");
+    }
+    if (hasVideos && media.length > 1) {
+      throw new Error("Bluesky supports one video attachment per post.");
+    }
+
+    const uploaded = [];
+    for (const item of media) {
+      const downloaded = await downloadMedia(item, fetchImpl);
+      const uploadResponse = await fetchImpl(
+        `${session.serviceUrl}/xrpc/com.atproto.repo.uploadBlob`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${session.accessJwt}`,
+            "Content-Type": downloaded.blob.type,
+          },
+          body: downloaded.blob,
+        },
+      );
+      const upload = await parseApiResponse(uploadResponse, "Bluesky");
+      if (
+        !upload ||
+        typeof upload !== "object" ||
+        !("blob" in upload) ||
+        !upload.blob
+      ) {
+        throw new Error("Bluesky did not return an uploaded media blob.");
+      }
+      uploaded.push({ item, blob: upload.blob });
+    }
+
+    embed = hasImages
+      ? {
+          $type: "app.bsky.embed.images",
+          images: uploaded.map(({ item, blob }) => ({
+            alt: item.alt || "",
+            image: blob,
+          })),
+        }
+      : {
+          $type: "app.bsky.embed.video",
+          video: uploaded[0].blob,
+          ...(uploaded[0].item.alt ? { alt: uploaded[0].item.alt } : {}),
+        };
+  }
+
+  const response = await fetchImpl(
     `${session.serviceUrl}/xrpc/com.atproto.repo.createRecord`,
     {
       method: "POST",
@@ -329,6 +517,7 @@ const postToBluesky = async (text: string) => {
           text,
           createdAt: new Date().toISOString(),
           ...(facets.length > 0 ? { facets } : {}),
+          ...(embed ? { embed } : {}),
         },
       }),
     },
@@ -378,7 +567,20 @@ export const crossPostRightNow = async (
     await attempt(
       "Mastodon",
       "mastodon",
-      publishers.mastodon || (() => postToMastodon(text)),
+      publishers.mastodon ||
+        (() =>
+          postToMastodon({
+            text,
+            media,
+            instanceUrl: requireEnv(
+              "MASTODON_INSTANCE_URL",
+              import.meta.env.MASTODON_INSTANCE_URL,
+            ),
+            accessToken: requireEnv(
+              "MASTODON_ACCESS_TOKEN",
+              import.meta.env.MASTODON_ACCESS_TOKEN,
+            ),
+          })),
     );
   }
 
@@ -386,7 +588,22 @@ export const crossPostRightNow = async (
     await attempt(
       "Bluesky",
       "bluesky",
-      publishers.bluesky || (() => postToBluesky(text)),
+      publishers.bluesky ||
+        (() =>
+          postToBluesky({
+            text,
+            media,
+            serviceUrl:
+              import.meta.env.BLUESKY_SERVICE_URL || "https://bsky.social",
+            identifier: requireEnv(
+              "BLUESKY_HANDLE",
+              import.meta.env.BLUESKY_HANDLE,
+            ),
+            password: requireEnv(
+              "BLUESKY_APP_PASSWORD",
+              import.meta.env.BLUESKY_APP_PASSWORD,
+            ),
+          })),
     );
   }
 

@@ -3,6 +3,8 @@ import test from "node:test";
 import {
   buildBlueskyLinkFacets,
   crossPostRightNow,
+  postToBluesky,
+  postToMastodon,
   postToThreads,
 } from "./social";
 
@@ -194,6 +196,139 @@ test("publishes mixed Threads media as a carousel", async () => {
   );
   assert.equal(carouselRequest?.body?.get("children"), "child-1,child-2");
   assert.equal(carouselRequest?.body?.get("text"), "Mixed media");
+});
+
+test("uploads Mastodon media and attaches it to the status", async () => {
+  const requests: Array<{ url: string; init?: RequestInit }> = [];
+  const fetchImpl: typeof fetch = async (input, init) => {
+    const url = String(input);
+    requests.push({ url, init });
+
+    if (url === "https://cdn.example/photo.jpg") {
+      return new Response(new Uint8Array([1, 2, 3]), {
+        headers: { "Content-Type": "image/jpeg" },
+      });
+    }
+    if (url === "https://mastodon.social/api/v2/media") {
+      return jsonResponse({
+        id: "attachment-1",
+        url: "https://mastodon.social/media/photo.jpg",
+      });
+    }
+    if (url === "https://mastodon.social/api/v1/statuses") {
+      return jsonResponse({
+        url: "https://mastodon.social/@meetdanielme/1",
+      });
+    }
+
+    throw new Error(`Unexpected request: ${url}`);
+  };
+
+  const result = await postToMastodon(
+    {
+      text: "Photo post",
+      media: [
+        {
+          type: "image",
+          src: "https://cdn.example/photo.jpg",
+          alt: "A descriptive photo",
+        },
+      ],
+      instanceUrl: "https://mastodon.social/",
+      accessToken: "secret",
+    },
+    fetchImpl,
+  );
+
+  assert.equal(result, "https://mastodon.social/@meetdanielme/1");
+  const upload = requests[1].init?.body;
+  assert.ok(upload instanceof FormData);
+  assert.equal(upload.get("description"), "A descriptive photo");
+  assert.ok(upload.get("file") instanceof Blob);
+  const status = requests[2].init?.body;
+  assert.ok(status instanceof FormData);
+  assert.equal(status.get("status"), "Photo post");
+  assert.deepEqual(status.getAll("media_ids[]"), ["attachment-1"]);
+});
+
+test("uploads Bluesky images and embeds them in the post record", async () => {
+  const requests: Array<{ url: string; init?: RequestInit }> = [];
+  let uploadIndex = 0;
+  const fetchImpl: typeof fetch = async (input, init) => {
+    const url = String(input);
+    requests.push({ url, init });
+
+    if (url.endsWith("/com.atproto.server.createSession")) {
+      return jsonResponse({
+        accessJwt: "access-token",
+        did: "did:plc:meetdaniel",
+      });
+    }
+    if (url.startsWith("https://cdn.example/")) {
+      return new Response(new Uint8Array([1, 2, 3]), {
+        headers: { "Content-Type": "image/jpeg" },
+      });
+    }
+    if (url.endsWith("/com.atproto.repo.uploadBlob")) {
+      uploadIndex += 1;
+      return jsonResponse({
+        blob: {
+          $type: "blob",
+          ref: { $link: `blob-${uploadIndex}` },
+          mimeType: "image/jpeg",
+          size: 3,
+        },
+      });
+    }
+    if (url.endsWith("/com.atproto.repo.createRecord")) {
+      return jsonResponse({
+        uri: "at://did:plc:meetdaniel/app.bsky.feed.post/post-1",
+      });
+    }
+
+    throw new Error(`Unexpected request: ${url}`);
+  };
+
+  const result = await postToBluesky(
+    {
+      text: "Two photos",
+      media: [
+        {
+          type: "image",
+          src: "https://cdn.example/one.jpg",
+          alt: "First photo",
+        },
+        {
+          type: "image",
+          src: "https://cdn.example/two.jpg",
+          alt: "Second photo",
+        },
+      ],
+      serviceUrl: "https://bsky.social/",
+      identifier: "meetdaniel.me",
+      password: "app-password",
+    },
+    fetchImpl,
+  );
+
+  assert.equal(result, "https://bsky.app/profile/meetdaniel.me/post/post-1");
+  const createRecord = requests.find((request) =>
+    request.url.endsWith("/com.atproto.repo.createRecord"),
+  );
+  const body = JSON.parse(String(createRecord?.init?.body));
+  assert.equal(body.record.embed.$type, "app.bsky.embed.images");
+  assert.deepEqual(
+    body.record.embed.images.map(
+      (image: { alt: string; image: { ref: { $link: string } } }) => ({
+        alt: image.alt,
+        ref: image.image.ref.$link,
+      }),
+    ),
+    [
+      { alt: "First photo", ref: "blob-1" },
+      { alt: "Second photo", ref: "blob-2" },
+    ],
+  );
 });
 
 test("keeps successful platforms when Threads fails", async () => {
