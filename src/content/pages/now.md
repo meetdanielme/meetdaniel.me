@@ -9,19 +9,26 @@ draft: false
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
 
-## July 2026
+## August 2026
 
 📍 Berlin, Germany
 
-- It's been a month since I joined Zartis. It's truly fascinating to me how different my job as a marketer is now from what it used to be just two years ago when I worked at Ready Player Me. Working with AI (specifically, Claude Code) compared to writing everything myself is a huge shift in the way I approach work. I wrote more about it [here](/blog/why-im-betting-on-business-technology-and-ai/). Also, my colleague Adnan [wrote](https://www.linkedin.com/feed/update/urn:li:activity:7477713711168643072/) about how my “outside-the-box" thinking has influenced his work. 
-- Also in June, I posted an [overview of some of my favourite student discounts](https://meetdaniel.me/blog/my-favourite-tools-and-services-with-student-discounts/).
-- I'm going back to Taiwan in a few weeks — really looking forward to that!
+- I'm back in Berlin after spending a few weeks in Taiwan and China. I already miss the food, but not the insane humidity.
+- Last month, I posted about how I want to [reclaim my attention](/blog/reclaiming-my-attention/). I will be honest, it's not going as smoothly as I hoped. I want to be more mindful of the goals that I have set for myself, especially before the end of the summer and going back to university.
 
 ---
 
 # Then
 
 Archival entries.
+
+## July 2026
+
+📍 Berlin, Germany
+
+- It's been a month since I joined Zartis. It's truly fascinating to me how different my job as a marketer is now from what it used to be just two years ago when I worked at Ready Player Me. Working with AI (specifically, Claude Code) compared to writing everything myself is a huge shift in the way I approach work. I wrote more about it [here](/blog/why-im-betting-on-business-technology-and-ai/). Also, my colleague Adnan [wrote](https://www.linkedin.com/feed/update/urn:li:activity:7477713711168643072/) about how my “outside-the-box" thinking has influenced his work. 
+- Also in June, I posted an [overview of some of my favourite student discounts](/blog/my-favourite-tools-and-services-with-student-discounts/).
+- I'm going back to Taiwan in a few weeks — really looking forward to that!
 
 ## June 2026
 
@@ -115,7 +122,7 @@ Movies & TV shows ([follow me on Trakt](https://trakt.tv/users/meetdanielme)):
 
 📍 Berlin, Germany
 
-- It’s officially my last month in Berlin before my move to Cork in the fall to start BSc in Business Information Systems at the University College Cork. I wrote a [short article](file:///blog/on-going-to-university-at-28) about what it feels like to go back to school after 9 years.
+- It’s officially my last month in Berlin before my move to Cork in the fall to start BSc in Business Information Systems at the University College Cork. I wrote a [short article](/blog/on-going-to-university-at-28) about what it feels like to go back to school after 9 years.
 
 ### Media
 
