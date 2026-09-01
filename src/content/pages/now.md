@@ -9,6 +9,19 @@ draft: false
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
 
+## September 2026
+
+📍 Berlin, Germany
+
+- My summer in Berlin is coming to the end as I prepare to go back to Cork to continue my studies.
+- I'm deep in my marathon training as I get ready to run in Cologne next month. Back in August, I posted how I created my training plan with [ChatGPT](https://meetdaniel.me/blog/training-for-my-next-marathon-with-codex/) as well as shared what's [my current shoe rotation](https://meetdaniel.me/blog/my-running-shoe-rotation-summer-2026/).
+
+---
+
+# Then
+
+Archival entries.
+
 ## August 2026
 
 📍 Berlin, Germany
@@ -16,11 +29,6 @@ Things going on in my life right now. _Inspired by [nownownow.com](https://nowno
 - I'm back in Berlin after spending a few weeks in Taiwan and China. I already miss the food, but not the insane humidity.
 - Last month, I posted about how I want to [reclaim my attention](/blog/reclaiming-my-attention/). I will be honest, it's not going as smoothly as I hoped. I want to be more mindful of the goals that I have set for myself, especially before the end of the summer and going back to university.
 
----
-
-# Then
-
-Archival entries.
 
 ## July 2026
 
