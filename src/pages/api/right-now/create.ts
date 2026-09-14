@@ -2,7 +2,7 @@ import type { APIContext } from "astro";
 import { Buffer } from "node:buffer";
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { put } from "@vercel/blob";
+import { put, head } from "@vercel/blob";
 import {
   RIGHT_NOW_MAX_LENGTH,
   countRightNowCharacters,
@@ -16,6 +16,11 @@ import {
   type RightNowMediaAttachment as MediaAttachment,
 } from "../../../utils/right-now-markdown";
 import { crossPostRightNow } from "../../../utils/social";
+
+import {
+  isRightNowUploadPath,
+  validateMedia,
+} from "../../../utils/right-now-media";
 
 export const prerender = false;
 
@@ -31,7 +36,7 @@ const allowedVideoTypes = new Set([
   "video/webm",
 ]);
 const maxFiles = 4;
-const maxImageSize = 10 * 1024 * 1024;
+const maxImageSize = 30 * 1024 * 1024;
 const maxVideoSize = 100 * 1024 * 1024;
 const isLocalPublish = import.meta.env.RIGHT_NOW_LOCAL_PUBLISH === "true";
 const isMastodonConfigured = Boolean(
@@ -350,7 +355,12 @@ export async function POST(context: APIContext) {
     return json({ error: "Not authorised." }, 401);
   }
 
-  const formData = await context.request.formData();
+  let formData: FormData;
+  try {
+    formData = await context.request.formData();
+  } catch {
+    return json({ error: "Could not read the post. Please try again." }, 400);
+  }
   const text = String(formData.get("text") || "").trim();
   const location = normalizeLocation(formData.get("location"));
   const shouldCrossPostToMastodon = isChecked(
@@ -377,15 +387,53 @@ export async function POST(context: APIContext) {
     return json({ error: `Add up to ${maxFiles} media files.` }, 400);
   }
 
-  const altTexts = String(formData.get("altText") || "")
-    .split("\n")
-    .map((line) => line.trim());
+  let altTexts: string[];
+  let uploadedPaths: string[];
+  try {
+    const altJson = formData.get("altTexts");
+    altTexts = altJson
+      ? JSON.parse(String(altJson))
+      : String(formData.get("altText") || "").split("\n");
+    uploadedPaths = JSON.parse(String(formData.get("uploadedMedia") || "[]"));
+    if (
+      !Array.isArray(altTexts) ||
+      altTexts.length > 4 ||
+      altTexts.some((value) => typeof value !== "string")
+    )
+      throw new Error();
+    if (
+      !Array.isArray(uploadedPaths) ||
+      uploadedPaths.length + files.length > 4 ||
+      uploadedPaths.some(
+        (path) => typeof path !== "string" || !isRightNowUploadPath(path),
+      )
+    )
+      throw new Error();
+    if (uploadedPaths.length && files.length) throw new Error();
+  } catch {
+    return json({ error: "Invalid attachment metadata." }, 400);
+  }
   const createdAt = new Date();
 
   try {
-    const media = isLocalPublish
-      ? await uploadLocalMedia(files, altTexts, createdAt)
-      : await uploadMedia(files, altTexts, createdAt);
+    const directMedia: MediaAttachment[] = [];
+    for (const [index, pathname] of uploadedPaths.entries()) {
+      // Resolve a validated pathname in our own store, never a client-supplied URL.
+      const blob = await head(pathname);
+      const spec = validateMedia(blob.contentType, blob.size);
+      directMedia.push({
+        type: spec.type,
+        src: blob.url,
+        alt: altTexts[index] || "",
+        mimeType: blob.contentType,
+        size: blob.size,
+      });
+    }
+    const media = uploadedPaths.length
+      ? directMedia
+      : isLocalPublish
+        ? await uploadLocalMedia(files, altTexts, createdAt)
+        : await uploadMedia(files, altTexts, createdAt);
     const syndication = await crossPostRightNow({
       text,
       media,

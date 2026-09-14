@@ -1,78 +1,75 @@
-// Leave room below Vercel's 4.5 MB request limit, including multipart metadata.
-export const RIGHT_NOW_UPLOAD_BUDGET = 4_000_000;
-const imageBudget = 900_000;
+import { upload } from "@vercel/blob/client";
+import { mediaTypes, validateMedia } from "./right-now-media";
+
+export const isHeicFile = (file: File) =>
+  /image\/hei[cf]/i.test(file.type) || /\.hei[cf]$/i.test(file.name);
 
 export async function optimiseRightNowImage(file: File): Promise<File> {
-  // Preserve animated GIFs and videos rather than flattening them.
-  if (!["image/jpeg", "image/png", "image/webp"].includes(file.type))
-    return file;
-
-  let bitmap: ImageBitmap;
+  // Web-ready images retain their original bytes, dimensions and animation.
+  if (!isHeicFile(file)) return file;
+  if (file.size > 30 * 1024 * 1024)
+    throw new Error("HEIC photos must be under 30 MB.");
   try {
-    bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+    // Load the decoder only for HEIC, including browsers without native support.
+    const { heicTo } = await import("heic-to");
+    const jpeg = await heicTo({
+      blob: file,
+      type: "image/jpeg",
+      quality: 0.95,
+    });
+    return new File([jpeg], `${file.name.replace(/\.[^.]+$/, "")}.jpg`, {
+      type: "image/jpeg",
+      lastModified: file.lastModified,
+    });
   } catch {
     throw new Error(
-      `Could not read ${file.name}. Try exporting it as a JPEG or PNG.`,
+      `Could not convert ${file.name}. Your draft is kept; try a full-size JPEG export.`,
     );
-  }
-  try {
-    const canvas = document.createElement("canvas");
-    const context = canvas.getContext("2d");
-    if (!context)
-      throw new Error("Image optimisation is unavailable in this browser.");
-    let edge = Math.min(2048, Math.max(bitmap.width, bitmap.height));
-    for (let attempt = 0; attempt < 6; attempt++) {
-      const scale = Math.min(1, edge / Math.max(bitmap.width, bitmap.height));
-      canvas.width = Math.max(1, Math.round(bitmap.width * scale));
-      canvas.height = Math.max(1, Math.round(bitmap.height * scale));
-      context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-      const blob = await new Promise<Blob>((resolve, reject) => {
-        canvas.toBlob(
-          (value) =>
-            value
-              ? resolve(value)
-              : reject(new Error(`Could not optimise ${file.name}.`)),
-          "image/webp",
-          0.82,
-        );
-      });
-      if (blob.size <= imageBudget) {
-        // Retain an already smaller original, including its original encoding.
-        if (file.size <= blob.size) return file;
-        const extension = blob.type === "image/webp" ? "webp" : "png";
-        return new File(
-          [blob],
-          `${file.name.replace(/\.[^.]+$/, "")}.${extension}`,
-          {
-            type: blob.type,
-            lastModified: file.lastModified,
-          },
-        );
-      }
-      edge *= 0.75;
-    }
-    if (file.size <= imageBudget) return file;
-    throw new Error(
-      `Could not make ${file.name} small enough. Try a smaller image.`,
-    );
-  } finally {
-    bitmap.close();
   }
 }
 
-export async function prepareRightNowUpload(data: FormData): Promise<FormData> {
+export async function prepareRightNowUpload(
+  data: FormData,
+  options: { local?: boolean; onProgress?: (message: string) => void } = {},
+  send: typeof upload = upload,
+): Promise<FormData> {
   const files = data
     .getAll("media")
     .filter((value): value is File => value instanceof File && value.size > 0);
-  data.delete("media");
-  // Process sequentially to avoid decoding several large photos at once.
-  for (const file of files)
-    data.append("media", await optimiseRightNowImage(file));
-  const bytes = (await new Response(data).blob()).size;
-  if (bytes > RIGHT_NOW_UPLOAD_BUDGET) {
-    throw new Error(
-      "Attachments are still too large to upload together. Use a smaller video or GIF, or remove an attachment. Your draft has been kept.",
+  if (files.length > 4) throw new Error("Add up to 4 media files.");
+  const prepared: File[] = [];
+  // Validate/convert every attachment before uploading any of them.
+  for (const [index, file] of files.entries()) {
+    options.onProgress?.(
+      `Preparing attachment ${index + 1} of ${files.length}...`,
     );
+    const ready = await optimiseRightNowImage(file);
+    validateMedia(ready.type, ready.size);
+    prepared.push(ready);
   }
+  data.delete("media");
+  if (options.local) {
+    for (const file of prepared) data.append("media", file);
+    return data;
+  }
+  const id = crypto.randomUUID();
+  const paths: string[] = [];
+  for (const [index, file] of prepared.entries()) {
+    const pathname = `right-now/uploads/${id}/${index}.${mediaTypes[file.type].extension}`;
+    const blob = await send(pathname, file, {
+      access: "public",
+      handleUploadUrl: "/api/right-now/upload/",
+      contentType: file.type,
+      multipart: file.size > 5 * 1024 * 1024,
+      abortSignal: AbortSignal.timeout(5 * 60_000),
+      onUploadProgress: ({ percentage }) =>
+        options.onProgress?.(
+          `Uploading attachment ${index + 1} of ${files.length}: ${Math.round(percentage)}%`,
+        ),
+    });
+    paths.push(blob.pathname);
+  }
+  // Only metadata goes through the Vercel function; media goes straight to Blob.
+  data.set("uploadedMedia", JSON.stringify(paths));
   return data;
 }

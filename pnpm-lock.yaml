@@ -40,6 +40,9 @@ importers:
       astro:
         specifier: ^7.0.6
         version: 7.0.6(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)(@types/node@24.12.2)(@vercel/blob@2.6.1)(@vercel/functions@3.7.5)(jiti@1.21.7)(rollup@4.60.3)(tsx@4.23.0)(yaml@2.8.4)
+      heic-to:
+        specifier: 1.5.2
+        version: 1.5.2
       lite-youtube-embed:
         specifier: ^0.3.4
         version: 0.3.4
@@ -79,6 +82,12 @@ importers:
         version: 6.0.3
 
 packages:
+  heic-to@1.5.2:
+    resolution:
+      {
+        integrity: sha512-8Fns+lZHAWmz5U5IUxDeXKwIf3foBoKNPLxxFY4B0MkLjNuomEIHCoDbDE+x/llFK3NCEO1cu4+n3iUKY+Svmw==,
+      }
+
   "@alloc/quick-lru@5.2.0":
     resolution:
       {
@@ -4858,6 +4867,7 @@ packages:
       }
 
 snapshots:
+  heic-to@1.5.2: {}
   "@alloc/quick-lru@5.2.0": {}
 
   "@astrojs/check@0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.9.4)(typescript@6.0.3)":
