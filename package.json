@@ -19,6 +19,7 @@
     "@vercel/blob": "^2.6.1",
     "@vercel/speed-insights": "latest",
     "astro": "^7.0.6",
+    "heic-to": "1.5.2",
     "lite-youtube-embed": "^0.3.4",
     "remixicon": "latest",
     "tailwindcss": "^3.4.17"

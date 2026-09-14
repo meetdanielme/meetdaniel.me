@@ -58,6 +58,7 @@ const isCrossPostingConfigured =
                         </div>
                         <form
                             class="right-now-compose-form"
+                            data-local-publish={import.meta.env.RIGHT_NOW_LOCAL_PUBLISH === "true" ? "true" : "false"}
                             data-right-now-form
                             enctype="multipart/form-data"
                         >
@@ -381,7 +382,7 @@ const isCrossPostingConfigured =
                         (file) =>
                             file.size > 0 &&
                             (file.type.startsWith("image/") ||
-                                file.type.startsWith("video/")),
+                                file.type.startsWith("video/") || /\.hei[cf]$/i.test(file.name)),
                     );
                     if (accepted.length === 0) return;
 
@@ -565,7 +566,13 @@ const isCrossPostingConfigured =
                     if (submit) submit.disabled = true;
                     try {
                         setStatus("Optimising images...");
-                        const body = await prepareRightNowUpload(new FormData(form));
+                        const draft = new FormData(form);
+                        draft.set("altTexts", JSON.stringify(altTexts));
+                        form.inert = true;
+                        const body = await prepareRightNowUpload(draft, {
+                            local: form.dataset.localPublish === "true",
+                            onProgress: message => setStatus(message),
+                        });
                         setStatus("Publishing...");
                         const response = await fetch("/api/right-now/create/", {
                             method: "POST",
@@ -598,6 +605,7 @@ const isCrossPostingConfigured =
                             : "Publishing could not be confirmed. Your draft has been kept. Check Right Now before retrying.", true);
                     } finally {
                         publishing = false;
+                        form.inert = false;
                         if (submit) submit.disabled = false;
                     }
                 });
