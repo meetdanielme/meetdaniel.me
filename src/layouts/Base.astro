@@ -57,6 +57,12 @@ const socials = [
         label: "Threads",
         icon: "ri-threads-fill",
     },
+    {
+        href: "https://www.strava.com/athletes/47540494",
+        label: "Strava",
+        // Strava mark from Simple Icons (CC0).
+        path: "M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169",
+    },
     { href: "/rss.xml", label: "RSS", icon: "ri-rss-line" },
 ];
 const contactHref = "mailto:hey@meetdaniel.me";
@@ -249,7 +255,13 @@ const structuredData = {
                                     href={item.href}
                                     aria-label={item.label}
                                 >
-                                    <i class={item.icon} aria-hidden="true" />
+                                    {item.path ? (
+                                        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d={item.path} />
+                                        </svg>
+                                    ) : (
+                                        <i class={item.icon} aria-hidden="true" />
+                                    )}
                                 </a>
                             ))
                         }
@@ -317,7 +329,13 @@ const structuredData = {
                                     href={item.href}
                                     aria-label={item.label}
                                 >
-                                    <i class={item.icon} aria-hidden="true" />
+                                    {item.path ? (
+                                        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                            <path d={item.path} />
+                                        </svg>
+                                    ) : (
+                                        <i class={item.icon} aria-hidden="true" />
+                                    )}
                                 </a>
                             ))
                         }
