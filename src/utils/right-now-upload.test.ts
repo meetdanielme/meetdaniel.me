@@ -81,6 +81,7 @@ test("direct uploads send full files to Blob and only ordered references to publ
         downloadUrl: `https://example.com/${pathname}`,
         contentType: "image/jpeg",
         contentDisposition: "inline",
+        etag: "test-etag",
       };
     },
   );
