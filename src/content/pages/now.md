@@ -9,18 +9,25 @@ draft: false
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
 
-## September 2026
+## October 2026
 
-📍 Berlin, Germany
+📍 Frankfurt, Germany
 
-- My summer in Berlin is coming to the end as I prepare to go back to Cork to continue my studies.
-- I'm deep in my marathon training as I get ready to run in Cologne next month. Back in August, I posted how I created my training plan with [ChatGPT](https://meetdaniel.me/blog/training-for-my-next-marathon-with-codex/) as well as shared what's [my current shoe rotation](https://meetdaniel.me/blog/my-running-shoe-rotation-summer-2026/).
+- Just got to Frankfurt from Cork. I'm back in Germany for the weekend as I will be running the Cologne Marathon on Sunday. Wish me luck 🏃‍♂️
+- It's been great being back at UCC so far this semester.
 
 ---
 
 # Then
 
 Archival entries.
+
+## September 2026
+
+📍 Berlin, Germany
+
+- My summer in Berlin is coming to the end as I prepare to go back to Cork to continue my studies.
+- I'm deep in my marathon training as I get ready to run in Cologne next month. Back in August, I posted how I created my training plan with [ChatGPT](https://meetdaniel.me/blog/training-for-my-next-marathon-with-codex/) as well as shared what's [my current shoe rotation](https://meetdaniel.me/blog/my-running-shoe-rotation-summer-2026/).
 
 ## August 2026
 
