@@ -6,6 +6,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 import SearchBox from "../components/SearchBox.astro";
 import YouTubeEmbedAssets from "../components/YouTubeEmbedAssets.astro";
 import { getImageMetadata } from "../utils/image-metadata";
+import { RIGHT_NOW_ENABLED } from "../utils/site-features";
 import { getPublishedRightNowPosts } from "../utils/right-now-collection";
 const {
     title = "Daniel Marcinkowski",
@@ -26,7 +27,9 @@ const nav = [
     { href: "/work/", label: "Work", icon: "ri-briefcase-4-line" },
     { href: "/uses/", label: "Uses", icon: "ri-tools-line" },
     { href: "/now/", label: "Now", icon: "ri-time-line" },
-    { href: "/right-now/", label: "Right Now", icon: "ri-chat-smile-3-line" },
+    ...(RIGHT_NOW_ENABLED
+        ? [{ href: "/right-now/", label: "Right Now", icon: "ri-chat-smile-3-line" }]
+        : []),
 ];
 const latestRightNowPost = (await getPublishedRightNowPosts())[0];
 const latestRightNowCreatedAt =
@@ -46,16 +49,6 @@ const socials = [
         href: "https://github.com/meetdanielme",
         label: "GitHub",
         icon: "ri-github-fill",
-    },
-    {
-        href: "https://bsky.app/profile/meetdaniel.me",
-        label: "Bluesky",
-        icon: "ri-bluesky-fill",
-    },
-    {
-        href: "https://www.threads.net/@meetdaniel.me",
-        label: "Threads",
-        icon: "ri-threads-fill",
     },
     {
         href: "https://www.strava.com/athletes/47540494",
@@ -395,9 +388,12 @@ const structuredData = {
         {hasYouTubeEmbeds && <YouTubeEmbedAssets />}
         <script>
             import "../scripts/search";
-            import "../scripts/right-now-time";
-            import "../scripts/right-now-carousel";
-            import "../scripts/right-now-new-dot";
+            import { RIGHT_NOW_ENABLED } from "../utils/site-features";
+            if (RIGHT_NOW_ENABLED) {
+                import("../scripts/right-now-time");
+                import("../scripts/right-now-carousel");
+                import("../scripts/right-now-new-dot");
+            }
         </script>
         <script is:inline>
             const openButton = document.getElementById("menu-open");

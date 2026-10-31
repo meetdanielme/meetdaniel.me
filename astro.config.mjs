@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import remarkEmbeds from "./src/utils/remark-embeds.mjs";
 import remarkImageAttributes from "./src/utils/remark-image-attributes.mjs";
+import { RIGHT_NOW_ENABLED } from "./src/utils/site-features.ts";
 import rehypeImages from "./src/utils/rehype-images.mjs";
 
 export default defineConfig({
@@ -27,6 +28,7 @@ export default defineConfig({
         const pathname = new URL(page).pathname;
 
         return (
+          (RIGHT_NOW_ENABLED || !pathname.startsWith("/right-now/")) &&
           pathname !== "/right-now/new/" &&
           !/^\/right-now\/\d{4}-\d{2}-\d{2}-.*z\/$/.test(pathname)
         );

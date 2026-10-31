@@ -1,4 +1,5 @@
 ---
+import { RIGHT_NOW_ENABLED } from "../../utils/site-features";
 import Base from "../../layouts/Base.astro";
 import RightNowPost from "../../components/RightNowPost.astro";
 import {
@@ -7,6 +8,10 @@ import {
     RIGHT_NOW_DESCRIPTION,
 } from "../../utils/right-now";
 import { getPublishedRightNowPosts } from "../../utils/right-now-collection";
+
+export const prerender = false;
+
+if (!RIGHT_NOW_ENABLED) return Astro.redirect("/", 302);
 
 const posts = await getPublishedRightNowPosts();
 const permalinkMap = buildRightNowPermalinkMap(posts);
