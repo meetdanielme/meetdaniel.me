@@ -2,12 +2,25 @@
 title: "Now"
 description: "A monthly updated list of things going on in my life at the moment."
 pubDate: 2025-02-23
-updatedDate: 2026-07-01
+updatedDate: 2026-10-31
 tags:
 draft: false
 ---
 
 Things going on in my life right now. _Inspired by [nownownow.com](https://nownownow.com)._
+
+## November 2026
+
+📍 Cork, Ireland
+
+- Last month, I smashed my marathon PR by 53 minutes by reaching the finish line in Cologne at 3:41:34 ([Strava](https://www.strava.com/activities/20447145464)). I already started my training for the Berlin Half-Marathon, which I want to run in under 1:30:00 (might be a bit too ambitious 😅.)
+- After I came back to Cork, I had a chance to attend the RebelCon conference co-organised by my company Zartis. Shared some thougts about it on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7514243051918315520/).
+
+---
+
+# Then
+
+Archival entries.
 
 ## October 2026
 
@@ -15,12 +28,6 @@ Things going on in my life right now. _Inspired by [nownownow.com](https://nowno
 
 - Just got to Frankfurt from Cork. I'm back in Germany for the weekend as I will be running the Cologne Marathon on Sunday. Wish me luck 🏃‍♂️
 - It's been great being back at UCC so far this semester.
-
----
-
-# Then
-
-Archival entries.
 
 ## September 2026
 
