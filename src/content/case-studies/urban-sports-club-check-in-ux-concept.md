@@ -4,7 +4,7 @@ description: "A UX concept for improving the ease and accessibility of the Urban
 pubDate: 2025-04-01
 order: 1
 tags:
-  - "Work"
+  - "Personal"
 draft: false
 heroImage: "/images/case-studies/urban-sports-club/urban-sports-club-improved-check-in-ux.png"
 period: "April 1–15, 2025"

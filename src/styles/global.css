@@ -720,6 +720,23 @@ pre code {
     gap: 2rem;
     margin-top: 1.5rem;
 }
+.case-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+}
+.case-filter-link {
+    border: 1px solid var(--rule);
+    border-radius: 9999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.case-filter-link[aria-current="page"] {
+    border-color: currentColor;
+    background: var(--surface);
+}
 .right-now-header {
     display: grid;
     gap: 0.75rem;

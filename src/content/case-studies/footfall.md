@@ -4,9 +4,7 @@ description: "Designing and building a café planning app with a three-person te
 pubDate: 2026-11-08
 order: 0
 tags:
-  - "Work"
-  - "Product Design"
-  - "AI"
+  - "University"
 draft: false
 heroImage: "/images/case-studies/footfall/footfall-cover.webp"
 location: "Cork, Ireland"
