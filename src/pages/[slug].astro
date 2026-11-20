@@ -5,6 +5,8 @@ import { hasYouTubeEmbed } from "../utils/embeds";
 import { getImageMetadata } from "../utils/image-metadata";
 import { getEntrySlug } from "../utils/content";
 import { getFeaturedImage } from "../utils/images";
+import { getPublishedCaseStudies } from "../utils/case-studies";
+import CaseStudyList from "../components/CaseStudyList.astro";
 export async function getStaticPaths() {
     const pages = await getCollection("pages", ({ data }) => !data.draft);
     return pages.map((page) => ({
@@ -29,13 +31,7 @@ const formattedUpdatedDate = page.data.updatedDate?.toLocaleDateString(
     },
 );
 const caseStudies =
-    pageSlug === "work"
-        ? (await getCollection("case-studies", ({ data }) => !data.draft)).sort(
-              (a, b) =>
-                  a.data.order - b.data.order ||
-                  b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-          )
-        : [];
+    pageSlug === "work" ? await getPublishedCaseStudies() : [];
 ---
 
 <Base
@@ -75,51 +71,9 @@ const caseStudies =
     </article>
     {
         pageSlug === "work" && caseStudies.length > 0 && (
-            <section class="case-section">
+            <section class="case-section" id="case-studies">
                 <h2 class="text-2xl font-bold">Case studies</h2>
-                <div class="case-list">
-                    {caseStudies.map((study) => {
-                        const featuredImage = getFeaturedImage(study);
-                        const featuredImageMetadata =
-                            getImageMetadata(featuredImage);
-                        return (
-                            <article
-                                class={`post-card ${featuredImage ? "with-image" : ""}`}
-                            >
-                                {featuredImage && (
-                                    <a href={`/work/${getEntrySlug(study)}/`}>
-                                        <img
-                                            class="post-thumb"
-                                            src={featuredImage}
-                                            alt=""
-                                            width={featuredImageMetadata?.width}
-                                            height={
-                                                featuredImageMetadata?.height
-                                            }
-                                            loading="lazy"
-                                            decoding="async"
-                                        />
-                                    </a>
-                                )}
-                                <div>
-                                    <h3 class="text-xl font-bold">
-                                        <a
-                                            class="post-title-link"
-                                            href={`/work/${getEntrySlug(study)}/`}
-                                        >
-                                            {study.data.title}
-                                        </a>
-                                    </h3>
-                                    {study.data.description && (
-                                        <p class="mt-2">
-                                            {study.data.description}
-                                        </p>
-                                    )}
-                                </div>
-                            </article>
-                        );
-                    })}
-                </div>
+                <CaseStudyList studies={caseStudies} allStudies={caseStudies} />
             </section>
         )
     }

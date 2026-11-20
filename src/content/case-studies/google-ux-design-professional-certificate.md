@@ -4,7 +4,7 @@ description: "An app and responsive website concept to help global travelers fin
 pubDate: 2025-04-01
 order: 2
 tags:
-  - "Work"
+  - "Personal"
 draft: false
 heroImage: "/images/case-studies/google-ux-design/google-coursera-ux-design.jpg"
 ---

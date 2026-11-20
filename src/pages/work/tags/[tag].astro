@@ -1,0 +1,44 @@
+---
+import Base from "../../../layouts/Base.astro";
+import CaseStudyList from "../../../components/CaseStudyList.astro";
+import {
+    caseStudyTagSlug,
+    getCaseStudyTags,
+    getPublishedCaseStudies,
+} from "../../../utils/case-studies";
+
+export async function getStaticPaths() {
+    const studies = await getPublishedCaseStudies();
+    return getCaseStudyTags(studies).map((tag) => ({
+        params: { tag: caseStudyTagSlug(tag) },
+        props: {
+            tag,
+            allStudies: studies,
+            studies: studies.filter((study) => study.data.tags.includes(tag)),
+        },
+    }));
+}
+
+const { tag, studies, allStudies } = Astro.props;
+---
+
+<Base
+    title={`${tag} case studies`}
+    description={`${tag} case studies by Daniel Marcinkowski.`}
+    canonical={`/work/tags/${caseStudyTagSlug(tag)}/`}
+>
+    <p>
+        <a class="back-link" href="/work/"
+            ><i class="ri-arrow-left-line" aria-hidden="true"></i>Back to Work</a
+        >
+    </p>
+    <h1 class="mt-4 text-4xl font-bold">{tag} case studies</h1>
+    <section class="case-section">
+        <CaseStudyList
+            studies={studies}
+            allStudies={allStudies}
+            activeTag={tag}
+            headingLevel="h2"
+        />
+    </section>
+</Base>

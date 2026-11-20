@@ -1,0 +1,94 @@
+---
+import { getEntrySlug } from "../utils/content";
+import { getImageMetadata } from "../utils/image-metadata";
+import { getFeaturedImage } from "../utils/images";
+import {
+    caseStudyTagHref,
+    getCaseStudyTags,
+    type CaseStudy,
+} from "../utils/case-studies";
+
+interface Props {
+    studies: CaseStudy[];
+    allStudies: CaseStudy[];
+    activeTag?: string;
+    headingLevel?: "h2" | "h3";
+}
+
+const { studies, allStudies, activeTag, headingLevel = "h3" } = Astro.props;
+const Heading = headingLevel;
+const tags = getCaseStudyTags(allStudies);
+---
+
+{
+    tags.length > 1 && (
+        <nav class="case-filter" aria-label="Filter case studies by tag">
+            <a
+                class="tag-link case-filter-link"
+                href="/work/#case-studies"
+                aria-current={activeTag ? undefined : "page"}
+            >
+                All
+            </a>
+            {tags.map((tag) => (
+                <a
+                    class="tag-link case-filter-link"
+                    href={caseStudyTagHref(tag)}
+                    aria-current={tag === activeTag ? "page" : undefined}
+                >
+                    {tag}
+                </a>
+            ))}
+        </nav>
+    )
+}
+<div class="case-list">
+    {
+        studies.map((study) => {
+            const href = `/work/${getEntrySlug(study)}/`;
+            const featuredImage = getFeaturedImage(study);
+            const featuredImageMetadata = getImageMetadata(featuredImage);
+            return (
+                <article
+                    class={`post-card ${featuredImage ? "with-image" : ""}`}
+                >
+                    {featuredImage && (
+                        <a href={href}>
+                            <img
+                                class="post-thumb"
+                                src={featuredImage}
+                                alt=""
+                                width={featuredImageMetadata?.width}
+                                height={featuredImageMetadata?.height}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </a>
+                    )}
+                    <div>
+                        <Heading class="text-xl font-bold">
+                            <a class="post-title-link" href={href}>
+                                {study.data.title}
+                            </a>
+                        </Heading>
+                        {study.data.description && (
+                            <p class="mt-2">{study.data.description}</p>
+                        )}
+                        {study.data.tags.length > 0 && (
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                {study.data.tags.map((tag) => (
+                                    <a
+                                        class="tag-link rounded-full bg-brand-code px-3 py-1 text-xs text-black"
+                                        href={caseStudyTagHref(tag)}
+                                    >
+                                        {tag}
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </article>
+            );
+        })
+    }
+</div>
